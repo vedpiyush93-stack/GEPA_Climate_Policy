@@ -73,16 +73,12 @@ Governments write their climate commitments into laws, policies and submissions 
 
 ## What GEPA learned
 
-<table>
-<tr>
-<td width="50%" valign="top"><b>Be strict</b><br>Count a goal only if it has both a number and a deadline.</td>
-<td width="50%" valign="top"><b>Energy savings are not emission cuts</b><br>Cutting energy use is an "other" target, not an emission-reduction target.</td>
-</tr>
-<tr>
-<td valign="top"><b>Vague does not count</b><br>Aims like "decarbonise the sector" with no figure are not targets.</td>
-<td valign="top"><b>Plans are not promises</b><br>Projects, policies, studies and financing are not targets.</td>
-</tr>
-</table>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/prompt-diff-dark.svg">
+  <img alt="The annotators&#x27; rule and GEPA&#x27;s prompt, line by line" src="assets/prompt-diff-light.svg" width="100%">
+</picture>
+
+Each row puts one line of the annotators' rule next to the same line in GEPA's prompt, quoted word for word ("…" marks a cut). GEPA kept every definition and added, label by label, the codebook the experts applied but never wrote down, plus a section the rule never had: what is *not* a target. This is the prompt from the main run; on its 300 held-out passages it took Claude Haiku from 85% to 92% with all three labels right.
 
 <details>
 <summary><b>Full prompt, before and after GEPA</b></summary>
