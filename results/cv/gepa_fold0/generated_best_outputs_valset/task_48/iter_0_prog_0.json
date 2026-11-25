@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Check the passage for quantified climate targets with a deadline. It describes the energy sector's structure (mitigation and adaptation approaches, management areas, and lines of work) and lists macro objectives such as limiting polluting energy and applying efficiency measures. It gives no numeric aim and no deadline. Because a target needs both a quantifiable outcome and a date, none of the three target types applies, so all three flags are false.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

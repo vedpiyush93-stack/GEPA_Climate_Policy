@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It sets a target to reduce average electricity intensity in the Residential and Commercial sectors from 2-2.4:1 to 1.5:1 by 2015, and to maintain that ratio through 2020. This is an energy efficiency target, not a GHG emissions reduction or net zero target, so it counts as \"other\". The remaining text describes energy audits, benchmarks, and a planned law, with no quantified emissions target or deadline. No net zero or GHG reduction target is present.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

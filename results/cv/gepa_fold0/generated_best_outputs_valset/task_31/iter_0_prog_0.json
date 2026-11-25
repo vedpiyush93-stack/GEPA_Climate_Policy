@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes electricity consumption figures for overseas countries (IEA data, Korea Electric Power Statistics) and a 2016 peak demand observation of 85.2 GW. It contains no net zero commitment, no GHG emissions reduction target with a deadline, and no other quantifiable target such as a renewable energy goal. It is descriptive statistical content only, so all three target flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

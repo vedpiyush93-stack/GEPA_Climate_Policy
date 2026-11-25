@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. It mentions a base year (2014), total emissions in that year (284.0 MtCO2eq), and a past reduction of 10.5 MtCO2eq over 2010-2014, with measures such as energy efficiency and renewables. It gives no future net zero target, no future emissions reduction target with a deadline, and no other quantified future target with a deadline (such as a renewable energy share by a set year). The base year and historical figures describe inventory data and past achievements, not forward-looking targets, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

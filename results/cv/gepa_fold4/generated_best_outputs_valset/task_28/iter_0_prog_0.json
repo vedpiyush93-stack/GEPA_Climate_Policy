@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a table of DRC transport-sector objectives, such as reducing GHG emissions from transport, promoting clean energy infrastructure, and electrifying railways. It also includes a 2012 ban on importing vehicles older than ten years. Under the definition, a target must be quantifiable and have a deadline. The only time reference is \"Medium-term development dynamic,\" which is vague, and the \"Deadline\" column is empty. The reduction and clean-energy items are qualitative aims with no numeric value or date. So none qualifies as a target under the definition, and all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

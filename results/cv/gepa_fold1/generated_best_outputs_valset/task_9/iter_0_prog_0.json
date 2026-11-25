@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable targets with deadlines. It describes WEM and WOM scenario assumptions: a CH4 flaring share of 10 per cent by 2030, 336 additional biogas facilities by 2030, a WOM landfill disposal decrease to 10 per cent of the 1999 value by 2020, and a constant 3.5 per cent flaring share through 2030. None of these is a net zero target. The flaring share and biogas facility count are modelling assumptions or projections, not policy targets. The landfill ban is a regulatory measure, not a reduction target with a quantified emissions goal. The 10 per cent flaring and 461-facility figures are quantifiable and dated, but they describe scenario assumptions rather than aims to achieve an outcome. So no target is clearly present. The landfill disposal reduction to 10 per cent by 2020 under WOM is the closest to a reduction target, but it is a counterfactual assumption about waste disposal volume, not a GHG emissions reduction target, so I mark reduction false. I mark other false for the same reason.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

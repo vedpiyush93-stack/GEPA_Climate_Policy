@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which is an inventory entry for category 1A1a (electricity and heat production from gaseous fuels) in Moldova. Check for any net zero commitment: none is stated. Check for any GHG emissions reduction target, economy-wide or sectoral, with a deadline: none is stated; it describes capacity, fuel shares, and methodology changes. Check for other quantifiable targets with deadlines, such as renewable energy goals: it notes renewable capacity growth (5 MW in 2015, about 6.9 MW in 2016) but sets no target or deadline. Therefore all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

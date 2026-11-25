@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage mentions a past reduction target: Singapore pledged at Copenhagen (2009) to cut emissions 16% below BAU by 2020, and states this was achieved. That is a GHG emissions reduction target with a deadline (2020), so reduction is true. The passage also cites the IPCC AR6 finding that the world needs net zero by around 2050. This is a global scientific finding, not a commitment by Singapore, so it does not count as a net zero target for this passage. No renewable energy or other quantifiable targets with deadlines appear, so other is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

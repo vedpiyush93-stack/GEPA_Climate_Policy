@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets a quantified renewable electricity target: at least 35% of electricity generation from renewables by 2025, maintained through 2030. It has a clear numeric goal and deadlines, so it qualifies as an \"other\" target (renewable energy). It mentions reducing fossil fuel dependence and energy efficiency measures, but gives no quantified GHG emissions reduction target and no net zero commitment. So net_zero and reduction are false, and other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

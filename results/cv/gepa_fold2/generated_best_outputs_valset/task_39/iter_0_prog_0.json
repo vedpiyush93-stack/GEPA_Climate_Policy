@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable aims with deadlines. Net zero: no commitment to balance emissions with removals to zero, so false. Reduction: the passage cites a GHG reduction target (EU CO2 emissions cut by more than twice the Kyoto requirement by 2012), which is an emissions reduction target with a deadline, so true. Other: the 20% energy saving target by 2020 and the 20% reduction in energy demand for Ireland by 2020 are energy efficiency targets with deadlines, which fit the \"other\" category, so true. The 2006\u20132009 National Energy Efficiency Campaign is a behavioural/savings aim but has no quantified target, so it does not count.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

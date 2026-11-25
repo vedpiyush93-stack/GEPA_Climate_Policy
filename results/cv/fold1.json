@@ -1,0 +1,72 @@
+{
+ "fold": 1,
+ "test_passages": 150,
+ "test_countries": 39,
+ "ml": {
+  "family": "Linear SVM",
+  "inner_cv": 0.747,
+  "params": {
+   "clf__estimator__C": 3,
+   "clf__estimator__class_weight": null,
+   "tfidf__min_df": 2,
+   "tfidf__ngram_range": [
+    1,
+    2
+   ]
+  }
+ },
+ "gepa": {
+  "val_scores": [
+   0.9444444444444444,
+   0.9555555555555556,
+   0.9722222222222222,
+   0.961111111111111,
+   0.961111111111111
+  ],
+  "labelled_passages_used": 84,
+  "instructions": "Task: Identify the climate targets in a passage taken from a national law, policy, or UNFCCC submission (passages are often truncated fragments, may be poorly translated, and may include table headers or boilerplate). For each passage, output brief reasoning followed by three booleans: net_zero, reduction, other. A passage can have several target types, or none.\n\nDefinition: A target is an aim to achieve a specific outcome that is BOTH quantifiable AND tied to a deadline/target year (or period). Both conditions must be clearly met in the text, and the aim must be a commitment, goal, or objective of the country/entity (or a formally adopted international/EU goal), not mere description.\n\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removals, effectively reaching net zero (also carbon neutrality / climate neutrality) by a date. \n- reduction: a quantified target to reduce greenhouse gas emissions (economy-wide or sectoral, e.g. X% below base year by year; emissions intensity; absolute cap) with a deadline.\n- other: a quantified, dated target that is not a GHG reduction or net zero, e.g. renewable energy share (X% by 2030), energy efficiency improvement, forest cover, electric vehicle numbers, installed renewable capacity goals that are explicit targets.\n\nGuidelines learned from expert labels:\n1. Mark false for all types when the passage only references a target without stating it (e.g. table titles like \"Description of quantified economy-wide emission reduction target\", reporting-format notes, market mechanism caveats). Missing number or missing year means no target.\n2. Be strict for \"other\": projections, scenarios, potentials, or possibilities (e.g. \"growth up to 60 GW may be achieved by 2050, depending on demand\"), vision statements, descriptions of future systems, and vague intentions are NOT targets. Only count them when phrased as a firm goal/objective/commitment with a number and deadline. Hedged language like \"may\", \"up to\", \"depending on\" signals a non-target.\n3. Past or historical aims still count when explicitly stated with number and deadline (e.g. Kyoto Protocol 5% reduction in 2008-2012 vs 1990; EU 20% reduction by 2020, 20% renewables share and 20% efficiency by 2020; global 50% cut by 2050 cited as needed). Each type is judged independently, so a passage may be reduction=true and other=true simultaneously.\n4. Decide each type separately; do not mark a type true merely because the topic (energy, offshore wind, emissions) is mentioned.\n5. Method: scan the passage for each type, look for number + deadline + commitment language, and when in doubt about a hedged or projected figure, lean false.\n\nOutput format: reasoning (short, listing which targets were found or why none), then net_zero, reduction, other as true/false."
+ },
+ "minutes": 1.4,
+ "summary": [
+  {
+   "fold": 1,
+   "setup": "Classical ML",
+   "passages": 150,
+   "exact_match": 0.813,
+   "F1_net_zero": 0.625,
+   "F1_reduction": 0.737,
+   "F1_other": 0.795,
+   "false_alarm_rate": 0.057
+  },
+  {
+   "fold": 1,
+   "setup": "Claude Haiku",
+   "passages": 150,
+   "exact_match": 0.793,
+   "F1_net_zero": 0.87,
+   "F1_reduction": 0.702,
+   "F1_other": 0.863,
+   "false_alarm_rate": 0.205
+  },
+  {
+   "fold": 1,
+   "setup": "Claude Sonnet",
+   "passages": 150,
+   "exact_match": 0.813,
+   "F1_net_zero": 0.87,
+   "F1_reduction": 0.724,
+   "F1_other": 0.872,
+   "false_alarm_rate": 0.205
+  },
+  {
+   "fold": 1,
+   "setup": "Claude Haiku + GEPA",
+   "passages": 150,
+   "exact_match": 0.9,
+   "F1_net_zero": 0.818,
+   "F1_reduction": 0.851,
+   "F1_other": 0.927,
+   "false_alarm_rate": 0.08
+  }
+ ]
+}

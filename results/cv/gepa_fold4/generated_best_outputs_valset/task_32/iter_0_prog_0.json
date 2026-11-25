@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It has no net zero commitment, so net_zero is false. It has no GHG emissions reduction target: the items concern legal frameworks, adoption of energy management models for enterprises (40%, 100%), and mandatory energy-efficiency compliance for new buildings (100% from 2006). These are quantified, time-bound efficiency targets, not emissions reductions, so reduction is false and other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

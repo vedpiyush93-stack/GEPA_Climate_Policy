@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Identify quantifiable climate targets with deadlines in the passage. The EU 20-20-20 package sets a 20% GHG reduction vs 1990 by 2020 (reduction, deadline 2020). The 20% renewables target by 2020 is an \"other\" target. The 20% primary energy consumption reduction by 2020 is an efficiency target, so \"other.\" Italy\\'s binding 18% overall reduction (21% ETS, 13% non-ETS vs 2005) by 2020 is a reduction target. Italy\\'s 17% renewables target by 2020 is \"other.\" Italy\\'s 20% primary energy reduction is \"other.\" The passage mentions a reduction of around 40% by 2050, which is an aspirational outcome tied to a deadline, so it also counts as a reduction target. No net zero commitment appears, so net_zero is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

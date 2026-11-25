@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each objective for a quantified outcome with a deadline. Objective B1.1 sets a target of meeting efficiency standards in at least 1 million buildings by 2023. This is an energy efficiency target, not a GHG reduction or net zero target, so it counts as \"other.\" Objective 2 sets a deadline of 2023 for reducing CO2-equivalent density per industrial group, which is a sector-level GHG reduction target, so it counts as \"reduction.\" The passage makes no net zero commitment.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

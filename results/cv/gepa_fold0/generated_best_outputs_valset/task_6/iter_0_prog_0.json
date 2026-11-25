@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified outcomes with deadlines. Found: (1) 100% universal electrification by 2020, which is an access/other target, not emissions. (2) 15% rural electrification via decentralised renewables by 2015, expanding to 30% by 2020, which is a renewable energy deployment target, so \"other\". (3) 50% reduction in average urban household electricity intensity by 2020, an energy efficiency target, not a GHG emissions reduction, so \"other\". (4) Energy efficiency savings of about 5,000 GWh by 2015 and 8,000 GWh by 2020, also quantified with deadlines, so \"other\". No net zero commitment and no GHG emissions reduction target appear. Therefore net_zero = false, reduction = false, other = true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

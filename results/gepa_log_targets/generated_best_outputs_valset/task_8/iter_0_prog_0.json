@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from a national adaptation policy (Objective 3.6) about improving agricultural resilience to climate change. It states a quantifiable target with a deadline: \"By 2040, 70% of producers have implemented climate change adaptation actions.\" This is not a net zero target and does not concern reducing GHG emissions, so net_zero and reduction are false. It is an adaptation target that does not fit the reduction or net zero categories, so it falls under \"other.\"'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

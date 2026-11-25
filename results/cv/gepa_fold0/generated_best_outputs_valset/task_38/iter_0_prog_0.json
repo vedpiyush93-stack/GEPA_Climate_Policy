@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It mentions a carbon pricing revenue estimate of up to \u00a327 billion per year by 2030, but that is an estimate of revenue, not a emissions target. It also discusses tax receipts at risk from EVs and redistribution of costs, but no GHG reduction, net zero commitment, or other quantified target (such as renewables share) with a deadline. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

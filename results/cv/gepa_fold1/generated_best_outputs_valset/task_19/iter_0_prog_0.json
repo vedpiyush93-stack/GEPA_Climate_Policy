@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Identify quantified, deadline-bound targets in the passage. Check for net zero commitments (none: no balancing of emissions with removals to zero). Check for GHG reduction targets: \"The current level of 114 ton CO emission will be reduced by 50% annually\" is a quantified emissions reduction, and \"reducing illegal action... by 80% during the plan period\" is about illegal activity, not emissions. The 50% emission cut is the reduction target. Check for other targets: the 70% infrastructure coverage by end of plan period, the 30% increase in rehabilitation/CO sinks, five new wildlife areas, ten management plans, and three rare animals reared all satisfy the definition, so \"other\" is true. Note the CO figure\\'s units are unclear in the passage, but the reduction target still stands as an emissions reduction.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a garbled, OCR-like figure caption describing electricity-sector scenarios (Figure 14). It mentions coal and gas generation trajectories, energy efficiency, installed capacity growth, and renewable build-out: 1.5 GW by 2030 and 2 GW by 2050, plus 4.6 GW of VZS and 1 GW of SPP (solar power stations) by 2030. It also mentions a \"decrease by 45\" item, which is ambiguous and may refer to a reduction, but it is not clearly tied to GHG emissions. There is no net zero commitment. The renewable capacity targets are quantified and dated, so they fit \"other.\" The emissions-reduction question is unclear, so I assign reduction as false because the passage does not clearly state a GHG reduction target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

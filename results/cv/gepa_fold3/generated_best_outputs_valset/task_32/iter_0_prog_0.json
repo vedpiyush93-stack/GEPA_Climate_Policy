@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. It mentions a renewable energy share of 38% of final energy consumption by 2020 (from the EU Renewable Energy Directive) and says Finland exceeded it at 44.6%. That is a quantified, deadline-bound renewable energy target, so it falls under \"other.\" It has no net zero commitment and no GHG emissions reduction target. The 2010 national package of renewable source targets is described without its own explicit figures, but the 38% target is enough to set other to true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

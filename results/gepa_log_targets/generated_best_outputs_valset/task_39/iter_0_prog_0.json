@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage mentions investments in EV charging infrastructure (Zero Emission Vehicle Infrastructure Program), a methane strategy titled \"Faster and Further\" (September 2022), and an Energy Efficient Buildings program. It contains no explicit net zero commitment and no quantified GHG emissions reduction target with a deadline. The EV infrastructure and buildings references are program descriptions without quantifiable outcomes or deadlines. The methane strategy is named only by title, with no stated quantified target in the passage. Therefore no target is clearly present, so all flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

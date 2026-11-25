@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes the Agency determining that certain HFC phasedown data elements deserve confidential treatment. It contains no net zero commitment, no GHG emissions reduction target with a quantified value and deadline, and no other quantifiable outcome target with a deadline (such as a renewable energy goal). It only discusses confidentiality of data and the enforceability rationale for transparency. Therefore all three target flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

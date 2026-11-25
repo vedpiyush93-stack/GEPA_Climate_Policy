@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which is only a chapter heading and introductory scope note for a UK Net Zero analysis. It mentions \"Net Zero by 2050\" as the subject of exploration, and refers to a Sixth Carbon Budget and possible Net Zero before 2050, but does not state a quantified commitment with a deadline itself. The Sixth Carbon Budget and Net Zero by 2050 are named as topics, not as adopted targets in this text. So net_zero is arguably referenced but not stated as a commitment; no reduction figure or other quantified target appears. Mark net_zero false since the passage only describes scenarios exploring pathways, not a commitment, and mark the other categories false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

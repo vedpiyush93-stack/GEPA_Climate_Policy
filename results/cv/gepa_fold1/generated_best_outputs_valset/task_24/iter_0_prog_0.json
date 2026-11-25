@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from France\\'s national climate policy (likely a UNFCCC submission or national plan). Check for net zero: none mentioned. Check for GHG emissions reduction target (economy-wide or sectoral, quantified with deadline): none; the 32% by 2030 target is for renewable energy share, not emissions. Check for other targets: \"objective of 32% by 2030\" for renewable energy is a quantified aim with a deadline, so it qualifies as an \"other\" target. The rest of the passage describes measures and timelines (tenders, scheduling), which are actions rather than targets. Result: other = true, the others false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

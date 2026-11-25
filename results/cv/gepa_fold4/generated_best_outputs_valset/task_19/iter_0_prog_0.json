@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which lists monitoring networks and research programs (CarboAfrica, CarboEurope, FLUXNET, ARS AfricaE, AERONET, SHADOZ, GAW). It describes observation activities and data collection, with no emissions reduction goal, no net zero commitment, and no quantified target with a deadline. So all three target flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

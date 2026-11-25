@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes the Haouma wind farm project. It includes one target with a quantified value and a deadline: the national strategy aims to raise the renewable share of electricity to 52% by 2030. That is a renewable energy target, so it falls under \"other.\" The passage also estimates the project will prevent about 150,000 tonnes of CO2 per year. This is a project-level expected outcome with no deadline, not a GHG reduction target for the economy or a sector, so I classify it as not a reduction target. The passage makes no net zero commitment.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage and check for three things: a net zero commitment, a GHG emissions reduction target with a deadline, and any other quantifiable climate target with a deadline (such as renewable energy). The passage is about construction batch plants, a water treatment plant, and soda ash bags. It mentions no emissions goals, no net zero commitment, no reduction targets, and no climate-related quantified targets with deadlines. All three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

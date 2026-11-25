@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. It gives projected shares of petroleum, natural gas, petcoke/coal, and renewables in Jamaica\\'s energy supply mix for 2008, 2012, and 2030. It sets no net zero commitment. It sets no GHG emissions reduction target, since it does not mention emissions. It does describe a renewables share of 12.5% by 2012 and 20% by 2030, which is a quantifiable outcome with deadlines, so it counts as an \"other\" target. These are framed as projections, not firm commitments, but they are still specific, dated aims for renewables\\' share of supply.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

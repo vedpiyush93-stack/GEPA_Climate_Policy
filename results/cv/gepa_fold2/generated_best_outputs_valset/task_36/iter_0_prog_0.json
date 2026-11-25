@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage gives a 2009 pledge by Singapore to cut emissions 16% from business-as-usual levels by 2020. That is a quantified emissions reduction with a deadline, so it counts as a reduction target. It mentions no net zero commitment and no non-emissions target such as renewables, so those flags are false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

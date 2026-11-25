@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It reports past achievements (42% emissions cut since 1990, outperforming the first carbon budget by 1%) and projections (outperforming second and third budgets by about 4% and 6% for 2013 to 2022, and economic growth of 12%). These are outcomes already achieved or forecast, not forward-looking targets. The only candidate is the carbon budget reference, but the passage does not state a new target, so there is no net zero target, no new reduction target, and no other target such as renewables. Mark all three as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

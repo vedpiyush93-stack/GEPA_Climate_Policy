@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a documentation note on recalculations in a GHG inventory (enteric fermentation and manure management data on cattle breeds). It states no quantified aim with a deadline. It contains no net zero commitment, no emissions reduction target, and no other target such as a renewable energy goal. All three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

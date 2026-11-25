@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets an objective to reduce deforestation and forest damage by 20% relative to 2007 values by 2020. This is quantifiable (20%), has a baseline and a deadline (2020), and concerns emissions-relevant land-use activity. It is not a net zero target (no balancing of emissions with removals) and does not state an explicit GHG emissions reduction target; it targets deforestation and forest damage, which are land-use activities. Because it is a quantified, dated aim that does not fit the reduction or net zero categories cleanly, it is classified as \"other\". The purpose statement is general and not quantified, so it adds no target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

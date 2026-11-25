@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Check the passage for each target type. It states an EU-wide 20% GHG reduction by 2020 versus 1990, and a 14% reduction versus 2005 for the ETS and non-ETS split. It also sets Latvia's 2020 non-ETS (ESD) limit at +17% versus 2005. These are all emission reduction targets with deadlines. The passage mentions no net zero commitment and no non-reduction target such as renewables or efficiency, so net_zero and other are false.\"",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

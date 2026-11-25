@@ -1,0 +1,7 @@
+setup,passages,exact_match,F1_net_zero,F1_reduction,F1_other,false_alarm_rate,cv_exact_match,train_passages,exact_south_asia,exact_india
+Logistic regression (same 360 as GEPA),300,0.743,0.238,0.677,0.571,0.062,0.753,360,0.784,26/32
+Linear SVM (same 360 as GEPA),300,0.737,0.238,0.677,0.571,0.073,0.753,360,0.773,26/32
+Random forest (same 360 as GEPA),300,0.653,0.0,0.0,0.185,0.005,0.664,360,0.711,23/32
+"Logistic regression (all 1,839 non-test)",300,0.723,0.627,0.706,0.607,0.167,0.765,1839,0.763,25/32
+"Linear SVM (all 1,839 non-test)",300,0.753,0.61,0.762,0.589,0.115,0.76,1839,0.742,25/32
+"Random forest (all 1,839 non-test)",300,0.73,0.15,0.615,0.488,0.021,0.703,1839,0.773,26/32

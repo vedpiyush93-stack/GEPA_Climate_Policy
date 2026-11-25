@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage for quantifiable aims with deadlines. It discusses institutional responsibility for renewable energy policy, a transfer of programs from the Central Energy Fund, and tariffs/feed-in-tariffs. It contains no net zero commitment and no GHG emissions reduction target. It has no explicit quantified renewable energy target with a deadline, so it does not clearly meet the target definition. Feed-in-tariff and renewable policy mentions are administrative, not targets. Conclude all flags are false, noting the passage is fragmentary.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

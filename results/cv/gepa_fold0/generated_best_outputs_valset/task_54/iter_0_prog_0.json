@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a list of intended outputs and targets from a national energy/climate plan. Scan for targets that are quantified and have a deadline. Look for: net zero commitments (none present); GHG emission reduction targets (the passage mentions \"significant emission reduction\" and \"GHG emissions reduction\" only as a general intended outcome, without a quantified GHG target, so this is not a reduction target by itself); other quantified, dated targets such as 1000 MW NG capacity by 2025, 15% efficiency improvement by 2025, CCGT efficiency 60% by 2025, CHP efficiency 80% by 2025, 200,000 solar water heaters by 2020, 300,000 by 2025, 85% of heavy trucks and 90% of buses on NG by 2025, 65% solar water pumps by 2025, and 1 MW biogas by 2025. These are energy and efficiency targets, so they fall under \"other\".'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

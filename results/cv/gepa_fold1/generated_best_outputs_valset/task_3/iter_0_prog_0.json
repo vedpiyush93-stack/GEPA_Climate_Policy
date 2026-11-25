@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a commitment to reduce greenhouse gas emissions by 20% by 2020 relative to 1990 levels. This is a quantifiable reduction target with a deadline (2020), so reduction is true. It does not mention net zero or balancing emissions with removals, so net_zero is false. It describes a reduction target rather than a renewable energy or other sector target, so other is false. The 2009 legislative package is a means to achieve the target, not a separate target.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

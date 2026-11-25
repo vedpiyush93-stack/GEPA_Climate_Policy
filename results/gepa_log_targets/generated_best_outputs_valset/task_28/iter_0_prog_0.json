@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a French energy law article (Art. L.271-3) on a payment scheme for load shedding (demand response) to electricity suppliers of curtailed sites. It sets out payment mechanics, a derogation allowing the state to share payments with the transmission operator for significant energy-saving categories, and a three-year review report by the energy regulator. It contains no net zero target, no GHG emissions reduction target, and no quantified target with a deadline. The only time reference is the three-year reporting period after a 2015 law, which is a review obligation rather than a climate target. Load shedding is a market/demand-response mechanism, not a renewable energy or efficiency target. Therefore all three target flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

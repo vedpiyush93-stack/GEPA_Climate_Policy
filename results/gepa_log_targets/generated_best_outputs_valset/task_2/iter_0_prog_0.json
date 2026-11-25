@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Check the passage for quantifiable aims with deadlines. The passage describes goals such as covering at least 80% of producers' food needs, reducing climate/economic risks, and using solar energy and organic amendments. It does not mention net zero. The 80% food-coverage aim is quantifiable but has no deadline, and the low-carbon and solar measures are described as strategies, not targets with dates. No GHG emissions reduction target or net zero commitment is stated. The passage contains no target that fully meets the definition, so all flags are false. Note the passage is truncated, and the closing text may hold a deadline that is not visible here.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a garbled list of Costa Rican laws, plans, and strategies. I checked it for aims that are both quantifiable and tied to a deadline. \"Carbon neutrality\" is mentioned, but no year or date is attached to it in the text, so it is not a net zero target. Phrases such as \"reducing GHG emissions in the transport sector,\" \"lower GHG emissions,\" and \"low levels of greenhouse gas emissions\" give no quantity or deadline, so they are not reduction targets. The 2021 roadmap sets an obligation for institutions to plan mitigation and adaptation actions, but that obligation is not quantifiable. The 40% borrowing cap is a financing limit, not a target. No renewable energy or other quantified aim with a deadline appears. All three flags are therefore false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

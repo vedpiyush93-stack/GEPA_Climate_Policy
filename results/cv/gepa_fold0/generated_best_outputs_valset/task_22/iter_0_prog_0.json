@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage for quantified, dated climate targets. It describes the Climate Action Plan 2050 funding, affordability, and a public participation process, and it ends mid-sentence (\"implements this modernisation strategy on three levels:\"). It has no net zero commitment, no emissions reduction target with a figure or deadline, and no other quantified target such as a renewable energy goal. The mention of the Climate Action Plan 2050 refers to a plan but does not state its targets here. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

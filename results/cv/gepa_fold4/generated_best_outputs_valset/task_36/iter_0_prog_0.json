@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Portugal\\'s climate policy. It contains a net zero target: the government pledged to ensure neutrality of emissions by the end of 2050, which has a deadline and balances emissions with removals. It contains economy-wide GHG reduction targets with deadlines: -18% to -23% by 2020 and -30% to -40% by 2030, both relative to 2005. Sectoral reduction targets are mentioned only in general terms, without figures, but the economy-wide ones are enough to mark reduction as true. The passage does not describe a renewable energy or other quantifiable target with a deadline, so \"other\" is false. The 2015 framework (QEPIC) is a strategy without a quantified target.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

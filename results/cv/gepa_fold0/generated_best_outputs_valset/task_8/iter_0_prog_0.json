@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage for quantifiable aims with a deadline. It describes the Erne campus, Passive House and BREEAM accreditations, and the UK government\\'s net zero challenge, but it does not state a net zero date, a GHG reduction figure with a deadline, or any other numeric target. The phrases \"we are now going further\" and \"3.18.3 Our goals\" point to goals that are not included in the excerpt. So none of the three target types is clearly present. I\\'m marking all three as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

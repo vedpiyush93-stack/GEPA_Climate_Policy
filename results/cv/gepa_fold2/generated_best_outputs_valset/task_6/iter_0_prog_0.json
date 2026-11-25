@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes engagement actions with Community Energy England and a contact group, and says community energy helps reach \"local and national net zero targets.\" It does not state a quantifiable outcome with a deadline of its own. The net zero mention refers to targets existing elsewhere, so it does not itself set a net zero target. No GHG reduction target or other quantified target (e.g., renewables capacity) with a deadline appears. All three flags should be false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

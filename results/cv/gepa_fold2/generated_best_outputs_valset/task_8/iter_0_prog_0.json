@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Executive Order 13693 with concrete, quantified, dated targets. First, check for net zero: none is mentioned, so net_zero is false. Second, check for GHG reduction targets: it states a 40% GHG reduction in federal government emissions over the next decade, and a projected 26 Mt cut by 2025, so reduction is true. Third, check for other targets: it sets a goal for federal electricity consumption from renewable and alternative sources to reach 30%, which is a renewable energy target with a deadline implied by \"over the next decade,\" so other is true.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

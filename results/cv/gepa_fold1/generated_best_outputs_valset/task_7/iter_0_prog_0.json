@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified targets with deadlines. It sets a 10% renewable energy share in transport by 2020, which is a renewable energy target, so it goes under \"other\". It has no net zero commitment and no GHG emissions reduction target. The 2016 share and the sustainability criteria are descriptive, not targets.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

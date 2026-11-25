@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a fragment, garbled by extraction. It mentions electric vehicles by 2030 and a target of 33% of private vehicle sales (including government vehicles) under a transportation section. The 33% electric vehicle sales target has a deadline and a quantifiable outcome, so it is an \"other\" target (renewable/clean-transport style, not a GHG reduction or net zero target). There is no mention of net zero, nor of an explicit GHG emissions reduction figure, so those are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

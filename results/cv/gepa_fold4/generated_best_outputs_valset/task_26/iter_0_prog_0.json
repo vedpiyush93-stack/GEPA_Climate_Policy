@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Greek energy efficiency measures and policy history (NEEAP, transposed directives, laws on building energy performance) and notes that transport GHG emissions are declining but still considerable, requiring suitable policies and restriction measures. It contains no net zero commitment. It does not state a quantified GHG reduction target with a deadline; it refers to measures and a declining trend, and the passage cuts off before any policy targets. It also lacks a quantified other-type target (e.g., a renewable energy share with a deadline). Therefore all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

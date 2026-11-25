@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified targets with deadlines. Net zero: no commitment to balance emissions with removals to zero, so false. Reduction: the passage cites a 16% reduction below BAU by 2020 (Copenhagen pledge), a 36% emissions intensity reduction from 2005 levels by 2030, and a goal to stabilise emissions and peak around 2030. These are GHG reduction targets, so true. Other: no renewable energy or other non-reduction quantified target with a deadline, so false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

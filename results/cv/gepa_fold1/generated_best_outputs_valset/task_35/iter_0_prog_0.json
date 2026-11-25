@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified aims with deadlines. The only deadline-bearing target is the government\\'s goal to achieve Net Zero by 2050, so net_zero is true. The passage gives a current emissions estimate (about 10 MtCO2e/year) but no GHG reduction target, so reduction is false. Statements such as \"halt further degradation\" and \"better managed\" lack a quantified outcome and deadline, and no other quantified target such as a renewable energy goal appears, so other is false.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

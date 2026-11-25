@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage for quantifiable aims with deadlines. It describes completed or ongoing social welfare actions: three new physical rehabilitation centres established, seven centres equipped, service standards and guidelines prepared, a Social Protection Policy ratified, and an elderly action plan revised. None of these is a net zero target, a GHG reduction target, or a renewable/energy-type target with a deadline. Therefore all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

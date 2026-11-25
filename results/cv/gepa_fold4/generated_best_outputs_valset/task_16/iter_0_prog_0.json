@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable aims with a deadline. The passage describes an approach framework (trajectory range, sector outcomes, carbon budgets, mitigation plans, economic instruments, GHG inventory) but sets no specific net zero year, no specific emissions reduction percentage or level with a date, and no other quantified target such as a renewable energy share with a deadline. It is a methodological description, so all three flags should be false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

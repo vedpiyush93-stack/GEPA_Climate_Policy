@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage mentions an aim of 30 percent of new sales of medium- and heavy-duty vehicles being zero-emission by 2030. This is a quantified, dated target, but it concerns vehicle sales share (zero-emission vehicles), not a GHG emissions reduction or a net zero balance. It therefore fits \"other\" (like renewable energy or EV deployment targets). The remaining text is a section heading and does not state a net zero or emissions reduction target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

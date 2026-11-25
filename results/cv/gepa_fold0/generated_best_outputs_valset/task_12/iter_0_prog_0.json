@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Dutch energy policy. Check for a net zero commitment: none mentioned. Check for an emissions reduction target: the passage cites an energy-saving target (1.5% average annual saving on final energy consumption) and a 100 PJ additional final energy savings target for 2020. These are energy efficiency targets, not GHG emissions reduction targets, so reduction is false. Check for other targets: the 1.5% annual energy saving target and the 100 PJ savings target by 2020 are quantifiable, have deadlines (2020 for the PJ target; annual for the 1.5% target), and are not GHG-based, so they fit \"other.\"'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

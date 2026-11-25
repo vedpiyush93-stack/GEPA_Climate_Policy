@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a 2030 target to reduce GHG emissions by 20% below business-as-usual, with a possible increase to 25% conditional on support. That is an economy-wide reduction target with a deadline, so reduction is true. It has no net zero commitment. The LT-LEDS mention is a strategy description, not a quantified target with a deadline, and no renewable energy or other quantified targets appear, so other is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

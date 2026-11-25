@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for a quantifiable aim with a deadline. The text describes a nutrition/household project with a climate mitigation co-benefit (reduced biomass burning in fuel-efficient stoves, reduced deforestation emissions). It gives no net zero commitment, no GHG reduction figure, and no deadline or quantified target for any other metric such as renewables. It is a description of project benefits, not a target, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

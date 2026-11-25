@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which contains only procedural dates and legislative steps: a comparative table handed over in second reading (06.06.2017), adoption in first reading (21.03.2017), and submission to the Committee (21.03.2017). No emissions figures, reduction percentages, net zero commitments, or renewable/other quantified outcomes appear. No target of any type is present, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states that Bulgaria will reduce GHG emissions by 49% by 2030 compared to 1990. This is an economy-wide, quantified reduction target with a deadline (2030), so reduction is true. It does not mention net zero or balancing emissions with removals, so net_zero is false. It contains no other kind of target such as renewable energy or efficiency, so other is false. The remaining text is a conclusion and a reference to a projections table, which does not add new targets.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

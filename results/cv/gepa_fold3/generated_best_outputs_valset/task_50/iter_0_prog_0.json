@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage is from Japan's NDC submission. It states a quantified target: reduce GHG emissions 46% by fiscal year 2030 from FY2013 levels, with a single-year target and a defined period (April 1, 2021 to March 31, 2031). It also mentions an aspiration to achieve net-zero by 2050 as a long-term goal, and a continued effort toward a 50% cut. The 46% economy-wide cut is a reduction target. The net-zero by 2050 reference is a stated long-term goal, which is a net zero target. There is no renewable energy or other non-reduction target in the passage. So net_zero and reduction are true, and other is false.\"",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

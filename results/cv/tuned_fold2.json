@@ -1,0 +1,40 @@
+{
+  "classify.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Identify the climate targets in a passage from a national law, policy or UNFCCC submission.\n\nA target is an aim to achieve a specific outcome, that is quantifiable and is given a deadline.\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removal, effectively reducing the net emissions to zero.\n- reduction: a target referring to a reduction in greenhouse gas emissions, either economy-wide or for a sector.\n- other: a target that does not fit into reduction or net zero but satisfies the definition of a target, e.g. renewable energy targets.\nA passage can contain several target types, or none.",
+      "fields": [
+        {
+          "prefix": "Passage:",
+          "description": "${passage}"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "A short plan for solving the task."
+        },
+        {
+          "prefix": "Net Zero:",
+          "description": "passage contains a net zero target"
+        },
+        {
+          "prefix": "Reduction:",
+          "description": "passage contains a GHG emissions reduction target"
+        },
+        {
+          "prefix": "Other:",
+          "description": "passage contains another kind of target (e.g. renewable energy)"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.5.0",
+      "cloudpickle": "3.1"
+    }
+  }
+}

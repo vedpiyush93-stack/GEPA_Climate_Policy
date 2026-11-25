@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified aims with a deadline. The passage describes the PMKSY-SMAF and National Bamboo Mission, with objectives like increasing tree cover, expanding bamboo plantation, and enhancing carbon sequestration. These are qualitative aims with no numeric target and no deadline. The 0.1318 MtCO\u2082 figure reports an emission reduction already achieved in 2017-18 and 2018-19, not a future target. No net zero, reduction, or other target is present, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEPA Candidate Tree</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; width: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8f9fa; display: flex; flex-direction: column; }
+  #header { background: #fff; border-bottom: 1px solid #dee2e6; padding: 12px 20px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+  #header h1 { font-size: 18px; font-weight: 600; color: #212529; }
+  .legend { display: flex; gap: 14px; font-size: 13px; color: #495057; }
+  .legend-item { display: flex; align-items: center; gap: 4px; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; border: 1px solid #adb5bd; }
+  #graph-container { flex: 1 1 auto; width: 100%; overflow: auto; padding: 20px; text-align: center; }
+  #graph-container svg { width: 100%; height: 100%; }
+  #tooltip {
+    display: none; position: fixed; background: #fff; border: 1px solid #dee2e6;
+    border-radius: 8px; padding: 14px 16px; max-width: 560px; max-height: 70vh; overflow-y: auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18); z-index: 1000; font-size: 13px; line-height: 1.5;
+  }
+  #tooltip .tt-header { font-weight: 700; font-size: 15px; margin-bottom: 6px; color: #212529; }
+  #tooltip .tt-meta { color: #6c757d; margin-bottom: 4px; }
+  #tooltip .tt-hint { color: #adb5bd; font-size: 11px; font-style: italic; margin-bottom: 10px; }
+  #tooltip .tt-comp-name { font-weight: 600; color: #495057; margin-top: 10px; border-bottom: 1px solid #e9ecef; padding-bottom: 2px; }
+  #tooltip .tt-comp-text {
+    white-space: pre-wrap; word-break: break-word; background: #f8f9fa;
+    border: 1px solid #e9ecef; border-radius: 4px; padding: 8px 10px; margin-top: 4px;
+    font-family: "SF Mono", SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px;
+    max-height: 200px; overflow-y: auto;
+  }
+  .role-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-left: 6px; }
+  .role-best { background: #00e5ff33; color: #006064; }
+  .role-pareto { background: #ff980033; color: #e65100; }
+  .role-seed { background: #e0e0e0; color: #424242; }
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>GEPA Candidate Tree</h1>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:cyan"></div> Best</div>
+    <div class="legend-item"><div class="legend-dot" style="background:orange"></div> Pareto Front</div>
+    <div class="legend-item"><div class="legend-dot" style="background:lightgray"></div> Other</div>
+  </div>
+</div>
+<div id="graph-container"><p>Loading graph&hellip;</p></div>
+<div id="tooltip"></div>
+
+<script type="module">
+const NODES = [{"idx": 0, "score": 0.9056, "parents": "seed", "role": "Seed", "components": {"classify.predict": "Identify the climate targets in a passage from a national law, policy or UNFCCC submission.\n\nA target is an aim to achieve a specific outcome, that is quantifiable and is given a deadline.\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removal, effectively reducing the net emissions to zero.\n- reduction: a target referring to a reduction in greenhouse gas emissions, either economy-wide or for a sector.\n- other: a target that does not fit into reduction or net zero but satisfies the definition of a target, e.g. renewable energy targets.\nA passage can contain several target types, or none."}},
+{"idx": 1, "score": 0.9389, "parents": "0", "role": "Best", "components": {"classify.predict": "Task: Identify the climate targets in a passage taken from a national law, policy, or UNFCCC submission (passages may be machine-translated, contain HTML entities, or be truncated fragments). Output brief reasoning followed by three boolean flags: net_zero, reduction, other.\n\nDefinition: A target is an aim to achieve a specific outcome that is BOTH quantifiable AND given a deadline (a target year or date). If either the quantity or the deadline is missing, it is not a target. Be conservative: expert labelers only mark a flag true when the passage clearly states a measurable goal with a time frame.\n\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removal, effectively reaching net zero (e.g., carbon neutrality / climate neutrality by a year).\n- reduction: a quantified GHG emissions reduction target with a deadline, economy-wide or sectoral (e.g., cut emissions 40% by 2030 vs. a baseline; also intensity or below-BAU targets with a date).\n- other: a target that is quantifiable and deadlined but is neither net zero nor an emissions reduction, e.g., renewable energy share or capacity by a year, energy efficiency targets, forest cover/afforestation hectares by a year, electric vehicle shares, etc.\nA passage can contain several target types, or none (all flags false, which is common).\n\nGuidelines:\n1. Check each type separately against the passage; set flags independently.\n2. Do NOT count: vague directional aims (\"reduce emissions significantly\", \"increase carbon sequestration\", \"diversify the energy matrix\"); descriptions of institutional responsibilities, programs, or project mandates; size thresholds or definitions (e.g., a plant of at least 2 MW); adaptation/awareness/research goals without numbers; mere mentions of technologies or roles (solar, storage, waste incineration) without figures and deadlines.\n3. Do NOT count a single-facility or policy action with a date as an \"other\" target, such as a coal/lignite plant phase-out (\"coal burning will stop after 2025\"). Experts labeled such a passage as no target at all (Net zero=no, Reduction=no, Other=no). Treat dated plant closures, phase-outs, or project milestones as not qualifying unless they are expressed as a clear quantified national/sectoral target (e.g., share of renewables, capacity in GW, a numeric percentage by a year). When in doubt, leave the flag false.\n4. Vague statements that emissions \"can be reduced\" by some measure, without a number and year, are not reduction targets.\n\nFormat: give concise reasoning that walks through whether a quantity and a deadline are both present for each candidate, then the flags net_zero, reduction, other."}},
+{"idx": 2, "score": 0.9389, "parents": "1", "role": "Pareto Front", "components": {"classify.predict": "Task: Identify the climate targets in a passage taken from a national law, policy, or UNFCCC submission (NDCs, strategies, etc.). Passages may be machine-translated, contain HTML entities (&quot;, &gt;), be messy, or be truncated fragments. Output brief reasoning followed by three boolean flags: net_zero, reduction, other.\n\nDefinition: A target is an aim to achieve a specific outcome that is BOTH quantifiable AND tied to a deadline (a target year or date). If either the quantity or the deadline is missing, it is not a target. Expert labelers decide which type it is, and mark a flag true only when the passage reasonably states a measurable goal with a time frame.\n\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removal, effectively reaching net zero (e.g., carbon neutrality / climate neutrality by a year).\n- reduction: a quantified GHG emissions reduction target (economy-wide or sectoral) with a deadline or time frame, e.g., cut emissions 40% by 2030 vs. a baseline; also intensity targets (emissions per unit GDP) or below-BAU targets. Must be about GHG/emissions/carbon intensity, not energy consumption.\n- other: a target that is quantifiable and deadlined but is neither net zero nor a GHG emissions reduction, e.g., renewable energy share or capacity by a year, energy efficiency / energy intensity / energy consumption reduction targets, forest cover/afforestation hectares, electric vehicle shares, etc.\nA passage can contain several target types, or none (all flags false, which is common).\n\nGuidelines:\n1. Check each type separately against the passage; set flags independently.\n2. Do NOT count: vague directional aims (\"reduce emissions significantly\", \"increase carbon sequestration\", \"diversify the energy matrix\"); institutional responsibilities, programs, or project mandates; size thresholds or definitions (e.g., a plant of at least 2 MW); adaptation/awareness/research/finance goals without numbers (e.g., a 3-month loan waiver is not a climate target); mere mentions of technologies without figures and deadlines.\n3. Do NOT count a single-facility or policy action with a date as an \"other\" target, such as a coal/lignite plant phase-out (\"coal burning will stop after 2025\"). Experts labeled such a passage as no target at all. Dated plant closures, phase-outs, or project milestones do not qualify unless expressed as a clear quantified national/sectoral target (share of renewables, capacity in GW, numeric percentage by a year).\n4. Vague statements that emissions \"can be reduced\" by some measure, without a number and year, are not reduction targets.\n5. Be lenient about the deadline when the passage is clearly a national strategy with a stated overall time horizon. Calibration example: an Uzbekistan passage about a \"Strategy for transition to a green economy for the period of 2030\" listing target indicators (cut specific GHG emissions per unit of GDP by 10% from 2010 level; renewables share above 25% of electricity generation; industrial energy efficiency up by at least 20%) was labeled by experts Reduction=yes, Other=yes, Net zero=no. So when quantified indicators are listed as the target indicators of a strategy whose period/horizon year (e.g., 2030) is stated in the same passage, treat that horizon as the deadline and set flags true, even if each individual bullet lacks its own year. Do not reject merely because the year appears in the strategy title rather than next to each number. Still require real quantities.\n6. Energy consumption / energy intensity reductions vs. BAU by a year (e.g., Brunei: residential -36%, commercial -41% vs BAU, toward total energy intensity reduction target by 2035) are \"other\" (energy efficiency), not \"reduction\", and net_zero/reduction false unless GHG emissions are the quantity. An undated sub-target (e.g., power plant efficiency from 23% to 45%) adds nothing alone, but a dated one in the same passage suffices for the flag.\n\nFormat: give concise reasoning that walks through, for each type, whether a quantity and a deadline (explicit or an evident strategy horizon) are both present, then output the flags net_zero, reduction, other."}},
+{"idx": 3, "score": 0.9278, "parents": "1", "role": "", "components": {"classify.predict": "Task: Identify the climate targets in a passage taken from a national law, policy, decree, or UNFCCC/NDC submission (passages may be machine-translated, contain HTML entities, legal drafting artifacts such as \"repealed by...\" notes, or be truncated fragments). Output brief reasoning followed by three boolean flags: net_zero, reduction, other.\n\nDefinition: A target is an aim to achieve a specific outcome that is BOTH quantifiable AND given a deadline (a target year or date). If either the quantity or the deadline is missing, it is not a target. Be conservative in general, but see the net-zero note below. Expert labelers only mark a flag true when the passage clearly states a measurable goal with a time frame.\n\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removals, i.e., reach net zero / carbon neutrality / climate neutrality / climate-neutral economy. IMPORTANT: Experts label net_zero = true when a passage states a carbon/climate-neutrality goal with any time horizon, even a loose one such as \"by 2050\", \"by mid-century\", or \"in the second half of this century\". Example: \"achieve climate neutrality in the second half of this century\" was labeled net_zero=yes. Do not reject a neutrality commitment merely because the deadline is a period rather than an exact year. The neutrality goal being explicit is what matters; a purely aspirational mention with no time horizon at all (\"we aim to become carbon neutral\") should stay false.\n- reduction: a quantified GHG emissions reduction target with a deadline, economy-wide or sectoral (e.g., cut emissions 40% by 2030 vs. a baseline; 50% below 1990 by 2050; intensity targets or below-BAU targets with a date; ETS/non-ETS sector reductions by a year). Count it if any one such target appears; multiple targets in one passage are fine.\n- other: a target that is quantifiable and deadlined but is neither net zero nor an emissions reduction, e.g., national renewable energy share or capacity by a year, energy efficiency targets, forest cover/afforestation hectares by a year, EV shares, etc.\nA passage can contain several target types, or none (all flags false, which is common).\n\nGuidelines:\n1. Check each type separately against the passage; set flags independently.\n2. Do NOT count: vague directional aims (\"reduce emissions significantly\", \"increase carbon sequestration\", \"diversify the energy matrix\"); descriptions of institutional responsibilities, programs, or project mandates; size thresholds or definitions (e.g., a plant of at least 2 MW); adaptation/awareness/research goals without numbers; mere mentions of technologies or roles (solar, storage, waste incineration) without figures and deadlines; definitions of calculation methodologies (e.g., typical/default/effective GHG-saving values for biofuels).\n3. Do NOT count a single-facility or policy action with a date as an \"other\" target, such as a coal/lignite plant phase-out (\"coal burning will stop after 2025\"). Experts labeled such a passage as no target at all. Treat dated plant closures, phase-outs, or project milestones as not qualifying unless expressed as a clear quantified national/sectoral target (e.g., share of renewables, capacity in GW, numeric percentage by a year).\n4. Do NOT count regulatory obligations/mandates on market operators (e.g., fuel suppliers must blend at least 5% biofuel in diesel from a date, and 7% from 2016). Experts labeled such a Romanian biofuel-blending decree as Net zero=no, Reduction=no, Other=no. Blending quotas, product standards, compliance obligations on companies, and legal-text amendments are not national climate targets, even though they have a percentage and a date. Only count \"other\" when the passage states a national or sectoral policy goal (e.g., renewables share in final energy consumption by 2030, forest area by 2030, EV share by 2035).\n5. Vague statements that emissions \"can be reduced\" by some measure, without a number and year, are not reduction targets.\n6. When in doubt about \"other\" or \"reduction\", leave the flag false; but do not be overly strict about net_zero timing (see above).\n\nFormat: give concise reasoning that walks through whether a quantity and a deadline are both present for each candidate, and whether it is a national/sectoral goal rather than an operator obligation or definition, then output the flags net_zero, reduction, other."}},
+{"idx": 4, "score": 0.9389, "parents": "1", "role": "Pareto Front", "components": {"classify.predict": "Task: Identify the climate targets in a passage taken from a national law, policy, or UNFCCC submission (passages may be machine-translated, contain HTML entities, or be truncated fragments). Output brief reasoning followed by three boolean flags: net_zero, reduction, other.\n\nDefinition: A target is a forward-looking aim to achieve a specific outcome that is BOTH quantifiable AND given a deadline (a target year or date or defined time frame). If either the quantity or the deadline is missing, it is not a target. Be conservative: expert labelers only mark a flag true when the passage clearly states a current, measurable goal with a time frame. When in doubt, leave the flag false.\n\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removal, effectively reaching net zero (e.g., carbon neutrality / climate neutrality by a year).\n- reduction: a quantified GHG emissions reduction target with a deadline, economy-wide or sectoral (e.g., cut emissions 40% by 2030 vs. a baseline; also intensity or below-BAU targets with a date).\n- other: a target that is quantifiable and deadlined but is neither net zero nor an emissions reduction, e.g., renewable energy share or capacity by a year (example: renewable energy projects producing 767 ktoe, 12% of electricity and heating demand, by 2020 = other yes), energy efficiency targets, forest cover/afforestation hectares by a year, electric vehicle shares, etc.\nA passage can contain several target types, or none (all flags false, which is common).\n\nGuidelines:\n1. Check each type separately against the passage; set flags independently.\n2. Do NOT count: vague directional aims (\"reduce emissions significantly\", \"increase carbon sequestration\", \"diversify the energy matrix\"); descriptions of institutional responsibilities, programs, work packages, data handling, or project mandates (these passages are typically all-false); size thresholds or definitions (e.g., a plant of at least 2 MW); adaptation/awareness/research goals without numbers; mere mentions of technologies or roles (solar, storage, waste incineration) without figures and deadlines.\n3. Do NOT count a single-facility or policy action with a date as an \"other\" target, such as a coal/lignite plant phase-out (\"coal burning will stop after 2025\"). Experts labeled such a passage as no target at all. Treat dated plant closures, phase-outs, or project milestones as not qualifying unless expressed as a clear quantified national/sectoral target (e.g., share of renewables, capacity in GW, a numeric percentage by a year).\n4. Vague statements that emissions \"can be reduced\" by some measure, without a number and year, are not reduction targets.\n5. Retrospective or policy-review passages do NOT count. If a passage discusses past policy objectives that were not achieved, evaluates a previous policy period, or only \"recommends\" that an earlier target be pursued in a vague future period (e.g., a Gambia forest policy review citing a 30% forest cover goal and a 75% community-managed forest share from the 1995-2005 policy, with the next \"10-year policy framework\" having no explicit target year), experts labeled it no target (all false). A quantity paired only with a relative or generic period (\"next 10-year policy framework\", \"the policy period\") or with a past, already-expired policy period, is not a clear deadlined target. Require an explicit, current commitment with a specific year/date. Do not flag a passage as a judgment call; resolve toward false.\n\nFormat: give concise reasoning that walks through whether a quantity and a deadline are both present (and whether the target is a current commitment rather than a review of past ones) for each candidate, then the flags net_zero, reduction, other."}}];
+const DOT = `digraph G {
+    rankdir=TB;
+    node [style=filled, shape=circle, fontsize=14, width=0.6, height=0.6];
+    0 [label="0\\n(0.91)", fillcolor=lightgray, tooltip=" "];
+    1 [label="1\\n(0.94)", fillcolor=cyan, tooltip=" "];
+    2 [label="2\\n(0.94)", fillcolor=orange, tooltip=" "];
+    3 [label="3\\n(0.93)", fillcolor=lightgray, tooltip=" "];
+    4 [label="4\\n(0.94)", fillcolor=orange, tooltip=" "];
+    0 -> 1;
+    1 -> 2;
+    1 -> 3;
+    1 -> 4;
+}`;
+
+const nodeMap = {};
+NODES.forEach(n => { nodeMap[n.idx] = n; });
+
+let pinnedIdx = null;   // non-null when tooltip is click-pinned (scrollable)
+let hoverIdx = null;    // non-null when hovering over a node
+
+function renderTooltip(idx) {
+  const n = nodeMap[idx];
+  if (!n) return "";
+  let roleBadge = "";
+  if (n.role === "Best") roleBadge = '<span class="role-badge role-best">BEST</span>';
+  else if (n.role === "Pareto Front") roleBadge = '<span class="role-badge role-pareto">PARETO</span>';
+  else if (n.role === "Seed") roleBadge = '<span class="role-badge role-seed">SEED</span>';
+
+  let comps = "";
+  for (const [name, text] of Object.entries(n.components)) {
+    const escaped = text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    comps += '<div class="tt-comp-name">' + name + '</div><div class="tt-comp-text">' + escaped + '</div>';
+  }
+
+  return '<div class="tt-header">Candidate ' + n.idx + roleBadge + '</div>' +
+    '<div class="tt-meta">Score: <strong>' + n.score + '</strong>&nbsp;&nbsp;|&nbsp;&nbsp;Parent(s): ' + n.parents +
+    '</div><div class="tt-hint">' + (pinnedIdx === idx ? 'Click node again to dismiss' : 'Click to pin &amp; scroll') + '</div>' +
+    comps;
+}
+
+function positionTooltip(x, y) {
+  const tt = document.getElementById("tooltip");
+  let tx = x + 16, ty = y + 16;
+  const r = tt.getBoundingClientRect();
+  if (tx + r.width > window.innerWidth - 8) tx = x - r.width - 16;
+  if (ty + r.height > window.innerHeight - 8) ty = y - r.height - 16;
+  if (tx < 8) tx = 8;
+  if (ty < 8) ty = 8;
+  tt.style.left = tx + "px";
+  tt.style.top = ty + "px";
+}
+
+function showTooltip(idx, x, y) {
+  const tt = document.getElementById("tooltip");
+  tt.innerHTML = renderTooltip(idx);
+  tt.style.display = "block";
+  positionTooltip(x, y);
+}
+
+function hideTooltip() {
+  pinnedIdx = null;
+  hoverIdx = null;
+  document.getElementById("tooltip").style.display = "none";
+}
+
+// Click outside tooltip and outside nodes dismisses pinned tooltip
+document.addEventListener("mousedown", function(e) {
+  const tt = document.getElementById("tooltip");
+  if (pinnedIdx !== null && tt.style.display === "block"
+      && !tt.contains(e.target) && !e.target.closest(".node")) {
+    hideTooltip();
+  }
+});
+
+async function render() {
+  const { instance } = await import("https://cdn.jsdelivr.net/npm/@viz-js/viz@3.11.0/lib/viz-standalone.mjs");
+  const viz = await instance();
+  const svg = viz.renderSVGElement(DOT);
+  const container = document.getElementById("graph-container");
+  container.innerHTML = "";
+  container.appendChild(svg);
+
+  // Attach hover listeners and strip native <title> tooltips to avoid double tooltips
+  svg.querySelectorAll(".node").forEach(node => {
+    const title = node.querySelector("title");
+    if (!title) return;
+    const idx = parseInt(title.textContent, 10);
+    if (isNaN(idx)) return;
+    title.remove();  // remove native SVG tooltip
+    node.style.cursor = "pointer";
+    // Hover: show tooltip following the mouse (non-interactive)
+    node.addEventListener("mouseenter", e => {
+      if (pinnedIdx !== null) return;  // don't override a pinned tooltip
+      hoverIdx = idx;
+      showTooltip(idx, e.clientX, e.clientY);
+    });
+    node.addEventListener("mousemove", e => {
+      if (pinnedIdx !== null || hoverIdx !== idx) return;
+      positionTooltip(e.clientX, e.clientY);
+    });
+    node.addEventListener("mouseleave", () => {
+      if (pinnedIdx !== null) return;
+      hoverIdx = null;
+      document.getElementById("tooltip").style.display = "none";
+    });
+    // Click: pin the tooltip so user can scroll it
+    node.addEventListener("click", e => {
+      e.stopPropagation();
+      if (pinnedIdx === idx) { hideTooltip(); return; }
+      pinnedIdx = idx;
+      showTooltip(idx, e.clientX, e.clientY);
+    });
+  });
+  // Also strip <title> from edges and the graph itself
+  svg.querySelectorAll(".edge title").forEach(t => t.remove());
+  const graphTitle = svg.querySelector(":scope > title");
+  if (graphTitle) graphTitle.remove();
+}
+
+render().catch(err => {
+  document.getElementById("graph-container").innerHTML =
+    "<p style='color:red'>Failed to render graph: " + err.message + "</p>" +
+    "<pre>" + DOT.replace(/</g,"&lt;") + "</pre>";
+});
+</script>
+</body>
+</html>

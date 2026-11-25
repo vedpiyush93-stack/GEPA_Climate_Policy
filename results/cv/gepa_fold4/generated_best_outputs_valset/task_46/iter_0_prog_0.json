@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable targets with a deadline. It describes sectoral strategies (LPG reduction, zero-emission transport, kiln shifts, renewables, all electricity from renewables) but gives no explicit economy-wide or sectoral GHG reduction figure with a deadline, and no net zero commitment with a date. The renewable electricity statement (\"all electricity will be generated from renewable sources\") is a qualitative aim without a deadline, so it does not clearly meet the definition. Nothing in the passage is a dated, quantified target, so all flags are false. Possible borderline cases are noted but not counted.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets a national target of 20% renewable share in gross final energy consumption by 2020 (quantified, with a deadline), which is an \"other\" target (renewable energy). It also sets a sub-target of at least 10% renewable energy in transport by 2020, also a renewable energy target, so \"other\" applies. There is no net zero commitment and no GHG emissions reduction target, so those are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

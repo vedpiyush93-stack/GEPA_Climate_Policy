@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes NDC measures for the energy and waste sectors. It gives one quantified, dated aim: clean energy reaching 40.7% of electricity production by 2035 under the PSE scenario. That is a renewable or clean energy share target, so it counts as \"other.\" The passage says the measures should reduce CO2 emissions, but it gives no quantified emissions reduction amount or deadline, so it has no reduction target. It makes no net zero commitment.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets a quantified target: reduce electricity consumption by 2,200 GWh per year by 2015 through encouraging solar water heating. It has a quantity and a deadline, so it qualifies as a target. It is not net zero. It is not a GHG emissions reduction target, since it targets electricity consumption, not emissions. It fits \"other\" as a renewable energy/energy efficiency style target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

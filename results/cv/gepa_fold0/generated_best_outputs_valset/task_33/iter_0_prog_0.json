@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage is only a title and author list from Latvia's Fourth Biennial Report to the UNFCCC. It contains no statement of any target: no net zero commitment, no emissions reduction goal, and no other quantifiable outcome with a deadline. Each target flag should therefore be false.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

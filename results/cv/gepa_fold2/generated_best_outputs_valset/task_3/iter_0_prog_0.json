@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified aims with deadlines. The \"European climate target of 80 to 95% reduction by 2050\" is an economy-wide GHG reduction target with a deadline, so reduction is true. The passage never mentions net zero, so net_zero is false. The renewable energy commitment and the phase-out of polluting electricity production have no quantified outcome or deadline, so they do not count as \"other\" targets, and other is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

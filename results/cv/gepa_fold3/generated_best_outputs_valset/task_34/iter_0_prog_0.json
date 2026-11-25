@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a list of EU citation references (regulations, directives, recommendations) with no stated climate targets. The only mentions of climate goals are in the titles, e.g. \"binding annual greenhouse gas emission reductions by Member States from 2021 to 2030\" and \"framework for achieving climate neutrality\". Titles name the subject of legislation but do not state a quantified outcome with a deadline in this passage, so none of the target types are satisfied. Mark all three as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

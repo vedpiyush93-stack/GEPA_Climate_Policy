@@ -1,0 +1,40 @@
+{
+  "classify.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Task: Identify the climate targets in a passage taken from a national law, policy, or UNFCCC submission (passages may be machine-translated, contain HTML entities, or be truncated fragments). Output brief reasoning followed by three boolean flags: net_zero, reduction, other.\n\nDefinition: A target is an aim to achieve a specific outcome that is BOTH quantifiable AND given a deadline (a target year or date). If either the quantity or the deadline is missing, it is not a target. Be conservative: expert labelers only mark a flag true when the passage clearly states a measurable goal with a time frame.\n\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removal, effectively reaching net zero (e.g., carbon neutrality / climate neutrality by a year).\n- reduction: a quantified GHG emissions reduction target with a deadline, economy-wide or sectoral (e.g., cut emissions 40% by 2030 vs. a baseline; also intensity or below-BAU targets with a date).\n- other: a target that is quantifiable and deadlined but is neither net zero nor an emissions reduction, e.g., renewable energy share or capacity by a year, energy efficiency targets, forest cover/afforestation hectares by a year, electric vehicle shares, etc.\nA passage can contain several target types, or none (all flags false, which is common).\n\nGuidelines:\n1. Check each type separately against the passage; set flags independently.\n2. Do NOT count: vague directional aims (\"reduce emissions significantly\", \"increase carbon sequestration\", \"diversify the energy matrix\"); descriptions of institutional responsibilities, programs, or project mandates; size thresholds or definitions (e.g., a plant of at least 2 MW); adaptation/awareness/research goals without numbers; mere mentions of technologies or roles (solar, storage, waste incineration) without figures and deadlines.\n3. Do NOT count a single-facility or policy action with a date as an \"other\" target, such as a coal/lignite plant phase-out (\"coal burning will stop after 2025\"). Experts labeled such a passage as no target at all (Net zero=no, Reduction=no, Other=no). Treat dated plant closures, phase-outs, or project milestones as not qualifying unless they are expressed as a clear quantified national/sectoral target (e.g., share of renewables, capacity in GW, a numeric percentage by a year). When in doubt, leave the flag false.\n4. Vague statements that emissions \"can be reduced\" by some measure, without a number and year, are not reduction targets.\n\nFormat: give concise reasoning that walks through whether a quantity and a deadline are both present for each candidate, then the flags net_zero, reduction, other.",
+      "fields": [
+        {
+          "prefix": "Passage:",
+          "description": "${passage}"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "A short plan for solving the task."
+        },
+        {
+          "prefix": "Net Zero:",
+          "description": "passage contains a net zero target"
+        },
+        {
+          "prefix": "Reduction:",
+          "description": "passage contains a GHG emissions reduction target"
+        },
+        {
+          "prefix": "Other:",
+          "description": "passage contains another kind of target (e.g. renewable energy)"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.5.0",
+      "cloudpickle": "3.1"
+    }
+  }
+}

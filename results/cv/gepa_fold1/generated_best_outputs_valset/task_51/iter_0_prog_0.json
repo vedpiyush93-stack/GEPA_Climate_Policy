@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which is from a Bulgarian notification about ETS free allocation and a capacity mechanism. Check for a net zero commitment: none is stated. Check for a GHG reduction target, economy-wide or sectoral: the passage mentions \"cost-effective reductions in GHG emissions\" as an aim of the derogation, but gives no quantified reduction figure or percentage target. The 40% cap is a limit on free allocation, not an emissions reduction target. Check for other quantifiable targets with a deadline: the passage sets a 40% cap on free quota distribution (quantifiable, tied to 2021-2030), a 10-year capacity mechanism period, and emission performance limits of 550 gCO2/kWh and 350 kgCO2/kW per year from 1 July 2025. These are quantified, time-bound targets or limits and fall under \"other\". Output net_zero false, reduction false, other true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

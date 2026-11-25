@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified targets with deadlines. Net zero: no commitment to balance emissions with removals to zero, so false. Reduction: no economy-wide or sector GHG emissions reduction target. The \"about 40% below 2006 levels by 2030\" phrase is an estimated outcome of SaskPower\\'s renewables target, not a stated GHG reduction target, so false. Other: yes. SaskPower\\'s 50% renewable generation by 2030 is a quantified, dated target. The 60 MW solar by 2021 and 1,600 MW wind by 2030 are also quantified, dated targets. BC\\'s 93% clean electricity and 66% demand-side management targets are not clearly dated, but the renewables target is enough to set other to true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage contains a quantified target with a deadline: 50% of Nauru\\'s energy from renewable sources by 2015. This is a renewable energy share, not a GHG emissions reduction or a net zero commitment, so it fits the \"other\" category only.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

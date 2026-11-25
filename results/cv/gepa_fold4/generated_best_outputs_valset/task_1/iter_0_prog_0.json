@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a cumulative energy saving target (4,357.55 ktoe by 2030) under Directive (EU) 2018/2002, with a gradually increasing annual savings rate (0.7% to 0.92%). It also mentions indicative intermediate goals for 2030, 2040 and 2050. There is no mention of net zero or a GHG emissions reduction target. Energy savings targets are quantifiable, have deadlines, and fit the \"other\" category (like renewable energy targets), so \"other\" is true. The passage does not reference greenhouse gas emissions reductions or net zero balancing.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

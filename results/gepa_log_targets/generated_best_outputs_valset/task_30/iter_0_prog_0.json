@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which describes Colombian modeling scenarios (TOT, PRO, ENE, ENY). Check for net zero targets: none is stated; no balancing of emissions with removals is mentioned. Check for reduction targets: TOT reduces total emissions by 90% by 2050 versus baseline, ENE cuts energy-related emissions by 83% by 2050 versus 2014, and PRO eliminates 100% of process emissions. These are quantified, deadlined GHG reductions, so reduction is true. Check for other targets: ENY aims for a fully electric economy by 2050 with electricity demand growing up to 700% versus the base year. This is a quantified, deadlined aim not classed as reduction or net zero, so other is true. Note these are modeled scenarios described in the passage rather than adopted policy targets, but the definition is met as written.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

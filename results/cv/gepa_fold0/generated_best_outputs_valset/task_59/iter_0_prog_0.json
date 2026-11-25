@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is only a page header/footer fragment: \"page 22 of 47 Flemish climate strategy for 2050 OCC Supplementary Information 1 dated 04-02-2020\". It contains no substantive text, no quantified outcome, and no deadline. The title refers to a Flemish climate strategy for 2050, but the passage itself does not state any target. Therefore none of the three target types can be confirmed as present, so all flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

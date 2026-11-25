@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is only a list of figure captions from a Mali climate document (LEAP modeling, emissions curves, mitigation scenarios). It contains no stated quantified aim with a deadline. The mitigation scenarios and the 2018-2030 and 2020-2030 periods describe modeled outcomes, not targets. No net zero, reduction, or other target is stated, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage reports historical GHG totals for 2020 (29,409.53 Gg CO2 eq.), a decrease of more than 54% from the 1990 base year, and describes LULUCF removal fluctuations. It also references figures comparing emissions trends to Kyoto targets of 8% and 20%. These are descriptions of past outcomes and historical comparisons, not a forward-looking aim with a specific quantifiable outcome and deadline. The Kyoto targets are mentioned only in figure captions, with no stated deadline or new commitment in this text. No net zero commitment, no reduction target with a deadline, and no other target (such as renewable energy) is stated. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

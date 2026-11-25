@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states that Switzerland aims to reduce its greenhouse gas emissions to net zero by 2050. This is a net zero target with a specific deadline (2050), so net_zero is true. The passage does not state a numerical emissions reduction target relative to a baseline year, so reduction is false. It contains no other quantifiable target such as renewable energy, so other is false.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

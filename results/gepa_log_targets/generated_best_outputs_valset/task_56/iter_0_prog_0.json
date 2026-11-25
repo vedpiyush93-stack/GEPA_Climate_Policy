@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage has no net zero commitment. It states that Tonga has no GHG reduction commitments under the Kyoto Protocol, so reduction is false. It does contain a quantified target with a deadline: 50% of the country using renewable energy by 2013. That is a renewable energy target, which falls under \"other.\"'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

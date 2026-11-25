@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage lists Quebec\\'s 2030 energy policy targets: energy efficiency gains, a 40% cut in petroleum product use, eliminating thermal coal, raising renewable and bioenergy production, and raising the renewable share of electricity. Each has a quantity and a 2030 deadline, so they qualify as targets. None mentions net zero. The petroleum and coal targets are energy-use measures rather than explicit GHG emissions reduction targets, so they fall under \"other\" (renewable energy, efficiency). Net zero is false, reduction is false, and other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

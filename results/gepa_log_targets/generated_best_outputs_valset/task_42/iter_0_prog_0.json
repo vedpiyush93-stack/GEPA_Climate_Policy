@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a heading and subheading: \"The Path to Carbon Neutrality and Resilience by 2050\" and \"Chile, carbon neutral no later than 2050.\" It names a carbon neutrality goal with a clear deadline (2050), which matches the net zero definition of balancing GHG emissions with removals. No reduction percentage or sector-level reduction figure is given, and no renewable energy or other quantified target appears. So net_zero is true, reduction and other are false.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

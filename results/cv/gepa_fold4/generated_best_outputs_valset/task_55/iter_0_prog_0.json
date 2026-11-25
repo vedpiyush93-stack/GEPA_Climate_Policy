@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable targets with a deadline. The passage is a qualitative policy text on urban climate risk, resilience, infrastructure, and ecosystem services. It has no net zero target. It has no GHG emissions reduction target. It has no quantified target of any kind with a deadline: the language is directional (\"strengthen,\" \"promote,\" \"prioritize,\" \"establish\") and lacks specific measurable outcomes or dates. The \"annual physical examination and five-year evaluation\" is a process/evaluation cycle, not a quantified outcome target. Therefore all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

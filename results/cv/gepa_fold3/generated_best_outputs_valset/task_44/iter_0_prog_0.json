@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage lists national climate targets. The first item sets a mitigation target of reducing GHG emissions by close to 26 percent by 2019 across five priority sectors. That is a quantified, deadlined economy-wide or sector-level reduction target, so reduction is true. There is no net zero commitment, so net_zero is false. The other items (improved early warning systems, data availability, speed and accuracy of MKG data) and the 15 vulnerable areas for adaptation are not quantified in a way that fits the definition, except that \"15 vulnerable areas\" is a count without a clear deadline. The passage has no renewable energy or similar sector-specific deployment target. I therefore judge other as false, since the only quantified, dated aim is the emissions reduction.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Check the passage for each target type. It mentions Kyoto Protocol emission limits for 2008-2012 and a second binding period for 2013-2020, which are background rather than the passage's own target. It then states concrete, dated emission-reduction targets: 21% reduction by 2020 for electricity, cement and ceramics, and 5% for other sectors, both relative to 2005. These are greenhouse gas reduction targets, so the reduction flag is true. No net zero commitment appears, and no non-emissions target such as renewables appears, so the other flag is false.\"",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

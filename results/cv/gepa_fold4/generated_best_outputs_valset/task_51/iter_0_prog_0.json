@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage for quantified climate targets with deadlines. The only explicit target is \"GHG neutrality by 2050,\" which is a net zero commitment. The passage mentions a recent NDC update that raised ambition, but it gives no numeric reduction figure or deadline, so no reduction target. It names no renewable energy or other quantified target, so no \"other\" target.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

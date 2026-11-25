@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Read the passage, which describes Sweden's climate goals. Identify (1) a zero net emissions goal by 2045, which is a net zero target. Identify (2) emission reduction commitments that exceed EU Effort Sharing requirements, which are reduction targets, though the passage refers to them without stating a precise quantified percentage, so the reduction target is implied by the 2030 and 2040 goals and the supplementary measures. Identify (3) any other targets, such as the 2030 and 2040 interim goals for supplementary measures, which are quantified (maximum 8 and 2 percentage points) and have deadlines. The passage is fragmentary, with garbled text, but the net zero goal (2045) and emission reduction goals (2030, 2040) are clearly present. Mark net_zero true, reduction true, and other false, since the supplementary measures are part of the emission reduction framework rather than a separate kind of target like renewable energy.\"",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

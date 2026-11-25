@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a Chilean-style law provision requiring electricity companies that withdraw energy from systems above 200 MW to certify that 10% of their annual withdrawals have been injected via non-conventional renewable energy (NCRE). This is a renewable energy share requirement, with a yearly compliance basis. It contains no net zero target and no GHG emissions reduction target. It fits the \"other\" category because it is a quantifiable renewable energy target, though the passage is cut off mid-sentence and the deadline is only implied as annual, which is a recurring requirement rather than a single dated deadline.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

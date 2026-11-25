@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for net zero commitments, GHG emissions reduction targets, and other quantified targets with deadlines. No net zero commitment appears. The phrase \"CONTRIBUTION TO THE REDUCTION OF GHG EMISSIONS\" is only a section heading and gives no quantified emissions target, so reduction is false. The passage has several other targets: 5% of electricity generation from renewables, 1,200 MW of hydroelectric capacity for 2020-2021, and biofuel blend percentages. These are renewable energy and biofuel targets, so other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

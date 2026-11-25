@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. (1) Net zero: no commitment to balance emissions with removals to zero, so false. (2) Economy-wide or sectoral GHG reduction: the passage has no emissions-reduction percentage or absolute target. The carbon tax and vehicle growth cap are policy instruments, not reduction targets. So false. (3) Other targets: several quantified, dated aims exist: 80% of building floor area meeting Green Buildings standards by 2030; rail network expanded from 230 km to 360 km by 2030; private vehicle growth rate reduced to 0% (set in February 2018, so a dated, quantified aim); carbon tax extended to all vehicle categories by 2030 (dated, but not quantified as a level). The building and rail targets clearly satisfy the definition, so other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

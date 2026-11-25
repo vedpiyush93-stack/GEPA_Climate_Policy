@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It describes past and ongoing support: 12 composting projects, 4 anaerobic digestion, 5 gas capture, and a pilot at the Copiulemu landfill with MRV reporting in real time. It has no net zero commitment, no GHG reduction target with a deadline, and no other quantified target with a deadline. The counts are completed activities, not targets. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

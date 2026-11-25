@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Identify the target statements in the passage. It gives an economy-wide GHG reduction target for 2030, unconditional (30.41%), conditional (68.54%), and combined (98.95%), each measured against the 2030 reference scenario. These are quantified and have a deadline, so they count as reduction targets. The passage mentions no net zero commitment and no non-GHG target such as renewables or efficiency.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

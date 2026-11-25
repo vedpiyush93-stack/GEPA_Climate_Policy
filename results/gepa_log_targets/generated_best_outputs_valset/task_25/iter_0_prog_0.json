@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a quantifiable target with a deadline: doubling the share of highly efficient combined heat and power in electricity production from about 12% to about 25% by 2020. It does not mention net zero or a reduction in GHG emissions. The aim is fuel efficiency and CHP deployment, which fits the \"other\" category, so only that flag is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

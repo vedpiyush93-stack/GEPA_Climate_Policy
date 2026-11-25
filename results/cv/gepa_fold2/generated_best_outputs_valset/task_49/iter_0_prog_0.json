@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage has three items. The ethanol item sets a quantifiable goal (an 11% average annual consumption increase over ten years) with a deadline, so it is an \"other\" target. It also states an emissions outcome (preventing 508 million tCO2 over the period), which is a GHG reduction-type target, though it describes avoided emissions. The biodiesel item sets a 5% blending obligation and a timing goal (moving the obligation from 2013 to 2010), which is a renewable energy target, so it is \"other.\" The agro-energy item describes a plan for research and technology transfer with no quantified outcome or deadline, so it is not a target. No net zero commitment appears.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

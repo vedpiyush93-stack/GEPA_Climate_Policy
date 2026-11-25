@@ -1,0 +1,72 @@
+{
+ "fold": 0,
+ "test_passages": 150,
+ "test_countries": 39,
+ "ml": {
+  "family": "Logistic regression",
+  "inner_cv": 0.761,
+  "params": {
+   "clf__estimator__C": 30,
+   "clf__estimator__class_weight": "balanced",
+   "tfidf__min_df": 2,
+   "tfidf__ngram_range": [
+    1,
+    2
+   ]
+  }
+ },
+ "gepa": {
+  "val_scores": [
+   0.9666666666666667,
+   0.961111111111111,
+   0.9666666666666667,
+   0.9888888888888889,
+   0.9833333333333333
+  ],
+  "labelled_passages_used": 84,
+  "instructions": "Task: You are given a passage (often noisy OCR text) from a national law, policy, or UNFCCC submission (NDC, Biennial Report, National Communication, sector plan, etc.). Decide which types of climate TARGET the passage itself contains. Output brief reasoning plus three booleans: net_zero, reduction, other. A passage can have several true labels, or none.\n\nDefinition of a target: an aim to achieve a specific outcome that is (a) quantifiable AND (b) has a deadline/target year. Both must be stated in the passage text. Expert annotators label strictly on what the passage actually states.\n\nTarget types:\n- net_zero: commitment to balance GHG emissions with removals / reach net zero, carbon neutrality, climate neutrality by some date.\n- reduction: a quantified GHG emissions reduction target (economy-wide or sector-specific; includes % below base year/BAU, absolute Mt cuts, emissions intensity cuts) with a deadline.\n- other: a quantified, time-bound target that is not a GHG reduction or net zero, e.g. renewable energy capacity or share (MW, % of electricity), energy efficiency targets, forest cover/afforestation, electric vehicle shares, biofuel blending mandates, etc.\n\nGuidance learned from feedback:\n1. Only label what the passage actually states. A passage that merely describes a report's structure or says a chapter 'reports the reduction targets for FY2020 and FY2030' without giving the quantified target does NOT count: all labels false (e.g., Japan Biennial Report table of contents -> none). Mere mention that targets exist, without a quantity, is not a target.\n2. Feasibility studies, needs estimates, background statistics, historical data, rationale, and descriptions of ongoing initiatives without quantified goals and deadlines are not targets (e.g., Fiji ethanol plant feasibility and E10 volume requirements, energy efficiency campaigns -> none).\n3. An action/measure with a stated quantified emissions abatement by a deadline (e.g., 'develop an additional 2,275 MW geothermal by 2030 to abate 14.1 Mt CO2e by 2030') counts as BOTH: the capacity goal is 'other', and the quantified emissions abatement with a deadline is also counted by experts as 'reduction'. So when a passage states an explicit amount of GHG reduction/abatement by a year, even as the result of a mitigation action, mark reduction=true. Do not dismiss it as just a consequence of the other target.\n4. Mark net_zero only if net zero/carbon neutrality with a date (or equivalent) is stated.\n5. Check each label independently; be neither over-inclusive (referenced-but-unstated targets, vague aspirations like 'increase', 'promote', 'significantly reduce' with no number or year) nor under-inclusive (explicit numeric abatement or capacity with year).\n\nProcess: scan the passage for numbers paired with years/deadlines; classify each as net_zero, reduction, or other; ignore items lacking either quantification or a deadline; then output reasoning and the three booleans."
+ },
+ "minutes": 1.2,
+ "summary": [
+  {
+   "fold": 0,
+   "setup": "Classical ML",
+   "passages": 150,
+   "exact_match": 0.807,
+   "F1_net_zero": 0.769,
+   "F1_reduction": 0.821,
+   "F1_other": 0.764,
+   "false_alarm_rate": 0.108
+  },
+  {
+   "fold": 0,
+   "setup": "Claude Haiku",
+   "passages": 150,
+   "exact_match": 0.713,
+   "F1_net_zero": 0.769,
+   "F1_reduction": 0.656,
+   "F1_other": 0.761,
+   "false_alarm_rate": 0.361
+  },
+  {
+   "fold": 0,
+   "setup": "Claude Sonnet",
+   "passages": 150,
+   "exact_match": 0.76,
+   "F1_net_zero": 0.857,
+   "F1_reduction": 0.702,
+   "F1_other": 0.81,
+   "false_alarm_rate": 0.349
+  },
+  {
+   "fold": 0,
+   "setup": "Claude Haiku + GEPA",
+   "passages": 150,
+   "exact_match": 0.793,
+   "F1_net_zero": 0.857,
+   "F1_reduction": 0.702,
+   "F1_other": 0.824,
+   "false_alarm_rate": 0.241
+  }
+ ]
+}

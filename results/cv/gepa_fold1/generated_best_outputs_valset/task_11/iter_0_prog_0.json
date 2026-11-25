@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes ETS free-allocation adjustment rules: allocation is reduced by set percentages when activity levels fall, and increased when installed capacity rises. These are mechanical rules, not aims to achieve a quantifiable outcome by a deadline. It contains no net zero commitment, no GHG emissions reduction target, and no other climate target such as a renewable energy goal. All three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

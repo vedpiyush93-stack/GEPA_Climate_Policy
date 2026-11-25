@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage has no net zero commitment, so net_zero is false. It contains no GHG emissions reduction target, so reduction is false. It sets a quantifiable, dated goal (about 35% self-sufficiency in electricity supply from renewable sources by 2025), which is a renewable energy target. That makes other true. The remaining sentences on energy security, diversifying supply, and affordable, reliable supply have no quantified outcome or deadline, so they add nothing further.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

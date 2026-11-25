@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage discusses EU legislation setting mandatory emission reduction targets for new cars and vans, with a figure of 164 g CO\u2082/km. This is a fleet-wide emissions performance limit with a regulatory basis, which is a GHG emissions reduction target for a sector (transport/road vehicles). It has a numeric value but the deadline is not explicit in the fragment, so the passage is still treated as a reduction target since the text describes it as a mandatory target. There is no mention of net zero or a non-emissions target such as renewables or efficiency.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

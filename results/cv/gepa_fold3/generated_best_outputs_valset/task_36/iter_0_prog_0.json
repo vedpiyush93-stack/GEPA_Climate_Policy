@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes how CO2 emissions from biomass are handled in an inventory: biomass CO2 is excluded from sector totals and reported as a memo item, and charcoal production emissions are estimated from the biomass differential. It contains no net zero target, no GHG emissions reduction target with a deadline, and no other quantifiable, dated target such as a renewable energy goal. It is purely methodological, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

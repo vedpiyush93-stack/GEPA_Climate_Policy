@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage lists two waste management items: 6.1 improving landfill infrastructure for sorting and processing municipal solid waste, and 6.2 faecal sludge treatment and regulations in Honiara. Neither mentions net zero. Neither states a quantifiable GHG reduction or a deadline. Both are action-oriented commitments without measurable outcomes or timelines, so neither clearly meets the definition of a target. Therefore all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

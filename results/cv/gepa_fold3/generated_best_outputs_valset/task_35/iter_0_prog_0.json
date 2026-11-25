@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each target type against the passage. Net zero: no commitment to balance emissions with removals to zero, so false. Reduction: the passage says Honduras \"aspires to significantly reduce\" emissions from electricity production, and the ENCC sets a guideline to reduce CO2 and GHG emissions. Neither gives a quantified reduction or a deadline, so false. Other: Goal 3.3 sets 80% renewable electricity generation by 2038, which is quantifiable and has a deadline, so true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

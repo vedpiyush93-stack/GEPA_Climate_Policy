@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable, dated targets. It cites a 2050 net zero target, which is a net zero commitment, so net_zero is true. It does not state an economy-wide or sectoral GHG reduction target with a quantified percentage and deadline, so reduction is false. It mentions no other quantified target such as renewable energy or efficiency goals, so other is false. The 2050 target is also referenced as an existing law rather than newly set here, but it is still stated in the passage.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

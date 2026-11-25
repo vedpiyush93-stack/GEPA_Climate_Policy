@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets quantified, dated targets: energy intensity of GDP down 50% by 2015 and 60% by 2020 (vs. 2005), own energy resources at 28-30% of boiler and furnace fuel balance by 2015 and 32-34% by 2020, and specific fuel consumption cuts of 10% by 2015 and 15% by 2020 for electricity generation. There is no net zero commitment. The GHG reduction language is qualitative (\"reduction of greenhouse gas emissions will be ensured by...\"), with no emissions reduction figure or deadline, so reduction is false. The energy intensity, energy share, and efficiency targets are not GHG emission targets, but they are quantified and dated, so they count as other.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

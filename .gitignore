@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.log
+# deterministic classical-ML results; rebuilt on the first notebook run
+cache/ml/
+# local per-call usage log
+results/llm_calls.jsonl
+*.db-wal
+*.db-shm

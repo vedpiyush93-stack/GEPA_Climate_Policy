@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a national energy strategy with broad aims: promoting renewables and energy efficiency, increasing cleaner fuel shares, and reducing nonsustainable energy. It mentions SE4All objectives (universal access, doubling renewables in the energy mix) and says the strategy\\'s pillars have \"substantial potential of reducing GHG emissions.\" It contains no net zero commitment. It contains no explicit, quantified GHG emissions reduction target with a deadline; the emissions reference is qualitative. The SE4All reference to doubling renewables is a quantified outcome, but the passage does not state a deadline for it within this text, and it is cited as a background objective rather than a specific target of the strategy. The strategy\\'s own aims (increase cleaner fuel share, reduce nonsustainable energy) lack quantities and deadlines. Therefore, under the definition requiring a quantifiable outcome with a deadline, no target is clearly present. I will mark all three as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

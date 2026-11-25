@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Mexico\\'s NOM-163-SEMARNAT-ENER-SCFI-2013, an efficiency standard for new light vehicles, which sets fuel efficiency and CO2 emissions parameters for model years 2014-2016, extended through 2018, with voluntary application for 2019-2020 and mandatory application for 2021-2025. Its stated objective is to increase fuel efficiency to reduce GHG emissions, particularly CO2. I need to check whether this constitutes a quantifiable target with a deadline. The passage gives a regulatory timeline (model years through 2025) and a goal of reducing emissions, but it does not state a specific quantified reduction percentage or a net zero commitment. The standard\\'s fuel-efficiency/CO2 limits are a regulatory mandate with deadlines, which fits \"other\" (efficiency standard) more than a sector emissions reduction target. No net zero language appears. For reduction, the objective is qualitative (\"reduce greenhouse gas emissions\") with no quantified magnitude, so it does not meet the target definition. The efficiency mandate with a deadline (model years 2021-2025) is a quantifiable outcome with a deadline, so I classify it as \"other.\"'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

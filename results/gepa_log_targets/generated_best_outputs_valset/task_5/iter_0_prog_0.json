@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a fuel demand table from Nauru\\'s energy documentation, followed by a summary of NERM 2014-2020 targets. Check for net zero commitments: none. Check for GHG emissions reduction targets: the passage discusses fuel demand data and energy efficiency, but no greenhouse gas emissions reduction target is stated. Check for other targets: the NERM targets are quantifiable and have a deadline (2020). These include 50% of grid electricity from renewables (renewable energy, other) and 30% energy efficiency improvement (other, since it is not a GHG emissions reduction target). The 24/7 grid supply target is quantifiable-ish but is a reliability target, which is also an \"other\" type. Therefore net_zero is false, reduction is false, and other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage and check for each target type. It mentions increasing fruit and vegetable production, water availability, inventory methodologies, and monitoring and evaluation methods for environmental services. It contains no net zero commitment. It gives no quantified GHG emissions reduction target with a deadline. It also has no quantified target with a deadline, such as a renewable energy goal. The statements are general aspirations about analysis and methodology, not measurable targets, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

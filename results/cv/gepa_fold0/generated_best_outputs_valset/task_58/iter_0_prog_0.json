@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a fragment of a table of U.S. federal agencies and regulatory bodies (BOEM, EPA, FERC, PHMSA, etc.) with sector labels (Production, Transmission, Buildings, Transportation) and abbreviation definitions. The only quantified items with deadlines are funding figures: $1B for electrolysis RD&D and $500 million for manufacturing and recycling RD&D, both from FY22 through FY26. These are research spending allocations, not emissions reduction, net zero, or other outcome targets (such as renewable share). So no target of any of the three types is stated. I will mark all three flags as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

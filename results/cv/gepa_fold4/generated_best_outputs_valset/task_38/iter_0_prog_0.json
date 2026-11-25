@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each target type against the passage. The passage gives a 2020 aim of biofuels making up 20% of transport fuels, which is a quantified share with a deadline, so it fits \"other\" (renewable energy). It also gives projected 2020 emission reductions of 1.6 to 1.7 million tonnes CO2, but these are estimated effects of the biofuel measure rather than a stated reduction aim, so I mark reduction false. Nothing mentions balancing emissions with removals, so net_zero is false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

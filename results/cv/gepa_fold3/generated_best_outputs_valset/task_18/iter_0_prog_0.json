@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a carbon neutrality goal by 2050, which is a net zero target. It also specifies an economy-wide emissions reduction of 85% to 90% by 2050 relative to 2005, which is a reduction target with a deadline and a quantified level. The passage refers to compensating remaining emissions via land use and forest sinks, which supports the net zero classification. It does not describe a separate target type such as renewable energy, so \"other\" is false.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

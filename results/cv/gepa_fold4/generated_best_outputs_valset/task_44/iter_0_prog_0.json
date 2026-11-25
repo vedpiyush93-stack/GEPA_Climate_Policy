@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage has no net zero commitment. It sets a 2030 target for cogeneration from renewable sources (biomass, bagasse, wind, solar, waste) to reach 11.4% of electricity supply, which is quantifiable and deadlined, so it is an \"other\" target. It does not set a GHG emissions reduction target. The 10-year plan to cut non-technical energy losses by 1,000 GWh per year is an energy-efficiency target, not a GHG target, though it is an \"other\" target as well. The passage also gives no emissions-cut figure, so reduction is false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

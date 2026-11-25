@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes black carbon emission estimation for energy industry sources (petroleum refining, solid fuel manufacturing). It is a methodology description with no stated targets. There is no net zero commitment, no GHG reduction target with a deadline, and no other quantified target such as a renewable energy goal. All three flags should be false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

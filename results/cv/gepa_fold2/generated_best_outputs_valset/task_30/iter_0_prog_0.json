@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage for quantified, dated aims. It mentions a 37% reduction versus BAU to 536 million tons by 2030, which is an economy-wide GHG emissions reduction target with a deadline, so reduction is true. It also mentions a domestic reduction share rising from 25.7% to 32.5%, which is part of the same reduction framing. The 1,777.13 million ton permitted emissions cap for 2018-2020 under the Emissions Trading Scheme is an allowance/cap rather than a reduction, net zero, or renewable-style aim, and it has no clear forward-looking target beyond the 2018-2020 period. No net zero commitment appears. No other target type (e.g., renewables, efficiency) is present, so other is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

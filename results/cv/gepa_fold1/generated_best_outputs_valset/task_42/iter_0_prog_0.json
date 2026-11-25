@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for targets: an aim to achieve a specific, quantifiable outcome with a deadline. Net zero: no mention of balancing emissions with removals to zero, so false. Reduction: the passage cites energy savings of up to 51.8% of primary and 27.5% of final energy, and mentions emission reductions only as a benefit, not as a GHG reduction target, so reduction is false. Other: it sets a quantified energy-efficiency savings goal (51.8% primary, 27.5% final) and says national EE targets for 2020 and 2030 should be set, which fits the \"other\" category (non-GHG, like renewable energy targets). Since the savings are tied to the strategy scenarios but no explicit deadline is stated for the percentages, this is a borderline case; the passage does reference 2020 and 2030 EE targets as a planned step, so I mark other as true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

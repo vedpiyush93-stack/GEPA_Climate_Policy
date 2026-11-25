@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes planned policy actions: a commission to support structural change, a roadmap toward a \"nearly carbon neutral\" building stock, state support for renewable heating, and a road transport strategy to reduce emissions \"up to 2030.\" Checking each against the target definition (a quantifiable outcome with a deadline): \"nearly carbon neutral\" is not a net zero commitment and has no date. The road transport item has a deadline (2030) but no quantified reduction amount. The renewable heating support has no quantified goal. The commission and its instruments are not targets. So no passage element meets the definition, and all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

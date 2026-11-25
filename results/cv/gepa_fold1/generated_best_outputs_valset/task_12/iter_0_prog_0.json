@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a country\\'s participation in COP 21 (2015) and signing the Paris Agreement, plus a mention of reporting (Biennial Updated Report) and working groups responsible for reducing emissions. It contains no explicit quantified target with a deadline: there is no net zero commitment, no emissions reduction figure or year, and no other quantified target such as renewables. The mention of working groups \"responsible [for] reducing emissions\" describes an institutional role, not a target. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable aims with a deadline. The passage describes vulnerability and impacts, and says temperatures will likely rise by at least 2\u00b0C by 2050, but that is a projection, not a policy target. It mentions the NPACC (2005) and its sector list, but gives no quantified goal or deadline. No net zero commitment, no GHG emissions reduction target, and no other quantified target (such as renewable energy share) appears. All three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

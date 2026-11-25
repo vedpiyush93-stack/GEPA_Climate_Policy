@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage is from Bhutan's NDC. It states an overall national target to remain carbon neutral, where total GHG emissions do not exceed total removals by sinks, for 2021 to 2030. That is a net zero target, with a deadline and quantifiable framing (emissions versus removals). It contains no explicit economy-wide or sectoral percentage reduction target, so reduction is false. The passage refers to sectoral targets and plans, but these are described only as part of the carbon neutral aim and no separate quantified non-GHG target is stated, so other is false.\"",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

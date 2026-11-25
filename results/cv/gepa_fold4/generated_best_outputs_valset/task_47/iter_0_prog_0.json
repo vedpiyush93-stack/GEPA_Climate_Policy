@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage has no net zero commitment and no GHG emissions reduction target. It does contain quantifiable, dated targets: urban and rural access to safe drinking water, with yearly milestones through 2021/22 (100% urban, 95% rural). These are not renewable energy targets, but they fit the definition of an \"other\" target (a quantifiable aim with a deadline) and are tied to climate-driven water scarcity. The water demand projections for 2025 and 2030 are forecasts, not targets. So: net_zero false, reduction false, other true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

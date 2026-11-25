@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a definitions fragment. It says \"it is necessary to reduce consumption,\" which is a general statement with no quantifiable outcome and no deadline, so it is not a reduction target. The rest defines \"commercial exploitation of an energy capacity\" and contains no net zero, emissions reduction, or other quantifiable target with a deadline. All three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

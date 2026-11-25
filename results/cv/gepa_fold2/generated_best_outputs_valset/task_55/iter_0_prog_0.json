@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a target: raise the share of renewable energy from 50% to 60% by 2020, with a deadline (2020) and a quantifiable outcome (60% share). It is a renewable energy target, so it falls under \"other\". It does not mention net zero balancing or a GHG emissions reduction target, so those are false. The remainder of the passage says the 60% level will be maintained until further developments allow an increase, which is a continuation of the same renewable energy target, not a new net zero or reduction target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

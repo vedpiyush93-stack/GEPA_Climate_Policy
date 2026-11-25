@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets quantified targets with deadlines. It does not mention net zero or carbon neutrality. It does contain a sector-specific GHG reduction target: limiting livestock-sector emissions to 77 million metric tons by 2030, down from a 125 Mt business-as-usual projection. For \"other,\" it lists quantified non-GHG targets with 2019/20 deadlines, including feed production, grazing land development, fodder producer compliance, fodder seed production, and industrial by-product feed. So reduction and other are true, and net_zero is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

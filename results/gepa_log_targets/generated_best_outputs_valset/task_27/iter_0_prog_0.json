@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Wallonia\\'s building requirements: a review in 2023 of whether the ZEN (zero energy) level becomes the standard from 2025, and an aim of \"carbon neutrality in new buildings from 2027.\" Carbon neutrality for new buildings is a net-zero-style commitment with a deadline (2027), so net_zero is true. There is no explicit economy-wide or sector GHG reduction percentage, so reduction is false. The ZEN/Q-ZEN level and the 2025 standard are energy-performance requirements rather than a clearly quantified renewable or other target with a deadline. The 2025 ZEN standard is a building-standard milestone that is not quantified as a specific outcome in the passage, so other is false. The remaining text on collective housing and co-ownership responsibilities describes obligations, not targets.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

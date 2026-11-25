@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for aims that are quantifiable and have a deadline. Net zero: no mention of balancing emissions with removals to zero, so false. Reduction: the passage lists measures and programs aimed at reducing emissions, but none gives a quantified emissions reduction with a deadline (the electricity sector cap and vehicle standards have no stated reduction figure), so false. Other: \"Mandate on renewable natural gas (5% by 2025)\" and \"increase in the content of gasoline to 10% ethanol by 2020\" are quantified renewable-content targets with deadlines, so true. The \"5% ethanol\" objective lacks a deadline and is not needed for the result.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

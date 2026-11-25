@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable climate targets with deadlines. Found: a 26% GHG reduction pathway (reduction, economy-wide target referenced in the opening line); CO2 reduction targets set via BAT in industry (no clear quantified deadline beyond the 26% reference, so this supports reduction only as context); 100% diffusion of LED lighting by FY2030 on a stock basis (efficiency/other target with deadline); 5.3 million household fuel cells by FY2030 (other target, a deployment target with deadline); Zero Energy Buildings and Zero Energy Houses promotion (no quantified deadline, so not a target). No net zero commitment appears. Mark reduction true for the 26% reduction pathway and other true for the LED and fuel cell deployment targets.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

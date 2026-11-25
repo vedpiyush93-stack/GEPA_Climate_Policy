@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type against the definition: a quantifiable aim with a deadline. The passage describes general policy directions, such as the 3E approach, sectoral focus areas, renewable energy use, and a Climate Change Action Plan with short, medium and long-term targets. It gives no specific quantified goal. It has no net zero commitment, no numeric emissions reduction target, and no quantified other target such as a renewable share. The 2020 reference is a planning horizon without a stated outcome. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

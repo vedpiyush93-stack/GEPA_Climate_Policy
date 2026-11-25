@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Look for quantified targets with deadlines. The passage sets GHG reduction objectives for 2020 relative to 2005: a 20% EU-wide reduction, a 21% reduction for the EU Emissions Trading Scheme sectors, and a 10% reduction for sectors outside the ETS. These are all emissions reduction targets with a 2020 deadline. It mentions no net zero commitment and no other kind of target, such as renewable energy or efficiency.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

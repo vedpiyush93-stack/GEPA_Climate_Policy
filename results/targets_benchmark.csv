@@ -1,0 +1,7 @@
+setup,labelled_passages_used,exact_match,F1_net_zero,F1_reduction,F1_other,false_alarm_rate,exact_south_asia,exact_india
+"Linear SVM (all 1,839 non-test)",1839,0.753,0.61,0.762,0.589,0.115,0.742,25/32
+Logistic regression (same 360 as GEPA),360,0.743,0.238,0.677,0.571,0.062,0.784,26/32
+"Naive prompt, Haiku",0,0.503,0.733,0.468,0.544,0.5,0.66,24/32
+"Expert definition, Haiku (GEPA's seed)",0,0.847,0.911,0.762,0.835,0.161,0.907,30/32
+"Expert definition, Sonnet (bigger model)",0,0.847,0.909,0.825,0.806,0.172,0.887,29/32
+GEPA-tuned Haiku (Sonnet as teacher),99,0.917,0.932,0.882,0.894,0.062,0.948,32/32

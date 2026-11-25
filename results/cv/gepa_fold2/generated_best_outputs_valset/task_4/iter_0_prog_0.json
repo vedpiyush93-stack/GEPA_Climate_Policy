@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with a deadline. It describes a strategy approach, a progress-reporting process, metrics (industry emissions, CCS volume, hydrogen use), and a \"roadmap to net zero\" for UK industry. It names no specific net zero year, no emissions reduction percentage, and no other quantified target with a date. The passage mentions net zero only as a document title, not as a commitment. The metrics and review cycle are process commitments, not targets. Conclusion: no targets are present, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

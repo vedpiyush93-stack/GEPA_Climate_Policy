@@ -1,0 +1,72 @@
+{
+ "fold": 2,
+ "test_passages": 150,
+ "test_countries": 38,
+ "ml": {
+  "family": "Linear SVM",
+  "inner_cv": 0.749,
+  "params": {
+   "clf__estimator__C": 3,
+   "clf__estimator__class_weight": null,
+   "tfidf__min_df": 2,
+   "tfidf__ngram_range": [
+    1,
+    2
+   ]
+  }
+ },
+ "gepa": {
+  "val_scores": [
+   0.9444444444444444,
+   0.9277777777777777,
+   0.9222222222222223,
+   0.9333333333333333,
+   0.9277777777777777
+  ],
+  "labelled_passages_used": 75,
+  "instructions": "Identify the climate targets in a passage from a national law, policy or UNFCCC submission.\n\nA target is an aim to achieve a specific outcome, that is quantifiable and is given a deadline.\nTarget types:\n- net_zero: a commitment to balance GHG emissions with removal, effectively reducing the net emissions to zero.\n- reduction: a target referring to a reduction in greenhouse gas emissions, either economy-wide or for a sector.\n- other: a target that does not fit into reduction or net zero but satisfies the definition of a target, e.g. renewable energy targets.\nA passage can contain several target types, or none."
+ },
+ "minutes": 1.4,
+ "summary": [
+  {
+   "fold": 2,
+   "setup": "Classical ML",
+   "passages": 150,
+   "exact_match": 0.793,
+   "F1_net_zero": 0.526,
+   "F1_reduction": 0.64,
+   "F1_other": 0.667,
+   "false_alarm_rate": 0.067
+  },
+  {
+   "fold": 2,
+   "setup": "Claude Haiku",
+   "passages": 150,
+   "exact_match": 0.853,
+   "F1_net_zero": 0.846,
+   "F1_reduction": 0.765,
+   "F1_other": 0.806,
+   "false_alarm_rate": 0.152
+  },
+  {
+   "fold": 2,
+   "setup": "Claude Sonnet",
+   "passages": 150,
+   "exact_match": 0.84,
+   "F1_net_zero": 0.815,
+   "F1_reduction": 0.788,
+   "F1_other": 0.781,
+   "false_alarm_rate": 0.162
+  },
+  {
+   "fold": 2,
+   "setup": "Claude Haiku + GEPA",
+   "passages": 150,
+   "exact_match": 0.853,
+   "F1_net_zero": 0.846,
+   "F1_reduction": 0.765,
+   "F1_other": 0.806,
+   "false_alarm_rate": 0.152
+  }
+ ]
+}

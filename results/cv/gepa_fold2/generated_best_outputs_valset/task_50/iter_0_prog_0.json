@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified targets with deadlines. Targets with a net-zero balance (none here) would map to net_zero. Targets reducing GHG emissions economy-wide or for a sector (e.g., GHG mitigation plan, decarbonization of the power matrix via coal plant withdrawal) would map to reduction. The remaining quantified, dated targets, such as EV count increases, renewable generation shares, low-GHG fuel shares, distributed generation capacity, and EE labeling or efficiency coverage, fall under other. The passage has many such targets, so other is true. Reduction is arguable: the \"GHG Emissions Mitigation Plan\" is a plan rather than a quantified reduction, and the coal withdrawal schedule has no stated percentage, so reduction is false. Net zero is absent.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

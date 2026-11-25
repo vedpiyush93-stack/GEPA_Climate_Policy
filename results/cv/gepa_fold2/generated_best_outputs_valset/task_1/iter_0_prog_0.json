@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a transport-sector GHG target: a 60% cut by 2050 vs 1990 and about 20% by 2030 vs 2008. Both are quantified emissions reductions with deadlines, so reduction is true. It does not mention net zero, and it has no non-emissions target such as renewables, so other is false. The passage also reports past trends and notes that greater effort will be needed, but those are not targets themselves.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

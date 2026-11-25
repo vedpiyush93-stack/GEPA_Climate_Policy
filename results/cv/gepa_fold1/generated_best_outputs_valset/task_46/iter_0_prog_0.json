@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a US statutory provision (Energy Independence and Security Act style CAFE language). It sets a combined fleet fuel economy average of at least 35 mpg for model year 2020, with a separate standard for passenger and non-passenger automobiles from model year 2011 onward. It also sets \"maximum feasible\" average fuel economy standards for model years 2021 through 2030. Fuel economy is an efficiency measure, not a GHG emissions reduction target, a net zero commitment, or a renewable energy target. Fuel economy standards are quantifiable and have deadlines (model years 2020 and 2021-2030), so they meet the definition of a target that does not fall under reduction or net zero, so \"other\" is true. The \"maximum feasible\" standard for 2021-2030 is not a numeric GHG reduction and is not framed as an emissions reduction, so reduction is false. No net zero language appears, so net_zero is false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

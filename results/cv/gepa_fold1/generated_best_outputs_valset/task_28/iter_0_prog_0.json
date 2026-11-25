@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a general explanatory text about climate change, the UNFCCC definition, and mitigation and adaptation. It describes mitigation aims (reducing net GHG emissions, increasing carbon capture) and adaptation in general terms, but it sets no quantifiable outcome with a deadline. No net zero target, emissions reduction target, or other target (such as renewable energy) appears. All three flags are therefore false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

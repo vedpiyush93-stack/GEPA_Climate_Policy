@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets two quantified, dated goals: cogeneration reaching 11.4% of national electricity supply (136 TWh) by 2030, and a reduction in non-technical energy losses of 1,000 GWh per year over 10 years. Neither is a net zero target. Neither is an explicit GHG emissions reduction target, since the losses target concerns energy waste rather than emissions. Both fit \"other\" as non-GHG-reduction targets, such as renewable and efficiency targets.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets quantified targets with deadlines: reducing petroleum-based transport fuel use by about 30% by 2020 and about 60% by 2025, relative to forecast consumption. It does not mention net zero or balancing emissions with removals, so net_zero is false. The target measures petroleum fuel use, not greenhouse gas emissions, so it is not an emissions reduction target and reduction is false. It is a quantified, dated aim that fits none of the emissions categories, similar to a renewable or alternative energy share target, so other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

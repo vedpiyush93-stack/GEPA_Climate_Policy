@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets several quantified targets with 2030 deadlines. Overall and sector-level GHG reductions (economy-wide 26%, energy 30%, waste 4%, AFOLU 26%) make the reduction flag true. It contains no net zero commitment. The mangrove expansion, agroforestry expansion, and forest cover increase targets are quantified, deadlined, and not GHG reduction targets, so they fall under other.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

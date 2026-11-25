@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage concerns the EU Energy Performance of Buildings Directive style rule: public buildings whose construction permit applications are submitted after 30 September 2029 must meet nearly zero-energy building (NZEB) standards, with an exemption when cost-effectiveness is negative. NZEB is an energy performance standard, not a net zero commitment to balance GHG emissions with removals, and it does not state a GHG emissions reduction target or a percentage/quantified reduction. It is a quantifiable requirement with a deadline (30 September 2029), so it fits the \"other\" category as a target, though it is a building efficiency standard rather than a named renewable or emissions target. Net zero: no. Reduction: no. Other: yes, a deadline-bound building energy performance requirement.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

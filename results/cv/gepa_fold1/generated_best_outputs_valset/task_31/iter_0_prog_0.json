@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with a deadline. It mentions 9,630 ha of forest reserves, carbon sequestration, wood as a renewable resource, and hunting/tourism. None of these is a stated target with a specific outcome and deadline. There is no net zero commitment, no GHG reduction target, and no other quantified, dated target such as a renewable energy goal. All three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

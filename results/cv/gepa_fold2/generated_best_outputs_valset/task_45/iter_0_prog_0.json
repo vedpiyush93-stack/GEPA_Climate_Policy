@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. It has no net zero commitment and no GHG emissions reduction target. It does contain a quantified, dated target: forest coverage around 25% of China\\'s land area and forest stock volume of 19 billion cubic meters by 2030. That is a non-emissions target, so it falls under \"other\". The remaining text describes actions and intentions without numeric targets or deadlines.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

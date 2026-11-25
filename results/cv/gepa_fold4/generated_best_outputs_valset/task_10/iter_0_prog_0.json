@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage discusses understanding measures and strategies to respond to climate change impacts, co-benefits for development and environment, and projected temperature rises (28\u00b0C to 32\u00b0C) and precipitation changes. It contains no net zero target, no GHG emissions reduction target, and no other quantified target with a deadline. The temperature and precipitation items are projections, not targets. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

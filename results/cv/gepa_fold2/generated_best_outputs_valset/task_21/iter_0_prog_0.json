@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. It lists several quantified targets with a 2030 deadline: renewable share of final consumption above 50%, self-sufficiency above 55%, phasing out coal in energy production, halving domestic use of imported oil, and renewable transport fuels at 40% (23.5% of fuel energy content). None of these is a net zero commitment. None is a GHG emissions reduction target, since the renewable share, self-sufficiency, coal phase-out, and oil halving are not framed as emissions cuts. The renewable energy and transport fuel targets fit the \"other\" category, which covers targets such as renewable energy shares.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

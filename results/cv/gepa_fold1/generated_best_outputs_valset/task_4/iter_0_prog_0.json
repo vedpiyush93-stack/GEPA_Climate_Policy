@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from a Spanish renewable energy policy document. It sets a quantified, dated target: renewables to reach 32% of gross electricity consumption by 2012 and 37% by 2020. That is a renewable energy target, so it belongs under \"other\". It contains no net zero commitment and no GHG emissions reduction target. The remaining text covers measures and incentives (small photovoltaic installations, hydro rehabilitation, tax bonuses) without further quantified GHG or net zero goals.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

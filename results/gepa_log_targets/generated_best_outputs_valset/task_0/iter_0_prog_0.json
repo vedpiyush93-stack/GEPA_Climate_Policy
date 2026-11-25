@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a binding goal of carbon neutrality, which is GHG emission neutrality, no later than 2050. That is a net zero target with a deadline. It has no quantified emissions reduction percentage or sector-level reduction goal, so reduction is false. The 10-year review is a process requirement, not an outcome target. The \"increasing resilience by 2050\" mention is not quantified, so it does not count as another target. Other is false.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

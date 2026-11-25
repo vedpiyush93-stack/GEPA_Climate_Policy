@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes proposed renewable energy and energy efficiency targets. It gives scenario-based shares of grid electricity generation from renewables (20%, 15%, 10% of generation mix in 2025) and installed capacity goals (wind, geothermal, landfill gas), plus off-grid solar home system electrification targets for 2025 (160,000 and 110,000 households). There is no net zero commitment and no greenhouse gas emissions reduction target (economy-wide or sectoral). These are renewable energy and electrification targets, which fall under \"other\" since they are quantifiable with a 2025 deadline.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

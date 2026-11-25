@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each target against the definitions. Net zero: the passage has no commitment to balance emissions with removals, so false. Reduction: the passage sets a GHG emissions reduction of at least 50% for State and public buildings within eight years, a sector-level target, so true. Other: the passage sets quantified, dated targets that are not GHG reductions, namely a 38% cut in building energy consumption by 2020, a 40% cut in energy consumption for renovated State buildings, and 400,000 dwelling renovations per year from 2013, so true.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

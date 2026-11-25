@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage mentions a \"goal of climate neutrality\" but gives no deadline for it. The only year, 2050, describes projected resource needs under current consumption trends, not a target. Since a target must be quantifiable and time-bound, none of the three target types is clearly met. The passage defers specific measures to future NEKP plans. I mark net_zero false because the goal has no stated date, though a reader could reasonably count it as a net zero commitment. No reduction or other targets appear.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

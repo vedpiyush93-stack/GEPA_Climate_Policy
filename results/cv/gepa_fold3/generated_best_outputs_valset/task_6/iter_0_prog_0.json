@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets a carbon neutrality goal for 2050, which is a net zero target. It also gives economy-wide GHG reduction targets for 2030 (45-55% below 2005) and 2040 (65-75% below 2005), which are reduction targets. It mentions no other kind of target, such as renewable energy or efficiency. So net_zero and reduction are true, and other is false.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

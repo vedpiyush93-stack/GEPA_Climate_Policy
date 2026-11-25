@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable targets with a deadline. It describes historical emissions trends, fertilizer use, and harvested areas and livestock changes between 1999 and 2010. It contains no net zero commitment, no emissions reduction target, and no other target such as renewable energy or efficiency goals. Those statements are descriptive, not targets, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

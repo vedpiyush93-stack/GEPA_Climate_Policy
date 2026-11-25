@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes the EU ETS. It states a quantified sector-level reduction target with a deadline: the cap falls 1.74% each year so that 2020 emissions are 21% below 2005 levels. Nothing mentions net zero. The only other mention is a \"Renewable energy\" heading with no quantified target, so the other field is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

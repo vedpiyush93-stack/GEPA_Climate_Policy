@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a Mexican energy efficiency financing project (FIDE/FOTEASE) and mentions the national energy efficiency goal of a 1.9% reduction in annual energy intensity from 2017 to 2030. No net zero commitment appears. Energy intensity reduction is an efficiency metric, not a GHG emissions reduction target, so the reduction flag is false. The 1.9% annual energy intensity target has a quantifiable value and deadline (2030), and it fits the \"other\" category as a non-GHG target. The remaining mentions (PRONASGEN, mitigation results in Table 3.3, the CONUEE statistics) describe programs and reports without a quantified target with a deadline.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Kenya\\'s (Big Four Agenda, KES-style national context) mitigation and adaptation goals. Check for each target type: net zero (no mention of balancing emissions with removals to zero), economy-wide or sectoral GHG reduction (yes: \"GHG emission reductions of 10.4 MtCO2e by 2023\" through forestry activities, which is a quantified reduction with a deadline), and other targets (forest cover increases and restored forests are described without quantified deadlines, but the 2023 deadline and quantity for reductions are explicit; the forest-related items are mostly qualitative outcomes). Conclude: reduction = true; net zero = false; other = false, since the remaining items are qualitative aims without specific quantified targets and deadlines.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

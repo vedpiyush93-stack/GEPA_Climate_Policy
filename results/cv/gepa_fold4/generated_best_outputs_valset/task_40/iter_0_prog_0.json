@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable targets with deadlines. Found: Manitoba\\'s legislated energy savings targets (22.5% of domestic electricity demand and 11.25% of natural gas demand over a 15-year period) are efficiency/energy-savings targets, not GHG reduction or net zero targets, so they fall under \"other.\" Manitoba\\'s Carbon Savings Account sets an economy-wide emissions reduction target of 1 Mt CO2 eq cumulative from 2018 to end of 2022, which is a reduction target. No net zero commitment appears. The Ontario regulation on efficiency standards for products has standards with implementation dates but no quantified emissions or energy outcome target, so it does not count as a target by itself.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

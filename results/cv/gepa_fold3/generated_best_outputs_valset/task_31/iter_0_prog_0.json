@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the garbled passage for quantifiable aims with deadlines. The text is a Vietnamese-style climate strategy with OCR noise. It mentions financial mobilization, investment increases from the state budget, and participation in GHG emission reduction programs, but gives no specific emissions reduction percentage, no net zero commitment, and no quantified renewable or other sector target with a deadline. The \"From now to 2012\" phase label is a timeline, not a target. Therefore none of the three target types is clearly present. Mark all as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

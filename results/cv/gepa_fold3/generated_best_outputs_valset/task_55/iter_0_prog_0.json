@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified aims with deadlines. Net zero: none mentioned. GHG reduction: the passage sets targets for energy demand reduction (industrial electricity and final energy, commercial electricity) and for stove and fuel use, but it never states a greenhouse gas emissions reduction, so this does not count. Other: the passage has several quantified, dated targets, including 30% efficient stove penetration by 2030, wood heating reduced to 10% by 2030, 10% annual fuel-wood replacement with LPG from 2020 to 2030, and industrial and commercial electricity and final energy demand reductions by 2030. These fit the \"other\" category.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

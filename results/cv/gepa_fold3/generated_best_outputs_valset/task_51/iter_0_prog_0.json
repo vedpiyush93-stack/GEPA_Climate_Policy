@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage is in Spanish. It asks for decarbonization goals for all sectors between now and 2050, aligned with the agreement based on total emissions, and mentions transformation routes and optimization models for Costa Rica's energy sector. It sets no specific quantified target with a deadline (no explicit percentage cut, no net zero commitment, no renewable share). The 2050 horizon is only a general timeframe for setting goals, not a stated quantified outcome. So no target types are present, though the passage is a directive to set future targets, which is why all flags are false.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

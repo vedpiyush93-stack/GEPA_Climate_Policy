@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified targets with deadlines. Net zero: the passage says Hong Kong is committed to carbon neutrality by 2050, which is a net zero target with a deadline, so net_zero is true. Reduction: the 2015 blueprint sets a 40% energy intensity reduction by 2025. Energy intensity is not GHG emissions, so it does not strictly count as a GHG reduction target. The 5% government building electricity reduction and the 6% \"Green Energy Target\" are also energy-focused, not GHG-focused. Reduction is therefore false. Other: the 40% energy intensity target, the 5% government electricity reduction target, and the 6% Green Energy Target are quantified with deadlines and fall outside the reduction and net zero categories, so other is true. Feed-in tariff and solar installation goals lack quantified deadlines.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": true
+}

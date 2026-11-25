@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets several dated, quantifiable waste-sector goals. Check each for a net zero commitment (none, since no emissions balancing to zero is mentioned). Check for GHG reduction targets: the passage refers to reducing organic matter sent to landfills and increasing reuse and recovery, but these are waste-management quantities rather than explicit GHG emissions reductions, so no reduction target applies. Check for other targets: the 76% landfill disposal share by end of 2012 and the 104 sanitary landfills by end of 2012 are quantified, deadlined waste-management aims that fit the \"other\" category, which covers targets outside reduction or net zero.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

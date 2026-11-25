@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a government will tighten climate targets to a 40% emissions cut by 2020 versus 1990, conditional on an international agreement. This is an economy-wide GHG reduction target with a deadline (2020), so reduction is true. It does not mention net zero or balancing emissions with removals, so net_zero is false. The long-term goal of equal per-person emission rights is an aspirational principle without a quantifiable outcome or deadline, so it does not qualify as an \"other\" target.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

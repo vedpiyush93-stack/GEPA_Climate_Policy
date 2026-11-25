@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified outcomes with deadlines. It mentions net zero for maritime and aviation, but only as general ambitions. It also gives no specific deadline for net zero. The \u00a320m, \u00a315m, and \u00a315m figures are funding amounts, not targets. \"40,000 new jobs by 2030\" is an employment outcome, not an emissions or energy target. Net zero is not dated here, so net_zero is false. There is no GHG reduction target with a quantity, so reduction is false. The \"other\" category needs a quantified target with a deadline, and the only candidate is the jobs figure, which is not a climate target, so other is false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

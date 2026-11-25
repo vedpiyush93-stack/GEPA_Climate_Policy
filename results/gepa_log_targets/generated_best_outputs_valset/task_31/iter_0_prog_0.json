@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. The passage describes Gabon\\'s gas flaring plan: it cites a reduction in annual flaring of about 1 Gm3 by 2015 (\"more than 60%\"), which is a quantified GHG-related reduction with a deadline, so it counts as a reduction target. It does not mention net zero. It mentions gas-based electricity, petrochemicals, and a national gas consumption market, but these are development plans without quantified targets or deadlines, so they do not count as \"other\" targets. The flaring reduction is about gas flaring volume, which is a source of emissions; it is framed as a volume reduction and a percentage with a deadline, so it qualifies as a reduction target.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

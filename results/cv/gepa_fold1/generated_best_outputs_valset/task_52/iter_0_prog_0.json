@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Scan the passage for any aim with a quantifiable outcome and a deadline. It reports past and current statistics: crop area and production growth, cattle stock, cattle's share of GDP, meat export shares, industrial production growth since 2012, and energy demand increases for 2014 and 2015. None of these are targets. There is no net zero commitment, no GHG reduction goal, and no other quantified deadline-bound aim such as a renewable energy goal. All three target flags are false.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

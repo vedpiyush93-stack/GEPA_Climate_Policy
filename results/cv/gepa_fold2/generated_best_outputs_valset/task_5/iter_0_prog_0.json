@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage for quantifiable aims with deadlines. It mentions achieving zero emissions by 2050 for Fiji, which is a net zero target. It does not state an economy-wide or sector-level GHG reduction percentage, so no reduction target. It describes EV adoption, public transport fostering, and vehicle scrapping measures as mitigation actions, but gives no specific quantified outcome (such as a share of EVs by a date). Those are plans and recommendations rather than quantified targets. The zero-emissions-by-2050 aim is the only clear target, so net_zero is true and the others are false.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

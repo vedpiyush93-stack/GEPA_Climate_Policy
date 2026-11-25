@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage: it describes a figure of CO\u2082 emissions trends for source category 4F \"Other Land\" and notes that emissions from 4F2 were recalculated for 1990\u20132015. It contains no net zero commitment, no emissions reduction target with a deadline, and no other quantifiable target such as renewable energy. It is purely descriptive reporting of historical inventory data, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

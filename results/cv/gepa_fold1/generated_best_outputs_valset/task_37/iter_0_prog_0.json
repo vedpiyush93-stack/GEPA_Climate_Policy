@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It sets a 2020 target of halving energy intensity of GDP (two-fold reduction), a target intensity of 456 toe/MEUR by 2020, and a 21% decrease in total energy demand by 2020 versus 2005. These are energy efficiency and energy-intensity targets, which are \"other\" targets rather than GHG reduction targets, since none is framed as a GHG emissions cut. It also mentions 17.5% lower final energy consumption and 26.8% primary energy savings around 2020, which are efficiency outcomes, not emissions reductions. No net zero commitment appears. So net_zero is false, reduction is false, and other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage cites carbon neutrality by 2050, which is a net zero target with a deadline. It also refers to the NDC goal for 2030 and to sectoral emissions budgets for 2020-2030, which are emissions reduction targets, though the passage does not state the NDC figure. It mentions no other kind of target, such as renewable energy or efficiency. So net_zero and reduction are true, and other is false.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage gives historical transport and aviation/shipping emissions, which are not targets. It does contain quantified transport-sector reduction ranges tied to deadlines: 2% to 8% on average over 2023-27, 27% to 39% by 2030, and 61% to 73% on average over 2033-37, relative to 2021. These are sectoral GHG reduction targets, so reduction is true. The passage does not mention net zero or any non-emissions target such as renewables, so those are false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

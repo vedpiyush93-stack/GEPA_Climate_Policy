@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which is a fragment of a national GHG inventory report (Republic of Moldova) describing methodology for CO2 emissions from urea-based catalysts in the Industrial Processes and Product Use sector. It describes historical trends (a 37.4% decrease from 1990 to 2019) and a calculation methodology, but it contains no forward-looking aim, no deadline, and no net zero, reduction, or other target. Historical decrease figures and estimation equations are not targets. Therefore all three target flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified aims with a deadline. The only clear one is that LPG and coal replaced by solar and traditional biomass reach 10% of the energy balance by the end of the planning period. That is a renewable energy substitution target, so it falls under \"other.\" The passage has no net zero commitment and no explicit GHG emissions reduction figure. The natural gas and energy savings statements are not quantified targets.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

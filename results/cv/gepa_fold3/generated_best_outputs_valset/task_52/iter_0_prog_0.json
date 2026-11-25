@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a national plan for reducing gas flaring on oil fields. Check for each target type: net zero (no mention of balancing emissions with removals or net zero), reduction (a GHG emissions reduction target; flaring reduction is a greenhouse gas emissions reduction aim, and it has deadlines such as 2014 and 2015 and \"as low as possible\"), and other (quantifiable targets not fitting above, e.g. the \"fatal threshold\" for flaring by 2015 and the ban on continuous flaring). The passage has no explicit net zero commitment. Flaring reduction with dated milestones counts as a reduction target. The 2015 threshold and continuous flaring ban are operational targets tied to flaring, which is a reduction measure, so they fall under reduction rather than other.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

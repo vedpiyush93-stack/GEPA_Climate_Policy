@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It lists programs, plans and projects, and most are about GHG emission reduction, but it gives no specific quantified target. Titles like \"Methane Emission Reduction Action Plan to 2030\" and \"Environmental Protection Plan ... 2025-2030\" name timeframes but no numeric reduction, net zero commitment, or other quantified target. Renewable and energy-efficiency items (solar incentive regulations, energy-efficiency program 2019-2030) are programs without stated quantities in the passage. So no target of any type is clearly present. Mark all three as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

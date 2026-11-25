@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Read the passage for quantifiable targets with deadlines. It describes a 2021 emissions target: installations' annual value for 2021 of about 1.5 million tonnes CO2eq, and reduction trajectories continued linearly to the end of 2021. Those are emission reduction targets, so reduction is true. It has no net zero commitment, so net_zero is false. Other targets appear too: an 80%/90% exploitation rate of economic potential of measures, and a metrics-based target multiplied by 1.125 with a 2020/2021 deadline. The exploitation rate is a measure-implementation target rather than a reduction or net zero target, so other is true.\"",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

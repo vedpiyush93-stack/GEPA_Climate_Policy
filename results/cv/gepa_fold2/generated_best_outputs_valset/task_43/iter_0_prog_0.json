@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Read the passage, which is about UK Export Finance's TCFD disclosures. Check for quantifiable targets with a deadline. The passage mentions a net zero path by 2050, which is a net zero target with a deadline. It does not state an economy-wide or sector GHG reduction target with a numeric figure and deadline. It also contains no other quantifiable target such as renewable energy. Net zero is true, reduction is false, other is false.\"",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

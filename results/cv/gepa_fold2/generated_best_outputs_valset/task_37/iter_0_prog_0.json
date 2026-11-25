@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each sentence for a quantifiable aim with a deadline. The passage has medium-term (2030) and long-term (2050) targets. Net zero: no mention of balancing emissions with removals to zero, so false. Reduction: \"GHG emissions be reduced by at least 32% in terms of electrical energy and 7% in terms of thermal energy\" is a quantified sector emissions reduction, but no explicit deadline is stated in that sentence beyond the medium-term section heading (2030), so it is counted as a reduction target under the 2030 heading. Other: electricity production share (33% by 2030, 50% by 2050), renewable share (75% by 2030, 80% by 2050), and energy intensity reductions (20% by 2030, 30% by 2050) are quantified non-emissions targets with deadlines, so true.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

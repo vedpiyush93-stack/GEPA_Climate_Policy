@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is only a fragment of headings: \"Directorate for the Promotion of the Defense of Women\\'s Rights\", \"Intergovernmental Panel on Climate Change\", and \"Environmental Impact Assessment\". It contains no numeric aim, no outcome, and no deadline. Therefore it contains no net zero target, no GHG reduction target, and no other climate target. All three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each sentence for a quantifiable aim with a deadline. Sentence 1: 50% renewable electricity by 2015 is an \"other\" target (renewables). Sentence 2: a 50% cut in energy-sector GHG emissions by 2015 relative to 2000 is a reduction target. Sentence 3: 7.5% energy savings over 10 years to 2020 is an efficiency target, which is \"other\" because it is not a GHG reduction or net zero target.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

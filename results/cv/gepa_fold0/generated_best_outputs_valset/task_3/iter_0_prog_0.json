@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable targets with deadlines. It states a 2030 economy-wide GHG reduction target relative to 2010 and reduction percentages versus the reference scenario for 2030 (unconditional 20.51%, combined 50.57%). These are reduction targets. It mentions an absolute economy-wide emissions reduction target and Paris Agreement Article 4(4), but gives no net zero commitment or date. No renewable energy or other non-emissions targets appear. Mark reduction true, net_zero false, other false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a Canadian law requiring national GHG reduction targets for 2030, 2035, 2040 and 2045, with the overarching objective of net-zero emissions by 2050. Net zero is explicitly stated as an objective with a deadline (2050), so net_zero is true. The law requires setting national GHG reduction targets for specific years, which fits the reduction category, so reduction is true. The passage does not mention renewable energy or other non-emissions-reduction outcomes, so other is false.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

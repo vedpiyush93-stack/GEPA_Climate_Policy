@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable aims with deadlines. The passage states a long-term goal of net-zero by 2070, which is a net zero target, though it is framed as a \"long term goal\" and a \"step forward\" rather than a firm commitment with a dated quantified target in this text; it still counts as a net zero commitment with a deadline. It mentions reducing overall emission intensity and improving energy efficiency \"over time\", but gives no quantified level or deadline, so it is not a reduction target. It refers to the Panchamrit elements and an update to the NDC \"for the period up to 2030\", but the passage itself does not state the specific quantified non-GHG targets (e.g., renewable energy capacity), so no \"other\" target is clearly present in this excerpt.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which is a list of actions for reducing livestock GHG emissions in Azerbaijan. Check for a net zero commitment: none. Check for an economy-wide or sector GHG reduction target with a quantity and deadline: the passage gives no quantified reduction figure or deadline, only actions like improving inventories, diets, breeding, and manure management. Check for other quantifiable targets with deadlines: none found; biogas use is mentioned only as an encouragement, not a quantified target. Conclude that no item meets the target definition, so all flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

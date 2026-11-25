@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets a carbon neutrality goal for 2050, which is a net zero target. It also sets emissions targets with deadlines: emissions peak by 2025, a maximum of 95 million tons CO2 by 2030, and a 1.1 billion ton budget for 2020-2030. These are economy-wide GHG reduction targets. The forestry targets are referenced but not stated, and no renewable energy or other non-emissions targets appear, so \"other\" is false.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

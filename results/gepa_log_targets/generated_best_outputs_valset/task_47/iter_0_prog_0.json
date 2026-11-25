@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from Finnish climate legislation. It sets a long-term goal of reducing total anthropogenic GHG emissions in Finland by at least 80% by 2050 compared to 1990 levels. That is a quantified, dated economy-wide reduction target, so reduction is true. It does not mention carbon neutrality, net zero, or balancing emissions with removals, so net_zero is false. It mentions adaptation goals and risk management but gives no quantifiable outcome with a deadline, and no renewable energy or similar targets, so other is false. The passage also says an international or EU 2050 target may replace the 80% figure, but that is conditional and does not add a separate target.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

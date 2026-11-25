@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with deadlines. It gives no net zero commitment, so net_zero is false. It contains no economy-wide or sector GHG emission reduction target with a deadline; it describes projections and the effects of policies, so reduction is false. It does state a renewable energy share target: the WEM projection gives about 40% renewable share of gross final energy consumption in 2020, rising to about 42% by 2030. This is a projection rather than an explicit policy target, but it is a quantified renewables aim with deadlines, so other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

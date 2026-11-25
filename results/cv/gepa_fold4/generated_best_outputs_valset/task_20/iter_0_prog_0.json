@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified aims with deadlines. The \"reduce emissions by 20% by 2030\" commitment is an economy-wide GHG reduction target for the company. The \"roadmap towards carbon neutrality\" has no quantified target or deadline, so it does not count as a net zero target. Renewable electricity coverage (25% by 2025, 400 MW by 2023) and fleet electrification by 2025 are other targets.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Check the passage for quantifiable targets with a deadline. It describes India's transport sector: freight and passenger volumes, fuel consumption share, and 2000 GHG emissions with their shares of energy and national totals. These are descriptive statistics, not aims. There is no net zero commitment, no emissions reduction target, and no other target such as renewables, so all three flags are false.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

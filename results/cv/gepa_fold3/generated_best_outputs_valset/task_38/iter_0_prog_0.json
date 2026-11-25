@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from French law (energy transition / thermal regulation for buildings). Check for net zero: none mentioned. Check for reduction: it mentions reducing greenhouse gas emissions and energy consumption in general, but the concrete quantified targets are primary energy consumption thresholds (50 kWh/m\u00b2/yr) and renewable energy production exceeding consumption. These are energy-efficiency and renewable-energy targets, not GHG emission reduction targets with a quantified value, so reduction is false. The 50 kWh/m\u00b2/yr threshold and the renewable-production requirement are quantifiable with deadlines (end of 2010/2012/2020), so they fall under \"other\". Net zero is false, reduction is false, other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

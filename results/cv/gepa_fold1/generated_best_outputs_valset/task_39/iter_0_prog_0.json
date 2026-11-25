@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable aims with deadlines. The passage lists unconditional and conditional targets for 2015 and 2020, all with 2030 deadlines. Items 1 (GHG emission reductions vs BAU, with absolute Gg CO2eq figures) are reduction targets. Items on renewable share of power and heat demand are \"other\" targets (renewable energy). Items on power demand reduction through energy efficiency are \"other\" targets too, since they are not GHG reductions and not net zero. No net zero target is present. Thus net_zero = false, reduction = true, other = true.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

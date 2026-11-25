@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes two quantified, dated GHG reduction figures for the transport sector: a working target of a 35-40% cut by 2030 versus 2005 (Meld. St. 41), and a government ambition of a 50% cut by 2030 versus 2005 (Granavolden platform). Both are sector-wide emissions reductions with deadlines, so they meet the reduction definition. Neither mentions net zero or balancing emissions with removals, so net_zero is false. The National Transport Plan goal of \"reducing climate emissions in line with the Norwegian climate targets\" is not quantifiable and has no deadline, and the passage has no renewable energy or other quantified non-GHG target, so other is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

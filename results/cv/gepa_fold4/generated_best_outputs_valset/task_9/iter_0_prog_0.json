@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each target type against the passage. There is no net zero commitment and no GHG emissions reduction target. The passage does contain a quantified, dated aim: raising national forest cover to 29.4% of the territory for the 2011-2015 period. That is not a GHG target, so it falls under \"other.\" The remaining text describes problems and causes, such as fires and species composition, without a quantified target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

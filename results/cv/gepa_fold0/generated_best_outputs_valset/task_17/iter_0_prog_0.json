@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from the Danish Climate Act. It states a quantified reduction target: cut GHG emissions by 70% by 2030 relative to 1990 levels. It also sets a climate-neutral society goal by 2050 at the latest. Climate neutrality means balancing emissions with removals, which matches the net zero definition. Reduction: yes, the 70% by 2030 target is economy-wide. Net zero: yes, the climate-neutral by 2050 target. Other: no renewable energy, efficiency, or similar non-GHG-reduction targets appear in the passage. The Paris 1.5\u00b0C reference is context, not a separate target.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

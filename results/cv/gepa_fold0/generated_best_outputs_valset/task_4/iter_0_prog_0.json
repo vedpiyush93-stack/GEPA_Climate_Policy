@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from a Chinese national energy policy describing regional low-carbon energy development. It lists many measures (distributed PV, geothermal, nuclear plant construction, offshore wind, LNG expansion, pumped storage, small hydropower rectification) but I need to check for quantified targets with deadlines. It contains no net zero commitment and no GHG emissions reduction target (economy-wide or sectoral). It does contain renewable/clean energy development aims such as expanding offshore wind, pumped storage stations, and distributed PV, but none of these are stated with a specific quantity or a deadline. Since a target must be quantifiable and time-bound, these are actions or directions rather than targets, so the other field should be false as well. The passage does not meet the definition of a target under any category.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

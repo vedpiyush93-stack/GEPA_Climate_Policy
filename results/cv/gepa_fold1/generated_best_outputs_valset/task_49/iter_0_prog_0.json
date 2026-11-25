@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable aims with a deadline. It describes energy supply mix, import bills, consumption shares, per-capita energy use, conversion efficiency, and generating capacity, but it states no net zero commitment, no GHG emissions reduction target, and no other dated, quantifiable target such as a renewable energy goal. Growth rates and current shares are descriptive statistics, not targets. Conclude all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

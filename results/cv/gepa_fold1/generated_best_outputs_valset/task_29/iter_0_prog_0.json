@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a list of national development targets (likely a planning document), mostly poverty, jobs, health, water, sanitation, and electricity. I\\'ll check each target for a net zero commitment, a GHG emissions reduction target, or another quantified, dated target. Poverty, employment, health, education, and water targets are not GHG-related, so they fall under \"other\" since they are quantifiable aims. Electricity generation (20,000 MW by FY21) is a quantified capacity target with a deadline, so it also counts as \"other\". No net zero or GHG reduction target appears, so those fields are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

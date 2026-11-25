@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage describes a solar power company's purposes: building power stations and their grid and water connections, supporting applied research and innovation in solar electricity production, and funding solar training courses. It contains no net zero commitment and no GHG emissions reduction target. It also has no quantifiable outcome with a deadline, such as a stated renewable capacity or generation figure by a given year. It therefore does not meet the definition of a target, so all three flags are false.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

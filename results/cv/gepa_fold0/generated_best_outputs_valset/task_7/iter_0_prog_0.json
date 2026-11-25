@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for three things: (1) a net zero commitment (balancing emissions with removals), (2) a GHG emissions reduction target for the economy or a sector, and (3) any other quantifiable target with a deadline, such as renewable energy. The passage mentions customer interface overhauls and quality of supply standards. It has no quantifiable outcome, no deadline, and no emissions or energy-share figure. So none of the three target types applies.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

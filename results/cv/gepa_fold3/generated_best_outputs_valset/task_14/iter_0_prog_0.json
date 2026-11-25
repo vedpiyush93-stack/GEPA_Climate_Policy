@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for net zero commitments: none appear. Check for GHG reduction targets: the passage gives a 12.15% cumulative emissions reduction by 2030 against business as usual for the energy sector, so reduction is true. Check for other quantified, time-bound targets: it lists specific numbers such as 300,000 efficient refrigerators, 46 health centers and 26 police stations, and 239 plus 22 localities for solar PV electrification, with the measures running over 2021 to 2030. These fit the \"other\" category, so other is true.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

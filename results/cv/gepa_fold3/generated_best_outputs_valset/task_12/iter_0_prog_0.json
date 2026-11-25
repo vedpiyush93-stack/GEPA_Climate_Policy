@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. It describes water availability projections (below 500 m per inhabitant by 2030) and calls for developing non-conventional water resources. These are water-security concerns, not GHG emissions aims. There is no net zero commitment and no GHG reduction target. The passage has no quantified, deadlined renewable energy or similar target either. The water availability figure is a projection, not a target. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

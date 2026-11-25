@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified climate aims with a deadline. It gives avoided emissions of 1,740 and 1,160 KTCO2/year in 2030 versus BAU and unconditional scenarios. These are emissions-reduction outcomes measured against baselines, with a 2030 deadline, so they count as a reduction target. The passage has no net zero commitment and no renewable energy or other non-reduction target. The final sentence about transport efficiency names a measure but gives no quantified outcome or deadline, so it is not a target by itself.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

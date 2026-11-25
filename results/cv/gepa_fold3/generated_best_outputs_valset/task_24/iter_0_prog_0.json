@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable targets with a deadline. It describes current emissions shares for 2020, the LULUCF net sink from 1990 to 2020, and forest increment and drain figures. It contains no net zero commitment, no future emissions reduction target, and no other target such as renewable energy share. Descriptive statistics and historical trends do not count as targets, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Read the passage, which covers South Africa's GHG emission reporting regulations and Pollution Prevention Plans, and notes a net-zero CO\u2082 economy goal by 2050. Check for each target type: net zero (the 2050 net-zero CO\u2082 economy aim is stated as the strategy's ultimate direction, so it counts). Reduction: the passage mentions reporting thresholds (0.1 Mt CO\u2082e) and PPPs, but no emissions reduction quantity with a deadline is set out. Other: no renewable energy or other quantifiable target with a deadline is given. Mark net_zero true, reduction false, other false.\"",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

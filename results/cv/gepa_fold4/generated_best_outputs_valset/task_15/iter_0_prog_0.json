@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each target for a quantifiable outcome and a deadline (2020). The passage sets GHG reduction targets for 2020 (a 21% reduction, or 18% versus 2005 levels), which qualify as reduction targets. It also sets 2020 targets for renewable shares (19-20% of gross final consumption, 35-38% of electricity) and primary energy consumption, which qualify as other targets. It never mentions balancing emissions with removals or reaching net zero, so net_zero is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

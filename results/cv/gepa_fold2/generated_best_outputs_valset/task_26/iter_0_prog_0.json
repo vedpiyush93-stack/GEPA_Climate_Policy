@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage discusses Fiji's business climate, biofuel/ethanol feasibility, and energy efficiency initiatives. I need to check for any stated target that is quantifiable and has a deadline. The ethanol plant recommendation (60 kL/day producing 16.579 million litres) is a feasibility figure, not a target with a deadline. The E10 blending requirement (10 to 12 million litres annually) is a need estimate, not a stated policy target. Energy efficiency efforts and awareness campaigns are described without quantified goals or deadlines. There is no net zero commitment, no GHG reduction target, and no other quantified target with a deadline. All three flags should be false.\"",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

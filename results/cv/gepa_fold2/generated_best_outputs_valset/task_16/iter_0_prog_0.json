@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage has a heading \"Target by 2050\" but gives no quantifiable outcome. It describes a general aim (a low-carbon circular economy) that requires radical change and joint action, without specifying a measurable goal. It contains no net zero commitment, no GHG reduction figure or percentage, and no other quantified target such as a renewable energy share. Since a target must be quantifiable and deadlined, and only a vague deadline heading is present, all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

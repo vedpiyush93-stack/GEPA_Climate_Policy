@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified targets with deadlines. It sets a 10-point Kyoto overshoot in the first commitment period (a reduction target with a deadline). It sets a 30% cut against 1990 by 2020 (reduction). It requires carbon neutrality by 2050 and a binding carbon neutrality goal by 2030 at the latest (net zero). It also contains a conditional tightening to a 40% cut by 2020 versus 1990 (reduction). The final sentence is a long-term per-capita equal emissions rights aspiration with no date, so it does not qualify as a dated, quantifiable target. No renewable or other non-emission targets appear, so \"other\" is false.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

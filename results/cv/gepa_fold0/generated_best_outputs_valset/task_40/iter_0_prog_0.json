@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable targets with deadlines. It mentions a GPRS goal of reaching a US$1,000 per capita middle-income level by 2015, which is an economic target, not a climate target. The woodfuel demand figures (38-46 Mt by 2015, 54-66 Mt by 2020) are projections of growth under that scenario, not emissions reduction or net zero targets. No net zero commitment is present. No GHG reduction target is stated; deforestation and climate change are only described as risks if no action is taken. The solar installation figures (5,000 systems, 1-2 kWp per system, a 50 kWp grid system) describe current deployment, not a target with a deadline. Therefore none of the three target types is present.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

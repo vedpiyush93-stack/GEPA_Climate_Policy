@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage, which is a Chinese government report on climate action (likely a UNFCCC submission). Check for quantifiable aims with a deadline. Net zero: none mentioned. Reduction: it reports past achievements (carbon intensity down 28.5% vs 2005 in 2013) and references a Twelfth Five-Year Plan for controlling GHG emissions, but gives no forward-looking reduction target with a deadline, so not a target. Other: the non-fossil energy share (9.8%) and forest coverage (21.6%) are reported outcomes, not future targets with deadlines. The passage is mostly retrospective, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

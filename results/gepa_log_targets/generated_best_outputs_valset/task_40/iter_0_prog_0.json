@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from Costa Rica\\'s climate submission. It contains no net zero commitment and no GHG emissions reduction target; the \"deforestation rate at zero\" and wetland \"net loss\" language concerns land cover, not emissions. It does contain quantifiable land-use targets: forest cover of 60%, silvopastoral and agroforestry systems on 69,500 hectares, and intervention on 1,000,000 hectares of forest. These fit \"other\" (non-emissions targets, like the renewable energy example), though none states an explicit deadline, which the strict definition calls for. I\\'m marking \"other\" as true, since the quantified forest targets are clear aims, and noting the missing deadline as a caveat.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

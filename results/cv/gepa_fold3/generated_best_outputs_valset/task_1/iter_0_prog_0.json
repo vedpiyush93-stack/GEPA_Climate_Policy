@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage and look for quantified targets with deadlines. It discusses exclusion thresholds for the Paris-aligned benchmark (1% coal/lignite, 10% oil), a possible future trajectory toward carbon neutrality by 2050 for electricity generation above 100 gCO2/kWh, and conditional inclusion of natural gas. It does not state an economy-wide or sector emissions reduction target, nor a net zero commitment with a deadline. The 2050 carbon-neutrality trajectory is mentioned only as a subject of future discussion, not as an adopted target, and the 1%/10% thresholds are exclusion criteria rather than targets. The passage also contains no renewable energy or other quantified outcome target. So all three flags should be false, with the reasoning noted.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

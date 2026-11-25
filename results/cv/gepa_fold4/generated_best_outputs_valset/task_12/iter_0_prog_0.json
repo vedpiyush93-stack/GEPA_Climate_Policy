@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage has no net zero target. It does contain a quantifiable target with a deadline: the renewable energy share in transport must reach 10% by 2020, which is a renewable energy target and falls under \"other\". It contains no economy-wide or sector GHG emissions reduction target, only descriptions of emissions and current shares. So reduction is false and other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

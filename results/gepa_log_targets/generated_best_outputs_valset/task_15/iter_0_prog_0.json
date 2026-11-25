@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Read the passage: it describes national, regional and local policies, planning and investment \"for delivery between now and 2040\" and a strategic framework for coordination. It contains a deadline (2040) but no quantified GHG reduction, no net zero commitment, and no specific renewable or other measurable outcome. The 2040 reference is a delivery horizon, not a quantified target, so no target types are met. Mark all three as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

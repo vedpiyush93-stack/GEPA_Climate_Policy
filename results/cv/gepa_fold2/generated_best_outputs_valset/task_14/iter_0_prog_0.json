@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states a renewable energy target: at least 17% of gross final energy consumption from renewables by 2020, and at least 10% of final energy consumption in transport from renewables by 2020. It has a quantified outcome and a deadline, so it counts as a target. It is not a net zero commitment, and it does not set a GHG emissions reduction target. It falls under \"other\" because it is a renewable energy share target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

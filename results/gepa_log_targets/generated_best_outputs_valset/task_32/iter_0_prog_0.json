@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a fragment from Iran\\'s Third National Communication. It says a low-carbon economy can be accepted as a strategy for emission reduction and reduced fossil fuel use, but it does not state any quantified target with a deadline. It also says economic structural change needs further study and that omissions from the Action Plan do not mean neglect. The heading \"6.4.1. Emission Reduction\" is only a section title. Since no net zero, GHG reduction, or other quantified target with a deadline appears, all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

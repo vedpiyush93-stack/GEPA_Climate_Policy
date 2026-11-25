@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. It reports sector shares and emission levels for 2000 to 2013 and describes LULUCF net removal trends, but it states no future goal. There is no net zero commitment, no reduction target with a deadline, and no other quantified target such as a renewable energy goal. Descriptive historical statistics do not count as targets, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

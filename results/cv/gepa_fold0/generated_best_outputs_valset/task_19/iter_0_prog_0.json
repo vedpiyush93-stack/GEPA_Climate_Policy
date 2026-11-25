@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is only a heading: \"Industry Embedding Net Zero in Government Heat and buildings.\" It names a net zero concept and a sector (heat and buildings) but gives no quantifiable outcome and no deadline. Since a target requires both a specific quantifiable outcome and a deadline, none of the three target types is clearly met. The heading signals a net zero theme, so I flag it as a possible net zero context, but I do not mark it as a target. No reduction or other target can be identified from the text.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

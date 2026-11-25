@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes the EU Renewables Directive proposal. It sets a binding EU target for the share of renewable energy in gross final energy consumption in 2030. That is a quantifiable target with a deadline, and it concerns renewables rather than emissions, so it fits \"other\". It does not mention net zero or an economy-wide or sectoral GHG emissions reduction target. The text mentions criteria for greenhouse gas emissions reduction for biofuels, bioliquids and biomass fuels, but these are sustainability criteria, not a reduction target with a deadline, so they do not count as a reduction target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

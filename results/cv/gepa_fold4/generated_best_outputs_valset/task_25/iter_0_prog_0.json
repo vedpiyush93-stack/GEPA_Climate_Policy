@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage gives 2020 targets for hydropower (350 million kW installed capacity, 1.2 trillion kWh annual generation) and nuclear power (58 million kW installed capacity). These are quantified outcomes with a deadline, but they are capacity and generation targets for renewable and nuclear energy, not GHG emissions reduction or net zero goals. So net_zero and reduction are false, and other is true. The vague statements about safe nuclear development have no quantified outcome and do not add a target.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

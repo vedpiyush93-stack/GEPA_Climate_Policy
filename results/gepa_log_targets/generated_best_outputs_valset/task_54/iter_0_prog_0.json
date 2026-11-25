@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes Canadian electricity-sector measures. It has no net zero commitment. The 214 Mt CO2eq reduction is a projected result of the regulation rather than a stated target, and the 420 t CO2/GWh performance standard is a regulatory limit, not a reduction target. The announced intention to phase out coal-fired electricity generation by December 31, 2029 is a quantifiable outcome with a deadline, and it is not an economy-wide or sectoral emissions reduction target, so I classify it as \"other.\"'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

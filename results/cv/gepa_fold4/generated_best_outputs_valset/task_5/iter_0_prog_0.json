@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantifiable aims with a deadline. The text describes inclusion of vulnerable groups, increased access to PSET/TVET, village-level climate and disaster resilience activities, and SDG references. It contains no GHG emissions reduction goal, no net zero commitment, and no quantified renewable or other energy target with a deadline. The fragment \"8.2). Community Safety Improved\" looks like an outcome label without a figure or date. Vague intentions such as \"will have increased access\" lack a measurable value and deadline, so they do not qualify. Conclude that none of the three target types apply.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

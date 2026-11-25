@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is an excerpt from the French Energy Transition law (Article 1-style policy statement, leading into Title II on building renovation). It describes general state energy policy principles: competitiveness, purchasing power, fuel poverty, self-consumption of electricity, avoiding carbon leakage, and social protection for workers in the energy transition. It contains no quantifiable outcome with a deadline. It does not state a net zero commitment, an emissions reduction target with a figure and date, or any other quantified target such as a renewable energy share. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage covers measures such as subsidies, incentives, and grants for energy efficiency, renewables, and public transport. It contains no net zero commitment and no GHG emissions reduction target with a quantifiable outcome and deadline. It does not state a renewable energy share, efficiency level, or any other numeric goal with a deadline. The passage describes policy instruments and actions rather than targets, so all three flags should be false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

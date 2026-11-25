@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type. Look for quantifiable aims with a deadline. \"Use of plastic will have been reduced\" is vague and has no quantity, so it is not a reduction target. \"10 percent of our installed power capacity will be renewables\" is quantified but has no explicit deadline, and it is a renewable energy target, so it counts as \"other\" only if a deadline is accepted as implied; the passage gives no year, so I flag it as a target that lacks a deadline. No net zero or GHG reduction target is stated. Drainage and plastic-alternative statements are aspirational and unquantified.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

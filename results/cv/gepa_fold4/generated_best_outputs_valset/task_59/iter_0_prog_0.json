@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a figure caption about hydraulic energy production and mentions European renewable energy policies with a \"triple objective\" whose text is cut off (\"to reduce emissions of...\"). No explicit quantified target with a deadline is stated. The only partial aim is the truncated objective, which lacks a complete, quantifiable outcome and deadline. So no net zero or reduction target is clearly present, and no other quantified target (e.g., renewable share by a year) is given. All flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

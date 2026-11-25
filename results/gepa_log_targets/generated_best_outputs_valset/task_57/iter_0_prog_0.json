@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage describes Colombia's updated NDC mitigation goal: a cap on absolute GHG emissions in 2030, with reductions shown relative to a reference scenario (figures such as 250.1 MtCO2, -28%, and 20%/30% scenarios). This is a quantified, dated, economy-wide emissions reduction target, so reduction is true. The mention of carbon neutrality is framed as a long-term aspiration expressed at a summit and carried into a strategy, not a formal net zero commitment with a stated date in this text, so net_zero is false. The passage refers to an adaptation component but gives no quantified adaptation or renewable energy target, so other is false.\"",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

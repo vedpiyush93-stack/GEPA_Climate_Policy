@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets quantified share targets with deadlines: new and renewable energy at 11% of total energy consumption by 2035, and renewables at 20% of power generation by 2030. It also sets a nuclear share of 16.5% of power generation by 2030. None of these is a net zero commitment or a GHG emissions reduction target, so they fall under \"other.\" The 95% clean-energy figure for new facilities has no deadline, so it does not qualify.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

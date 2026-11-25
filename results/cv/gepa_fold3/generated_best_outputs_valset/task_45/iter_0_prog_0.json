@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage cites a 2050 target for a climate-neutral economy, which matches the net zero definition. It has no explicit percentage cut in GHG emissions, so reduction is false. The lignite plant decommissioning deadlines (2023, with Ptolemaida V until 2028) are quantifiable, dated commitments that are not emissions-reduction or net zero targets, so they count as other.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": true
+}

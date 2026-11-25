@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantified targets with deadlines. It mentions a mobility plan updated every 3 years (a process requirement, not an emissions or energy target). It gives a car-sharing objective of 20,000 clients in BCR by 2020, implying 800 cars, which is a quantified deadline-bound aim but not a renewable, efficiency, or GHG target. It describes historical transport CO2 falling from 70 kt (2006) to 10 kt (2015) and assumes stabilization at that level until 2030. That is a description of past and projected emissions with a stabilization assumption, not a stated reduction target. There is no net zero commitment. The car-sharing objective is a deployment target, which fits \"other\" since it is quantified and time-bound. Reduction is not clearly stated as a target, since the emissions figures are observed values and modeling assumptions.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

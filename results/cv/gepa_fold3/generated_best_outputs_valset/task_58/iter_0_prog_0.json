@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is garbled and fragmentary. It refers to carbon emissions from new buildings (non-dwellings completed after 1 January, dwellings completed after 1 November 2019), and mentions achieving \"these targets\" by public bodies and schools. This resembles UK Building Regulations / Part L or Future Homes/Buildings Standard language about emissions standards for new buildings. It contains no net zero commitment and no explicit GHG emissions reduction percentage or economy-wide/sector target with a clear quantified outcome. The language about carbon emissions standards for new buildings is a regulatory standard with dates, and the \"over 350 public bodies and 4,000 schools\" wording suggests a commitment program, but the passage does not clearly state a quantifiable reduction or renewable-type target. Classify conservatively: no net zero, no clear reduction target, and only a possible \"other\" target given the dated building-emissions requirements and the commitment to achieve targets by public bodies and schools. Because the text is too garbled to confirm a quantified outcome, I\\'d mark \"other\" as false as well, noting uncertainty.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

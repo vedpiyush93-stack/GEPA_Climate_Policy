@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage describes Canada's national communication on mitigation measures, centered on the pan-Canadian approach to pricing carbon pollution. Check for a net zero commitment: none is stated. Check for a GHG emissions reduction target with a deadline: the passage describes a carbon pricing policy with stringency increasing over time, a CAN$50/tonne price by 2022, and an estimated 30,000 kt impact by 2030. The 2030 mitigation estimate is a quantified outcome with a deadline, and it is tied to reducing emissions, so it counts as a reduction target. Check for other targets such as renewable energy: none is stated. The carbon price levels and the minimum tariff are policy parameters rather than outcome targets, so they are not counted as targets themselves. Conclude: reduction = true, net_zero = false, other = false.\"",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

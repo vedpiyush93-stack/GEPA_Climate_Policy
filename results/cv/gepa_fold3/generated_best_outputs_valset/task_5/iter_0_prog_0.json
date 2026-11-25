@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is from a US federal executive order (sustainability/clean energy for Federal operations). Identify each commitment: 100% CFE by 2030 and ZEV acquisitions by 2035 are \"other\" targets (clean electricity and vehicle acquisition). Net-zero emissions from Federal procurement has no explicit deadline, so it does not clearly meet the target definition, though it is arguably net-zero in nature. The net-zero building portfolio by 2045 (with a 50% reduction by 2032) and net-zero overall Federal operations by 2050 (with a 65% reduction by 2030) are net-zero targets with deadlines and interim reduction targets, so both net_zero and reduction are true. The passage contains net-zero and reduction targets with deadlines, plus other targets like CFE and ZEV.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": true
+}

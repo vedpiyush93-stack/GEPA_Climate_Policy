@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for quantifiable targets with deadlines. It sets a renewable energy share of 32% by 2030. That is not a GHG reduction or net zero target, so it falls under \"other\". The passage also mentions future calls for tenders and schedules, but these are procedural measures rather than outcome targets. No net zero or emissions reduction target appears.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each bullet for a quantifiable aim with a deadline. Bullet 1 sets a deadline-based ban on new petrol/diesel sales (2030) and a zero-emission-at-tailpipe requirement (2035). This is a fleet/sales target about vehicle technology rather than an explicit GHG tonnage reduction or net zero commitment, so it fits \"other.\" Bullet 2 sets annual percentage targets for zero-emission sales starting 2024. This is also a zero-emission vehicle share target, so \"other.\" Bullet 3 is a pledge to end sales of non-zero-emission road vehicles by 2040, \"subject to consultation.\" It has a deadline and is quantifiable as a sales phase-out, so it counts as \"other.\" None of the bullets mention net zero or an emissions reduction percentage, so those are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

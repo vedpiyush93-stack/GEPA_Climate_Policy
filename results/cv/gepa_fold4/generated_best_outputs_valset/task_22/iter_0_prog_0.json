@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Scan the passage for quantified climate targets with deadlines. The clearest is the national goal to reduce greenhouse gas emissions by at least 40% by 2030, which is a reduction target. The 2050 \"low-emission society\" goal is not a net zero commitment and has no quantified outcome. Other statements (renewable energy development, ambition for sustainable growth, the green transition) are not quantified with deadlines, so they are not targets under the definition.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

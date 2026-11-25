@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes the Noor Ouarzazate II CSP plant in Morocco. It states a capacity (200 MW), a renewable energy share goal for 2030 (52% of electricity capacity), and an emissions-avoidance figure (about 380,000 tCO2/year), but the emissions figure is a project-level outcome, not a sector or economy-wide reduction target with a deadline. The 52% renewables goal is a quantifiable aim with a 2030 deadline, so it counts as an \"other\" target. No net zero commitment appears. I\\'ll mark other as true and the reduction and net_zero fields as false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

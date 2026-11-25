@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage cites two quantified, dated economy-wide emission reduction goals: at least 32 Mt CO2eq below 2005 levels by 2020, and at least 44 Mt CO2eq below 2005 levels by 2030. Both are GHG reduction targets with deadlines, so the reduction field is true. The passage mentions no net zero commitment and no other kind of target such as renewable energy or efficiency, so net_zero and other are false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

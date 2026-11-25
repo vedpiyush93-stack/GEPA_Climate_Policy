@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage cites the EU objective of reaching climate neutrality by 2050, which is a net zero target with a deadline. It does not state a GHG emissions reduction percentage or any other quantified target such as renewables or efficiency. So net_zero is true, and reduction and other are false.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

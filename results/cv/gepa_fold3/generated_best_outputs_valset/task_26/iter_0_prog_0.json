@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check each objective in the passage for a quantifiable outcome and a deadline. The passage lists orientations such as reducing N2O and CH4 emissions, reducing CO2 from fossil energy, moving to totally carbon-free building energy, renovating buildings to BBC level, and reversing soil carbon destocking. None gives a numeric value or a target year, so none meets the definition of a target. The indicator list is measurement, not targets. Net zero, economy-wide or sectoral reduction, and other quantified targets are therefore all absent.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

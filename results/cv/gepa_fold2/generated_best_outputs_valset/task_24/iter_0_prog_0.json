@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets several quantified targets with 2040 deadlines: raising access to healthy household waste disposal from 33.7% to 90%, a 90% urban waste collection rate, a 40% recycling rate, and a 95% cut in plastic packaging production and marketing. None of these is a net zero commitment. None is a GHG emissions reduction target, since they concern waste management and sanitation rather than greenhouse gas emissions. They do fit the \"other\" category as quantified, dated targets outside the net zero and reduction types.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

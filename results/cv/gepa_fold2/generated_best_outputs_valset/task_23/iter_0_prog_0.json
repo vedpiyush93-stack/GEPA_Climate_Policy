@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a national energy policy statement. It mentions a quantified GHG emissions reduction of 10% and a 20% energy efficiency improvement, both tied to the 2015 timeframe in the same sentence. The text is cut off before the renewable share target is stated. No net zero commitment appears. The 10% GHG cut is an economy-wide reduction target, so it counts as reduction. The 20% efficiency goal is a quantified, dated, non-emissions target, so it counts as other.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

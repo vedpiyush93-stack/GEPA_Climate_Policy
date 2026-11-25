@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a truncated fragment: \"50% of the total mass of biodegradable waste produced in 2010 must...\" It sets a quantifiable aim, but it does not state the action or the deadline, and it does not mention greenhouse gas emissions. Net zero does not apply. Reduction requires a GHG emissions reduction, and this is a waste-mass target, so it does not qualify. The \"other\" category requires a complete target with a deadline, which the passage lacks. All three fields are therefore false, though the passage could be a waste-diversion target with a methane link if the full text were available.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

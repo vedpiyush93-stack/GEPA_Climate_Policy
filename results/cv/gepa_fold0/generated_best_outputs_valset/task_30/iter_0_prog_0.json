@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a fragment about a water network on a main island, a Hague meeting in November 2000, and statistics on a percentage ranging from -3.36% (2010) to 7.69% (2003). It contains no net zero commitment, no GHG emissions reduction target, and no quantifiable target with a deadline for another climate outcome (such as renewable energy). The percentages describe a range of observed values, not an aim to achieve by a set date. So all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

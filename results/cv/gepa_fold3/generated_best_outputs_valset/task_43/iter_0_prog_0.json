@@ -1,0 +1,6 @@
+{
+    "reasoning": "'1. Scan the passage for quantified targets with deadlines.\\n2. Found \"10% penetration in terms of installed capacity by 2020\" for renewable energy. This is a renewable energy target, so it counts as \"other.\"\\n3. Found \"30% penetration of rural electrification via renewable energy technologies by 2020.\" This is also a renewable target with a deadline, so it counts as \"other.\"\\n4. The remaining text describes expansion options and fuel supply, with no net zero commitment and no GHG emissions reduction target.\\n5. Set net_zero and reduction to false, and other to true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

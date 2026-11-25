@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"The passage cites Singapore's 2020 pledge to reduce emissions 16% below BAU, and its NDC commitments: a 36% reduction in emissions intensity from 2005 levels by 2030, and stabilising emissions with a peak around 2030. The 2020 pledge is a reduction target with a deadline. The 36% intensity-reduction target is a reduction target with a deadline, though it refers to intensity rather than absolute emissions. Emissions peaking around 2030 is a stabilisation/peaking aim, not a net zero commitment. No net zero target or renewable/other-type target appears. So reduction is true, and net zero and other are false.\"",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

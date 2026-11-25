@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Identify quantifiable climate targets with deadlines in the passage. The passage states a net zero target: climate neutrality (net zero GHG emissions) for the EU by 2050. It also states a reduction target: at least 55% reduction in net GHG emissions by 2030 versus 1990 levels. Nothing about renewable energy, efficiency, or other non-emissions targets appears. The Slovakia sentence only describes agreement to the 2050 goal, which repeats the net zero target and adds no new target. So net_zero and reduction are true and other is false.'",
+    "net_zero": true,
+    "reduction": true,
+    "other": false
+}

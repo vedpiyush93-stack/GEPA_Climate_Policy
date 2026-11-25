@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage states that the national GHG emissions target for 2050 is net-zero emissions. This is a commitment to balance emissions with removals, with a quantifiable outcome (net zero) and a deadline (2050). So it qualifies as a net_zero target. It is not an economy-wide or sectoral reduction target expressed as a quantity reduction, and it names no other non-reduction target such as renewables. Therefore net_zero is true, reduction and other are false.'",
+    "net_zero": true,
+    "reduction": false,
+    "other": false
+}

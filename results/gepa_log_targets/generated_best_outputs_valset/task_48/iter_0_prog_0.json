@@ -1,0 +1,6 @@
+{
+    "reasoning": "'Check the passage for each target type against the definitions. A target needs a quantifiable outcome plus a deadline. The passage sets an agroforestry target: add 200,000 acres (about 81,000 Ha) under agroforestry by 2022, and mentions a 10% farm tree cover requirement. Tree cover and area expansion are not emissions reductions, and there is no net zero commitment. Agroforestry is a land-use/afforestation measure, so it falls under \"other\" rather than \"reduction\". The passage also cites a 2015\u20132030 projection of 281,000 Ha, but that is an analysis assumption, not a stated target. The 10% compulsory tree cover rule is a regulatory requirement with no deadline, so it does not count. The passage does not state an emissions reduction target. The \"other\" flag is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

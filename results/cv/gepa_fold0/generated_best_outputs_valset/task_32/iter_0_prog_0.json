@@ -1,0 +1,6 @@
+{
+    "reasoning": "\"Check the passage for quantified targets with deadlines. It cites an EU non-ETS reduction of about 30% below 2005 levels, Slovakia's non-ETS target of -20% by 2030, and modelled non-ETS reductions of 19.42% and 30.5% by 2030 versus 2005. These are GHG emission reduction targets, so reduction is true. There is no net zero commitment, and no non-reduction targets such as renewable energy shares, so other is false. Note that the passage mentions modelled outcomes and scenarios, but the Slovakian and EU non-ETS figures are stated as targets with deadlines.\"",
+    "net_zero": false,
+    "reduction": true,
+    "other": false
+}

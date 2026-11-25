@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage is a fragment about health system and nursing care development funded by the ARP (American Rescue Plan-style funds), referencing \"Component 4\" and sub-items 4.A.1 and 4.A.2 on primary care. It contains no net zero target, no GHG emissions reduction target, and no quantifiable target with a deadline related to climate or renewable energy. It is cut off mid-sentence and is not climate-related, so all three flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets quantified targets for domestic electricity production from renewable sources (excluding hydropower): at least 4,400 GWh by 2020 and at least 11,400 GWh by 2035. These are specific, measurable, and deadlined, so they count as a target. It is not a net zero target, and it is not a GHG emissions reduction target. It is a renewable energy generation target, so it falls under \"other.\"'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

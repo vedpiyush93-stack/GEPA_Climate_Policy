@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes transport-sector climate actions: integrating GHG reduction goals into sector strategies, implementing an Action Program on Green Energy Transition and Reduction of Carbon and Methane Emissions, and increasing renewable energy use in public lighting and traffic signals. It contains no net zero commitment. The phrase \"the goal of reducing GHG emissions\" is a reduction aim, but it has no quantified target or deadline, so it does not meet the definition of a target. The renewable energy increase in public lighting and traffic signals is also unquantified and undated. Therefore no target types are satisfied, and all flags are false.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": false
+}

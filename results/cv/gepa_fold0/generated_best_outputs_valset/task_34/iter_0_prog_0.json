@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage sets quantifiable renewable energy targets with a 2020 deadline: 31% of gross final energy consumption from renewables and 10% of final energy consumption in transport. It mentions no net zero commitment and no greenhouse gas emissions reduction target. Renewable energy shares are \"other\" targets under the definition, so only the other flag is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}

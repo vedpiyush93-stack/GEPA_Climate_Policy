@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes a Viet Nam NAMA (Nationally Appropriate Mitigation Action) for carbon-neutral housing. Check for net-zero commitments: none stated. Check for GHG reduction targets: it states a target of 27,000 tCO2e accumulated reduction by project end and 192,000 tCO2e accumulated reduction 10 years after implementation, both with deadlines, so reduction is true. Check for other targets: it sets quantified, dated goals beyond emissions, such as 17 construction units and 3,400 apartment owners trained, 1 green bond issued, 34 buildings rated 5-star under CPLS, and EUR 200 million public and EUR 257.9 million private investment mobilised by project end. These fit the \"other\" category, so other is true.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

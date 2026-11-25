@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes several GHG emissions reduction targets with 2020 deadlines: the EU-wide 20% cut below 1990 levels, Denmark\\'s non-ETS cut of 20% below 2005 by 2020, and the EU ETS cut of 21% below 2005 by 2020. It also sets renewable energy share targets (20% EU-wide and 30% for Denmark by 2020), which are \"other\" targets. Nothing mentions balancing emissions with removals or reaching net zero, so net_zero is false.'",
+    "net_zero": false,
+    "reduction": true,
+    "other": true
+}

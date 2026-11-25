@@ -1,0 +1,6 @@
+{
+    "reasoning": "'The passage describes current achievements (21,000 onshore turbines, 30.2 Mt avoided emissions) and forward-looking renewable energy goals. The 25 GW offshore wind capacity by 2030 and the Desertec goal of meeting 15% of electricity needs by 2050 are quantified, deadlined renewable energy targets, so they count as \"other.\" The avoided-emissions figure describes past or current results, not a reduction target with a deadline. No net zero commitment appears. The energy efficiency heading has no quantified aim. So net_zero and reduction are false, and other is true.'",
+    "net_zero": false,
+    "reduction": false,
+    "other": true
+}
