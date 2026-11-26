@@ -4,308 +4,316 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Climate Targets Explorer</title>
-<meta name="description" content="Every passage of Climate Policy Radar's national climate targets dataset, with the experts' labels, a GEPA-tuned language model's labels, and the model's explanation.">
+<meta name="description" content="Can AI spot a climate target? 2,610 passages from national climate laws and policies, with the experts' labels and a GEPA-coached AI model's labels and explanations.">
 <style>
 :root {
   color-scheme: light;
-  --bg: #f4f7f6; --surface: #ffffff; --surface2: #f8faf9; --ink: #142a26; --ink2: #4a5f5a; --muted: #7a8a86;
-  --line: #e2e9e6; --accent: #0a8a5f; --accent-ink: #ffffff; --accent-soft: #e2f3ec;
-  --nz: #1f7a6b; --nz-soft: #dff1ec; --rd: #2d6aa3; --rd-soft: #e1ecf7; --ot: #6750b0; --ot-soft: #ece8f7;
-  --warn: #c2410c; --warn-soft: #fdeee6; --ok: #0a8a5f; --year: #fff1c7; --num: #e2f3ec;
-  --shadow: 0 1px 2px rgba(16,40,35,.05), 0 6px 24px rgba(16,40,35,.06);
+  --bg: #f5f7f6; --surface: #ffffff; --surface2: #f3f6f5; --ink: #13211f; --ink2: #4a5b57; --muted: #7c8b87;
+  --line: #e3e9e7; --accent: #0a8a5f; --accent-ink: #ffffff; --accent-soft: #e3f3ec;
+  --nz: #1f7a6b; --nz-soft: #dcf0ea; --rd: #2d6aa3; --rd-soft: #dfeaf6; --ot: #6750b0; --ot-soft: #ebe7f7;
+  --warn: #b4530e; --warn-soft: #fdf0e4; --year: #ffefc2; --num: #dff2ea;
+  --shadow: 0 1px 2px rgba(16,40,35,.05), 0 10px 30px rgba(16,40,35,.07);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #0b1110; --surface: #121b19; --surface2: #17221f; --ink: #e6f0ed; --ink2: #a8bab5; --muted: #7d8f8a;
-    --line: #23312e; --accent: #1aa874; --accent-ink: #06130f; --accent-soft: #14352b;
-    --nz: #6fd2bd; --nz-soft: #163631; --rd: #8dbbea; --rd-soft: #172a3d; --ot: #b9a8f0; --ot-soft: #251f3d;
-    --warn: #ff9a6b; --warn-soft: #3a2117; --ok: #3ccf95; --year: #4a3d12; --num: #173a2f;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+    --bg: #0b1110; --surface: #121b19; --surface2: #172220; --ink: #e7f0ed; --ink2: #a9bbb6; --muted: #7f918c;
+    --line: #22302d; --accent: #1aa874; --accent-ink: #04120d; --accent-soft: #143429;
+    --nz: #6fd2bd; --nz-soft: #15332e; --rd: #8dbbea; --rd-soft: #16283a; --ot: #b9a8f0; --ot-soft: #241e3b;
+    --warn: #ffab70; --warn-soft: #382114; --year: #4b3d11; --num: #163a2e;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.35);
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0b1110; --surface: #121b19; --surface2: #17221f; --ink: #e6f0ed; --ink2: #a8bab5; --muted: #7d8f8a;
-  --line: #23312e; --accent: #1aa874; --accent-ink: #06130f; --accent-soft: #14352b;
-  --nz: #6fd2bd; --nz-soft: #163631; --rd: #8dbbea; --rd-soft: #172a3d; --ot: #b9a8f0; --ot-soft: #251f3d;
-  --warn: #ff9a6b; --warn-soft: #3a2117; --ok: #3ccf95; --year: #4a3d12; --num: #173a2f;
-  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+  --bg: #0b1110; --surface: #121b19; --surface2: #172220; --ink: #e7f0ed; --ink2: #a9bbb6; --muted: #7f918c;
+  --line: #22302d; --accent: #1aa874; --accent-ink: #04120d; --accent-soft: #143429;
+  --nz: #6fd2bd; --nz-soft: #15332e; --rd: #8dbbea; --rd-soft: #16283a; --ot: #b9a8f0; --ot-soft: #241e3b;
+  --warn: #ffab70; --warn-soft: #382114; --year: #4b3d11; --num: #163a2e;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.35);
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--ink);
-  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
 a { color: var(--accent); }
 button, input, select { font: inherit; color: inherit; }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.narrow { max-width: 860px; margin: 0 auto; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 /* hero */
-.hero { position: relative; overflow: hidden; color: #eaf6f1;
-  background: radial-gradient(1200px 420px at 85% 10%, rgba(52,211,153,.22), transparent 60%),
-              linear-gradient(135deg, #031d1c 0%, #05312c 55%, #0a4534 100%); }
-.hero svg.topo { position: absolute; right: -120px; top: -60px; width: 760px; height: 520px; opacity: .55; pointer-events: none; }
-.hero .wrap { position: relative; padding-top: 44px; padding-bottom: 40px; }
-.topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 30px; }
-.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #34d399; }
-.iconbtn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06);
-  color: #eaf6f1; border-radius: 999px; padding: 7px 14px; cursor: pointer; font-size: 13px; text-decoration: none; }
-.iconbtn:hover { background: rgba(255,255,255,.12); }
-.hero h1 { font-size: clamp(30px, 5vw, 50px); line-height: 1.08; margin: 0 0 14px; letter-spacing: -.02em; max-width: 760px; }
-.hero p.lede { font-size: clamp(15px, 2vw, 18px); color: #a9cbbf; max-width: 680px; margin: 0 0 28px; }
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 900px; }
-.stat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.13); border-radius: 16px; padding: 14px 16px; }
-.stat b { display: block; font-size: clamp(22px, 3.4vw, 32px); line-height: 1.1; color: #fff; letter-spacing: -.01em; }
-.stat b.hi { color: #34d399; }
-.stat span { font-size: 13px; color: #a9cbbf; }
+.hero { position: relative; overflow: hidden; color: #e9f6f1;
+  background: radial-gradient(900px 380px at 88% 0%, rgba(52,211,153,.22), transparent 60%),
+              linear-gradient(140deg, #031d1c 0%, #05312c 60%, #0a4534 100%); }
+.hero svg { position: absolute; right: -160px; top: -90px; width: 720px; height: 500px; opacity: .5; pointer-events: none; }
+.hero .wrap { position: relative; padding-top: 22px; padding-bottom: 44px; }
+.nav { display: flex; align-items: center; gap: 10px; margin-bottom: 42px; }
+.brand { font-weight: 700; letter-spacing: .02em; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.brand i { width: 22px; height: 22px; border-radius: 50%; border: 5px solid #34d399; display: inline-block; }
+.nav .sp { flex: 1; }
+.nav a, .nav button { white-space: nowrap; color: #cfe7de; text-decoration: none; font-size: 14px; background: none; border: 0; cursor: pointer; padding: 6px 10px; border-radius: 8px; }
+.nav a:hover, .nav button:hover { background: rgba(255,255,255,.08); color: #fff; }
+.hero h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.04; letter-spacing: -.025em; margin: 0 0 16px; }
+.hero h1 em { font-style: normal; color: #34d399; }
+.hero .lede { font-size: clamp(16px, 2.1vw, 19px); color: #b2d3c7; max-width: 700px; margin: 0 0 30px; }
+.nums { display: flex; gap: 34px; flex-wrap: wrap; align-items: flex-end; }
+.nums div b { display: block; font-size: clamp(30px, 4.6vw, 44px); line-height: 1; color: #fff; letter-spacing: -.02em; }
+.nums div:first-child b { color: #34d399; }
+.nums div span { font-size: 14px; color: #a7c8bc; display: block; max-width: 230px; margin-top: 4px; }
+.cta { margin-left: auto; background: #34d399; color: #03231c; font-weight: 700; border-radius: 999px; padding: 12px 22px; text-decoration: none; }
+.cta:hover { background: #5ee3b2; }
 
-/* toolbar */
-.toolbar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+/* primer: what counts as a target */
+.primer { background: var(--surface); border-bottom: 1px solid var(--line); }
+.primer .wrap { padding-top: 22px; padding-bottom: 22px; display: grid; grid-template-columns: 1.1fr repeat(3, 1fr); gap: 18px; align-items: start; }
+.primer h2 { font-size: 15px; margin: 0 0 4px; }
+.primer p { margin: 0; font-size: 14px; color: var(--ink2); }
+.primer .rule b { color: var(--accent); }
+.lab { border-left: 3px solid; padding-left: 12px; }
+.lab.nz { border-color: var(--nz); } .lab.rd { border-color: var(--rd); } .lab.ot { border-color: var(--ot); }
+.lab h3 { margin: 0 0 2px; font-size: 14.5px; }
+.lab.nz h3 { color: var(--nz); } .lab.rd h3 { color: var(--rd); } .lab.ot h3 { color: var(--ot); }
+
+/* controls */
+.controls { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 90%, transparent);
   backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
-.toolbar .wrap { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-top: 12px; padding-bottom: 12px; }
-.search { flex: 1 1 260px; display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line);
-  border-radius: 12px; padding: 0 12px; height: 40px; }
-.search input { border: 0; outline: 0; background: transparent; width: 100%; height: 38px; }
-.search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-.seg { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 3px; height: 40px; }
-.seg button { border: 0; background: transparent; padding: 0 12px; border-radius: 9px; cursor: pointer; color: var(--ink2); font-size: 14px; }
-.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
-select.pick { height: 40px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); padding: 0 10px; color: var(--ink2); }
-.chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; min-width: 0; max-width: 100%; }
-.chips .lead { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-right: 2px; }
-.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; font-size: 13px;
-  cursor: pointer; color: var(--ink2); display: inline-flex; align-items: center; gap: 6px; }
-.chip i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-.chip[aria-pressed="true"] { border-color: currentColor; font-weight: 600; }
-.chip.nz[aria-pressed="true"] { color: var(--nz); background: var(--nz-soft); }
-.chip.rd[aria-pressed="true"] { color: var(--rd); background: var(--rd-soft); }
-.chip.ot[aria-pressed="true"] { color: var(--ot); background: var(--ot-soft); }
-.chip.no[aria-pressed="true"] { color: var(--ink); background: var(--surface2); }
-.btn { height: 40px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); padding: 0 14px; cursor: pointer;
-  color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
-.btn:hover, .chip:hover { border-color: var(--accent); }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.controls .wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+.tabs { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 3px; }
+.tabs button { border: 0; background: none; border-radius: 9px; padding: 7px 14px; cursor: pointer; color: var(--ink2); font-size: 14px; white-space: nowrap; }
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
+.tabs.show button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.ctl { height: 38px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); padding: 0 10px; color: var(--ink2); font-size: 14px; }
+.search { flex: 1 1 200px; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+.search input { border: 0; outline: 0; background: none; width: 100%; height: 36px; font-size: 14px; }
+.search:focus-within, .ctl:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.listonly { display: none; }
+body.list .listonly { display: inline-flex; }
 
-/* results */
-.meta-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0 12px; color: var(--muted); font-size: 14px; }
-.meta-row b { color: var(--ink); }
-.linkish { background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; font-size: 14px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; padding-bottom: 40px; }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; cursor: pointer;
-  box-shadow: var(--shadow); transition: transform .12s ease, border-color .12s ease; display: flex; flex-direction: column; gap: 10px;
-  text-align: left; width: 100%; color: inherit; }
-.card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
-.card:focus-visible { outline: 3px solid var(--accent-soft); border-color: var(--accent); }
-.card-top { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.card-top .country { white-space: nowrap; }
-.flag { font-size: 20px; line-height: 1; }
-.country { font-weight: 650; }
-.region { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 0 1 auto; }
-.badge { margin-left: auto; font-size: 12px; font-weight: 650; border-radius: 999px; padding: 3px 10px; white-space: nowrap;
-  max-width: 55%; overflow: hidden; text-overflow: ellipsis; flex: 0 0 auto; }
-.badge.ok { color: var(--ok); background: var(--accent-soft); }
-.badge.diff { color: var(--warn); background: var(--warn-soft); }
-.preview { overflow-wrap: anywhere; color: var(--ink2); font-size: 14px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
-.who { display: grid; grid-template-columns: 64px 1fr; gap: 6px 8px; align-items: center; font-size: 12px; }
-.who > span { color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 11px; }
-.pills { display: flex; gap: 6px; flex-wrap: wrap; }
-.pill { font-size: 12px; font-weight: 600; border-radius: 999px; padding: 2px 10px; border: 1.5px solid transparent; }
-.pill.nz { color: var(--nz); background: var(--nz-soft); }
-.pill.rd { color: var(--rd); background: var(--rd-soft); }
-.pill.ot { color: var(--ot); background: var(--ot-soft); }
-.pill.none { color: var(--muted); background: var(--surface2); }
-.pill.off { border-color: var(--warn); border-style: dashed; }
-.idtag { color: var(--muted); font-size: 12px; }
-mark { border-radius: 4px; padding: 0 2px; color: inherit; }
-mark.yr { background: var(--year); }
-mark.nm { background: var(--num); }
-.sentinel { height: 1px; }
-.empty { text-align: center; padding: 60px 20px; color: var(--muted); grid-column: 1 / -1; }
-.skeleton { height: 210px; border-radius: 18px; background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
-  background-size: 200% 100%; animation: shimmer 1.2s infinite; border: 1px solid var(--line); }
-@keyframes shimmer { to { background-position: -200% 0; } }
-
-/* detail */
-dialog { border: 0; padding: 0; background: transparent; max-width: 920px; width: calc(100% - 32px); max-height: calc(100% - 32px); color: var(--ink); }
-dialog::backdrop { background: rgba(6,16,14,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-.sheet { background: var(--surface); border-radius: 22px; box-shadow: 0 30px 80px rgba(0,0,0,.35); overflow: hidden; display: flex; flex-direction: column; max-height: calc(100vh - 32px); }
-.sheet-head { display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
-.sheet-head .flag { font-size: 26px; }
-.sheet-head h2 { font-size: 19px; margin: 0; line-height: 1.2; }
-.sheet-head .sub { color: var(--muted); font-size: 13px; }
-.sheet-head .actions { margin-left: auto; display: flex; gap: 6px; }
-.round { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface2); cursor: pointer;
-  display: inline-flex; align-items: center; justify-content: center; color: var(--ink2); }
-.round:hover { border-color: var(--accent); color: var(--accent); }
-.sheet-body { overflow: auto; padding: 20px 22px 24px; display: grid; gap: 22px; }
-.sheet-body:focus { outline: none; }
-.sec-title { font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
-.passage { font-size: 16.5px; line-height: 1.7; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
-.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-.tag { font-size: 12px; color: var(--ink2); background: var(--surface2); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
-.cmp { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: 14px; }
-.cmp th, .cmp td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); }
-.cmp tr:last-child td { border-bottom: 0; }
-.cmp th { font-size: 12px; color: var(--muted); font-weight: 650; background: var(--surface2); }
-.cmp td.lab { font-weight: 650; }
-.cmp .pill { white-space: nowrap; }
-.yn { display: inline-block; min-width: 46px; text-align: center; border-radius: 999px; padding: 2px 10px; font-size: 12.5px; font-weight: 650; }
-.yn.y { background: var(--accent); color: var(--accent-ink); }
-.yn.n { background: var(--surface2); color: var(--muted); border: 1px solid var(--line); }
-.res { font-weight: 650; font-size: 13px; }
-.res.ok { color: var(--ok); } .res.bad { color: var(--warn); }
-.why { background: var(--accent-soft); border-radius: 16px; padding: 16px 18px; position: relative; }
-.why p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.65; }
-.sec-title .hint { text-transform: none; letter-spacing: 0; font-weight: 500; margin-left: 10px; white-space: nowrap; }
-.sw { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin: 0 4px 0 8px; vertical-align: -1px; }
+/* reader */
+.stage { padding: 28px 20px 60px; }
+.reader { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; }
+.r-head { display: flex; align-items: center; gap: 10px; padding: 16px 22px; border-bottom: 1px solid var(--line); }
+.r-head .flag { font-size: 26px; line-height: 1; }
+.r-head .who b { display: block; font-size: 17px; line-height: 1.2; }
+.r-head .who span { font-size: 13px; color: var(--muted); }
+.r-head .pos { margin-left: auto; font-size: 13px; color: var(--muted); text-align: right; white-space: nowrap; }
+.iconbtn { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface2); cursor: pointer; color: var(--ink2);
+  display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.iconbtn:hover { color: var(--accent); border-color: var(--accent); }
+.r-body { padding: 24px 26px 8px; }
+.r-text { font-size: clamp(17px, 2.1vw, 19px); line-height: 1.75; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.r-note { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0 0; font-size: 12.5px; color: var(--muted); }
+.sw { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 .sw.yr { background: var(--year); } .sw.nm { background: var(--num); }
-.sheet-foot { display: flex; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--line); background: var(--surface2); align-items: center; }
-.sheet-foot .grow { flex: 1; color: var(--muted); font-size: 13px; }
+mark { border-radius: 4px; padding: 0 2px; color: inherit; }
+mark.yr { background: var(--year); } mark.nm { background: var(--num); }
+.verdict { margin: 22px 26px 0; border-radius: 16px; padding: 14px 18px; display: flex; gap: 12px; align-items: center; font-weight: 650; }
+.verdict.ok { background: var(--accent-soft); color: var(--accent); }
+.verdict.diff { background: var(--warn-soft); color: var(--warn); }
+.verdict .ic { width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex: none; font-size: 16px; background: currentColor; }
+.verdict .ic span { color: var(--surface); font-weight: 800; }
+.vs { margin: 14px 26px 0; display: grid; grid-template-columns: 1fr 120px 120px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.vs > div { padding: 11px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; font-size: 15px; }
+.vs > div:nth-last-child(-n+3) { border-bottom: 0; }
+.vs .h { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--surface2); }
+.vs .c { justify-content: center; }
+.vs .bad { background: var(--warn-soft); }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.dot.nz { background: var(--nz); } .dot.rd { background: var(--rd); } .dot.ot { background: var(--ot); }
+.yes, .no { display: inline-flex; align-items: center; gap: 6px; font-weight: 650; font-size: 14px; }
+.yes { color: var(--accent); } .no { color: var(--muted); font-weight: 500; }
+.yes::before { content: "✓"; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+.no::before { content: "–"; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--line); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+.why { margin: 18px 26px 0; border-radius: 16px; background: var(--surface2); }
+.why summary { cursor: pointer; padding: 14px 18px; font-weight: 650; list-style: none; display: flex; align-items: center; gap: 10px; }
+.why summary::-webkit-details-marker { display: none; }
+.why summary::after { content: "▾"; margin-left: auto; color: var(--muted); transition: transform .15s; }
+.why[open] summary::after { transform: rotate(180deg); }
+.why summary .av { width: 26px; height: 26px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.why p { margin: 0; padding: 0 18px 16px 54px; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink2); font-size: 15px; line-height: 1.65; }
+.r-nav { display: flex; gap: 10px; padding: 20px 26px 24px; }
+.r-nav button { flex: 1; height: 48px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-weight: 650; font-size: 15px; color: var(--ink); }
+.r-nav button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.r-nav button.next { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.r-nav button.next:hover:not(:disabled) { filter: brightness(1.06); color: var(--accent-ink); }
+.r-nav button:disabled { opacity: .45; cursor: default; }
+.keys { text-align: center; color: var(--muted); font-size: 12.5px; margin-top: 12px; }
 kbd { font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 2px 5px; background: var(--surface); color: var(--ink2); }
+.fade { animation: fade .22s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
-/* about + footer */
-.about { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px 24px; margin: 10px 0 30px; box-shadow: var(--shadow); }
-.about h3 { margin: 0 0 14px; font-size: 18px; }
+/* list */
+.listview { display: none; }
+body.list .listview { display: block; }
+body.list .readview { display: none; }
+.lhead, .row { display: grid; grid-template-columns: 190px 1fr 150px 150px 30px; gap: 14px; align-items: center; }
+.lhead { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 0 16px 8px; }
+.rows { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+.row { width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: none; padding: 12px 16px; cursor: pointer; color: inherit; font-size: 14px; }
+.row:hover { background: var(--surface2); }
+.row .c { display: flex; gap: 8px; align-items: center; font-weight: 600; min-width: 0; }
+.row .c span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .t { color: var(--ink2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.tag { font-size: 12px; font-weight: 600; border-radius: 999px; padding: 1px 9px; white-space: nowrap; }
+.tag.nz { color: var(--nz); background: var(--nz-soft); } .tag.rd { color: var(--rd); background: var(--rd-soft); }
+.tag.ot { color: var(--ot); background: var(--ot-soft); } .tag.none { color: var(--muted); background: var(--surface2); }
+.st { width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; }
+.st.ok { background: var(--accent-soft); color: var(--accent); } .st.diff { background: var(--warn-soft); color: var(--warn); }
+.lcount { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+.sentinel { height: 1px; }
+
+/* about */
+.about { padding: 10px 20px 30px; }
+.about h2 { font-size: 22px; margin: 0 0 16px; }
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.step { background: var(--surface2); border-radius: 14px; padding: 14px; font-size: 14px; color: var(--ink2); }
-.step b { display: flex; align-items: center; gap: 8px; color: var(--ink); margin-bottom: 4px; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; font-size: 14px; color: var(--ink2); }
+.step b { display: flex; align-items: center; gap: 8px; color: var(--ink); margin-bottom: 6px; }
 .step b i { font-style: normal; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
-footer { color: var(--muted); font-size: 13px; padding: 10px 0 40px; }
-.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); opacity: 0; background: var(--ink); color: var(--bg);
-  padding: 10px 16px; border-radius: 12px; font-size: 14px; transition: all .2s ease; z-index: 50; pointer-events: none; }
+footer { color: var(--muted); font-size: 13px; padding: 8px 20px 50px; }
+.toast { position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%) translateY(16px); opacity: 0; background: var(--ink); color: var(--bg);
+  padding: 9px 16px; border-radius: 12px; font-size: 14px; transition: all .2s ease; z-index: 50; pointer-events: none; }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-@media (max-width: 760px) {
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 820px) {
+  .primer .wrap { grid-template-columns: 1fr 1fr; }
+  .primer .rule { grid-column: 1 / -1; }
   .steps { grid-template-columns: 1fr 1fr; }
-  .grid { grid-template-columns: 1fr; }
-  .hero .wrap { padding-top: 26px; padding-bottom: 28px; }
-  .card-top .region { display: none; }
-  .cmp th, .cmp td { padding: 9px 8px; }
-  .res .w { display: none; }
-  .sheet-body { padding: 16px 16px 20px; }
-  .badge { max-width: 60%; }
-  .topbar { margin-bottom: 20px; }
-  .chips { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; scrollbar-width: none; }
-  dialog { width: 100%; max-width: 100%; max-height: 100%; margin: 0; height: 100%; }
-  .sheet { border-radius: 0; max-height: 100vh; height: 100%; }
-  .kbdhint { display: none; }
+  .lhead { display: none; }
+  .row { grid-template-columns: 1fr 30px; grid-template-areas: "c st" "t t" "e e" "a a"; gap: 6px; }
+  .row .c { grid-area: c; } .row .t { grid-area: t; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .row .e { grid-area: e; display: flex; gap: 8px; align-items: center; } .row .a { grid-area: a; display: flex; gap: 8px; align-items: center; }
+  .row .st { grid-area: st; }
+  .row .e::before { content: "Experts"; } .row .a::before { content: "AI"; }
+  .row .e::before, .row .a::before { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; width: 58px; flex: none; }
 }
-@media (prefers-reduced-motion: reduce) { .card, .toast { transition: none; } .skeleton { animation: none; } }
+@media (max-width: 600px) {
+  .hero .wrap { padding-bottom: 30px; }
+  .nav { margin-bottom: 26px; }
+  .nav .hide-s { display: none; }
+  .nav { gap: 4px; }
+  .brand { font-size: 15px; gap: 8px; }
+  .nav a, .nav button { padding: 6px 6px; }
+  .nums { gap: 22px; }
+  .cta { margin-left: 0; }
+  .primer .wrap { grid-template-columns: 1fr; gap: 12px; }
+  .controls .wrap { gap: 8px; }
+  .tabs button { padding: 7px 10px; }
+  .stage { padding: 18px 12px 40px; }
+  .r-head, .r-body { padding-left: 18px; padding-right: 18px; }
+  .verdict, .vs, .why { margin-left: 18px; margin-right: 18px; }
+  .vs { grid-template-columns: 1fr 70px 70px; }
+  .vs > div { padding: 10px 10px; font-size: 14px; }
+  .why p { padding-left: 18px; }
+  .r-nav { position: sticky; bottom: 0; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); border-top: 1px solid var(--line); padding: 12px 14px; margin-top: 14px; }
+  .r-nav button { font-size: 14px; }
+  .keys { display: none; }
+  .steps { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .fade { animation: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 <header class="hero">
-  <svg class="topo" viewBox="0 0 760 520" aria-hidden="true" id="topo"></svg>
+  <svg viewBox="0 0 720 500" aria-hidden="true" id="topo"></svg>
   <div class="wrap">
-    <div class="topbar">
-      <span class="eyebrow">GEPA · Climate Policy Radar</span>
-      <span style="display:flex;gap:8px">
-        <button class="iconbtn" id="themeBtn" type="button" aria-label="Switch light or dark theme">◐ Theme</button>
-        <a class="iconbtn" href="https://github.com/vedpiyush93-stack/GEPA_Climate_Policy">Code &amp; method ↗</a>
-      </span>
-    </div>
-    <h1>Every climate-policy passage, classified and explained</h1>
-    <p class="lede" id="lede">Climate Policy Radar's expert-labelled passages from national laws and policies. Each one is labelled by a GEPA-tuned Claude Haiku that never saw its country, with the model's own explanation.</p>
-    <div class="stats" id="stats">
-      <div class="stat"><b>&nbsp;</b><span>loading</span></div><div class="stat"><b>&nbsp;</b><span>&nbsp;</span></div>
-      <div class="stat"><b>&nbsp;</b><span>&nbsp;</span></div><div class="stat"><b>&nbsp;</b><span>&nbsp;</span></div>
+    <nav class="nav">
+      <span class="brand"><i></i>Climate Targets Explorer</span>
+      <span class="sp"></span>
+      <a href="#about" class="hide-s">How it works</a>
+      <a href="https://github.com/vedpiyush93-stack/GEPA_Climate_Policy">Code ↗</a>
+      <button type="button" id="theme" aria-label="Switch light or dark theme" title="Light or dark">◐</button>
+    </nav>
+    <h1>Can AI spot a <em>climate target</em>?</h1>
+    <p class="lede">Governments write climate goals into laws and policies. Experts read passages from these documents and marked every target. A small AI model, coached with GEPA, read the same passages without ever seeing their country. Compare their answers, one passage at a time.</p>
+    <div class="nums" id="nums">
+      <div><b>&nbsp;</b><span>loading…</span></div>
+      <a class="cta" href="#explore">Start exploring ↓</a>
     </div>
   </div>
 </header>
 
-<div class="toolbar">
+<section class="primer" aria-label="What counts as a target">
   <div class="wrap">
-    <label class="search" aria-label="Search passages">
-      <span aria-hidden="true" style="color:var(--muted)">⌕</span>
-      <input id="q" type="search" placeholder="Search passages or countries (e.g. hydrogen, India, 2030)" autocomplete="off">
-    </label>
-    <div class="seg" role="group" aria-label="Agreement with experts">
-      <button type="button" data-agree="all" aria-pressed="true">All</button>
-      <button type="button" data-agree="ok" aria-pressed="false">Agrees</button>
-      <button type="button" data-agree="diff" aria-pressed="false">Differs</button>
+    <div class="rule"><h2>What counts as a target?</h2><p>A goal with <b>a number</b> and <b>a deadline</b>. Each passage can hold any of three kinds, or none.</p></div>
+    <div class="lab nz"><h3>Net zero</h3><p>A commitment to balance emissions with removals, reaching net zero.</p></div>
+    <div class="lab rd"><h3>Emission reduction</h3><p>A promise to cut greenhouse gas emissions, nationwide or in one sector.</p></div>
+    <div class="lab ot"><h3>Other target</h3><p>Any other goal with a number and a date, e.g. renewable energy.</p></div>
+  </div>
+</section>
+
+<div class="controls" id="explore">
+  <div class="wrap">
+    <div class="tabs" role="group" aria-label="View">
+      <button type="button" data-mode="read" aria-pressed="true">One at a time</button>
+      <button type="button" data-mode="list" aria-pressed="false">List</button>
     </div>
-    <select class="pick" id="region" aria-label="Region"><option value="">All regions</option></select>
-    <select class="pick" id="sort" aria-label="Sort">
-      <option value="order">Dataset order</option><option value="short">Shortest first</option>
-      <option value="long">Longest first</option><option value="country">Country A to Z</option>
+    <div class="tabs show" role="group" aria-label="Show">
+      <button type="button" data-show="all" aria-pressed="true">All</button>
+      <button type="button" data-show="ok" aria-pressed="false">AI agrees</button>
+      <button type="button" data-show="diff" aria-pressed="false">AI disagrees</button>
+    </div>
+    <select class="ctl" id="label" aria-label="Filter by the experts' label">
+      <option value="">Any label</option><option value="0">Net zero</option><option value="1">Emission reduction</option>
+      <option value="2">Other target</option><option value="none">No target</option>
     </select>
-    <button class="btn primary" id="surprise" type="button">✦ Surprise me</button>
-    <div class="chips" role="group" aria-label="Filter by the experts' labels">
-      <span class="lead">Experts said</span>
-      <button class="chip nz" type="button" data-lab="0" aria-pressed="false"><i style="background:var(--nz)"></i>Net zero</button>
-      <button class="chip rd" type="button" data-lab="1" aria-pressed="false"><i style="background:var(--rd)"></i>Emission reduction</button>
-      <button class="chip ot" type="button" data-lab="2" aria-pressed="false"><i style="background:var(--ot)"></i>Other target</button>
-      <button class="chip no" type="button" data-lab="none" aria-pressed="false"><i style="background:var(--muted)"></i>No target</button>
-    </div>
+    <label class="ctl search"><span aria-hidden="true">⌕</span><span class="sr">Search</span>
+      <input id="q" type="search" placeholder="Search words or countries" autocomplete="off"></label>
+    <select class="ctl listonly" id="region" aria-label="Region"><option value="">All regions</option></select>
+    <select class="ctl listonly" id="sort" aria-label="Sort">
+      <option value="order">Dataset order</option><option value="short">Shortest first</option><option value="country">Country A to Z</option>
+    </select>
   </div>
 </div>
 
-<main class="wrap">
-  <div class="meta-row"><span id="count">Loading passages…</span><button class="linkish" id="clear" type="button" hidden>Clear filters</button></div>
-  <div class="grid" id="grid" aria-live="polite"></div>
-  <div class="sentinel" id="sentinel"></div>
-
-  <section class="about" id="about">
-    <h3>How these labels were made</h3>
-    <div class="steps">
-      <div class="step"><b><i>1</i>Expert labels</b>Climate Policy Radar's domain experts marked each passage: does it hold a net zero target, an emission reduction target, or another target with a number and a deadline?</div>
-      <div class="step"><b><i>2</i>Split by country</b>The countries were split into five groups. Each group was held out once, so a model never sees the country it is judging.</div>
-      <div class="step"><b><i>3</i>GEPA coaching</b>On the other four groups, GEPA had Claude Sonnet read Claude Haiku's mistakes and rewrite its instructions, starting from the experts' own written definition.</div>
-      <div class="step"><b><i>4</i>Every passage</b>Each fold's coached Haiku then labelled every passage of its held-out countries and explained why. That is what you are browsing.</div>
-    </div>
+<main class="wrap stage">
+  <section class="readview narrow" aria-live="polite">
+    <article class="reader" id="reader">
+      <div class="r-head"><span class="flag" id="rFlag"></span><div class="who"><b id="rCountry">Loading…</b><span id="rRegion"></span></div>
+        <span class="pos" id="rPos"></span><button class="iconbtn" id="rCopy" type="button" aria-label="Copy a link to this passage" title="Copy link">🔗</button></div>
+      <div class="r-body"><p class="r-text" id="rText"></p>
+        <div class="r-note"><span><i class="sw yr"></i>years</span><span><i class="sw nm"></i>numbers with units</span><span id="rTr"></span></div></div>
+      <div class="verdict" id="rVerdict"></div>
+      <div class="vs" id="rVs"></div>
+      <details class="why" id="rWhy" open><summary><span class="av">AI</span>Why the AI answered this way</summary><p id="rWhyText"></p></details>
+      <div class="r-nav"><button type="button" id="prev">← Previous</button><button type="button" id="shuffle">⤮ Shuffle</button><button type="button" class="next" id="next">Next →</button></div>
+    </article>
+    <p class="keys"><kbd>←</kbd> <kbd>→</kbd> previous and next · <kbd>S</kbd> shuffle · <kbd>/</kbd> search</p>
   </section>
-  <footer>
-    Data: Climate Policy Radar, <a href="https://huggingface.co/datasets/ClimatePolicyRadar/national-climate-targets">national-climate-targets</a> (CC BY 4.0; Juhasz et al. 2024, <a href="https://arxiv.org/abs/2404.02822">arXiv:2404.02822</a>).
-    Method: GEPA (Agrawal et al., International Conference on Learning Representations 2026, <a href="https://arxiv.org/abs/2507.19457">arXiv:2507.19457</a>).
-    Code, data and cached model responses: <a href="https://github.com/vedpiyush93-stack/GEPA_Climate_Policy">GitHub</a>.
-  </footer>
+
+  <section class="listview">
+    <p class="lcount" id="lcount"></p>
+    <div class="lhead"><span>Country</span><span>Passage</span><span>Experts</span><span>AI</span><span></span></div>
+    <div class="rows" id="rows"></div>
+    <div class="sentinel" id="sentinel"></div>
+  </section>
 </main>
 
-<dialog id="detail" aria-labelledby="dTitle">
-  <div class="sheet">
-    <div class="sheet-head">
-      <span class="flag" id="dFlag"></span>
-      <div><h2 id="dTitle"></h2><div class="sub" id="dSub"></div></div>
-      <div class="actions">
-        <button class="round" id="dPrev" type="button" aria-label="Previous passage">←</button>
-        <button class="round" id="dNext" type="button" aria-label="Next passage">→</button>
-        <button class="round" id="dClose" type="button" aria-label="Close">✕</button>
-      </div>
-    </div>
-    <div class="sheet-body" tabindex="-1" autofocus>
-      <section>
-        <p class="sec-title">The passage <span class="hint">highlighted: <i class="sw yr"></i>years <i class="sw nm"></i>numbers with units</span></p>
-        <p class="passage" id="dPassage"></p>
-        <div class="tags" id="dTags"></div>
-      </section>
-      <section>
-        <p class="sec-title">The labels</p>
-        <table class="cmp"><thead><tr><th>Label</th><th>Experts</th><th>GEPA model</th><th></th></tr></thead><tbody id="dTable"></tbody></table>
-      </section>
-      <section>
-        <p class="sec-title">The model's explanation</p>
-        <div class="why"><p id="dWhy"></p></div>
-      </section>
-    </div>
-    <div class="sheet-foot">
-      <span class="grow kbdhint"><kbd>←</kbd> <kbd>→</kbd> browse · <kbd>Esc</kbd> close</span>
-      <button class="btn" id="dCopy" type="button">🔗 Copy link</button>
-    </div>
+<section class="wrap about" id="about">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><b><i>1</i>Expert labels</b>Climate Policy Radar's experts marked each passage: net zero target, emission reduction target, other target, or none.</div>
+    <div class="step"><b><i>2</i>Unseen countries</b>Countries were split into five groups. Each group was held out once, so the AI never judged a country it had learned from.</div>
+    <div class="step"><b><i>3</i>Coaching with GEPA</b>A larger model, Claude Sonnet, read the small model's mistakes and rewrote its instructions, starting from the experts' own definition.</div>
+    <div class="step"><b><i>4</i>Every passage</b>The coached small model, Claude Haiku, then labelled every passage of its unseen countries and explained each answer.</div>
   </div>
-</dialog>
+</section>
+<footer class="wrap">
+  Passages, expert labels, countries and regions: Climate Policy Radar, <a href="https://huggingface.co/datasets/ClimatePolicyRadar/national-climate-targets">national-climate-targets</a> (CC BY 4.0; Juhasz et al. 2024, <a href="https://arxiv.org/abs/2404.02822">arXiv:2404.02822</a>). Country names and flags are derived from the dataset's country codes.
+  Method: GEPA (Agrawal et al., International Conference on Learning Representations 2026, <a href="https://arxiv.org/abs/2507.19457">arXiv:2507.19457</a>).
+  Code, data and cached model responses: <a href="https://github.com/vedpiyush93-stack/GEPA_Climate_Policy">GitHub</a>.
+</footer>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
 "use strict";
-const LABELS = [
-  { name: "Net zero", long: "Net zero target", cls: "nz" },
-  { name: "Emission reduction", long: "Emission reduction target", cls: "rd" },
-  { name: "Other target", long: "Other target", cls: "ot" },
-];
+const LAB = [{ name: "Net zero", cls: "nz" }, { name: "Emission reduction", cls: "rd" }, { name: "Other target", cls: "ot" }];
 const $ = id => document.getElementById(id);
-const S = { q: "", agree: "all", labs: new Set(), region: "", sort: "order", list: [], shown: 0, cur: -1 };
-let DATA = [], META = {};
+const S = { mode: "read", show: "all", label: "", q: "", region: "", sort: "order", list: [], idx: 0, shown: 0 };
+let DATA = [], META = {}, IDX = new Map();
 
 function el(tag, attrs, ...kids) {
   const n = document.createElement(tag);
@@ -318,10 +326,10 @@ function el(tag, attrs, ...kids) {
 const flag = cc => cc ? String.fromCodePoint(...[...cc.toUpperCase()].map(c => 0x1F1E6 + c.charCodeAt(0) - 65)) : "🌐";
 const pct = x => `${Math.round(x * 100)}%`;
 const fmt = n => n.toLocaleString("en-US");
-const yes = bits => bits.map((b, i) => b ? i : -1).filter(i => i >= 0);
 const agrees = d => d.e.every((b, i) => b === d.m[i]);
+const diffs = d => LAB.filter((_, i) => d.e[i] !== d.m[i]).map(L => L.name);
 
-// Highlight years and numbers with units, built as DOM nodes (never innerHTML: the text is data).
+// years and numbers with units, built as DOM nodes (the text is data, never parsed as HTML)
 const HL = /\b(?:19|20)\d{2}\b|\b\d+(?:[.,]\d+)?\s?(?:%|per ?cent|percent|GW|MW|kW|Mt|Gt|kt|MtCO2e?|tCO2e?|tonnes?|million|billion|ha|hectares)(?![\w])/gi;
 function highlight(text) {
   const f = document.createDocumentFragment(); let pos = 0;
@@ -333,172 +341,179 @@ function highlight(text) {
   f.append(text.slice(pos));
   return f;
 }
-
-function pills(bits, ref) {
-  const box = el("div", { class: "pills" });
-  const on = yes(bits);
-  if (!on.length) box.append(el("span", { class: "pill none" + (ref && yes(ref).length ? " off" : ""), text: "No target" }));
-  for (const i of on) box.append(el("span", { class: `pill ${LABELS[i].cls}` + (ref && ref[i] !== bits[i] ? " off" : ""), text: LABELS[i].name }));
-  return box;
-}
-function diffText(d) {
-  const bad = d.e.map((b, i) => b !== d.m[i] ? LABELS[i].name : null).filter(Boolean);
-  return bad.length ? `Differs: ${bad.join(", ")}` : "Agrees";
+function tags(bits) {
+  const on = LAB.map((L, i) => bits[i] ? el("span", { class: `tag ${L.cls}`, text: L.name }) : null).filter(Boolean);
+  return el("span", { class: "tags" }, ...(on.length ? on : [el("span", { class: "tag none", text: "No target" })]));
 }
 
-function card(d) {
-  const ok = agrees(d);
-  const c = el("button", { class: "card", type: "button", "aria-label": `${d.c}, passage ${d.id}. ${diffText(d)}` },
-    el("div", { class: "card-top" }, el("span", { class: "flag", "aria-hidden": "true", text: flag(d.cc) }),
-      el("span", { class: "country", text: d.c }), el("span", { class: "region", text: d.r }),
-      el("span", { class: "badge " + (ok ? "ok" : "diff"), text: ok ? "✓ Agrees" : "≠ " + diffText(d).replace("Differs: ", "") })),
-    el("div", { class: "preview" }, highlight(d.p)),
-    el("div", { class: "who" }, el("span", { text: "Experts" }), pills(d.e), el("span", { text: "Model" }), pills(d.m, d.e)));
-  c.addEventListener("click", () => openDetail(d.id));
-  return c;
-}
-
-function apply() {
+function filter() {
   const q = S.q.trim().toLowerCase();
-  let list = DATA.filter(d =>
-    (S.agree === "all" || (S.agree === "ok") === agrees(d)) &&
-    (!S.region || d.r === S.region) &&
-    [...S.labs].every(l => l === "none" ? !d.e.some(Boolean) : d.e[+l] === 1) &&
-    (!q || d._s.includes(q)));
-  const by = { order: (a, b) => a.id - b.id, short: (a, b) => a.p.length - b.p.length, long: (a, b) => b.p.length - a.p.length,
+  const list = DATA.filter(d =>
+    (S.show === "all" || (S.show === "ok") === agrees(d)) &&
+    (S.label === "" || (S.label === "none" ? !d.e.some(Boolean) : d.e[+S.label] === 1)) &&
+    (!S.region || d.r === S.region) && (!q || d._s.includes(q)));
+  const by = { order: (a, b) => a.id - b.id, short: (a, b) => a.p.length - b.p.length,
                country: (a, b) => a.c.localeCompare(b.c) || a.id - b.id }[S.sort];
-  S.list = list.sort(by); S.shown = 0;
-  $("grid").replaceChildren();
-  const filtered = S.q || S.agree !== "all" || S.labs.size || S.region;
-  $("clear").hidden = !filtered;
-  $("count").replaceChildren(el("span", {}, el("b", { text: fmt(list.length) }), ` of ${fmt(DATA.length)} passages`));
-  if (!list.length) $("grid").append(el("div", { class: "empty", text: "No passages match. Try fewer filters." }));
+  return list.sort(by);
+}
+function refresh(keepId) {
+  S.list = filter();
+  const i = keepId != null ? S.list.findIndex(d => d.id === keepId) : -1;
+  S.idx = i >= 0 ? i : 0;
+  renderRead(false); renderList();
+}
+const curId = () => (S.list[S.idx] ? S.list[S.idx].id : null);
+
+// ----- reader -----
+function renderRead(animate = true) {
+  const d = S.list[S.idx];
+  if (!d) {
+    $("rFlag").textContent = ""; $("rCountry").textContent = "No passages match these filters"; $("rRegion").textContent = "Try fewer filters.";
+    $("rPos").textContent = ""; $("rText").textContent = ""; $("rTr").textContent = "";
+    $("rVerdict").className = "verdict"; $("rVerdict").replaceChildren(); $("rVs").replaceChildren(); $("rWhyText").textContent = "";
+    ["prev", "next", "shuffle"].forEach(b => { $(b).disabled = true; }); return;
+  }
+  $("rFlag").textContent = flag(d.cc);
+  $("rCountry").textContent = d.c;
+  $("rRegion").textContent = d.r;
+  $("rPos").textContent = `${fmt(S.idx + 1)} of ${fmt(S.list.length)}`;
+  $("rText").replaceChildren(highlight(d.p));
+  $("rTr").textContent = d.tr ? "Translated into English" : "";
+  const ok = agrees(d), bad = diffs(d);
+  $("rVerdict").className = "verdict " + (ok ? "ok" : "diff");
+  $("rVerdict").replaceChildren(el("span", { class: "ic" }, el("span", { text: ok ? "✓" : "!" })),
+    el("span", { text: ok ? "The AI agrees with the experts on all three labels" : `The AI and the experts disagree on: ${bad.join(", ")}` }));
+  const cells = [el("div", { class: "h", text: "Label" }), el("div", { class: "h c", text: "Experts" }), el("div", { class: "h c", text: "AI" })];
+  LAB.forEach((L, i) => {
+    const off = d.e[i] !== d.m[i] ? " bad" : "";
+    cells.push(el("div", { class: "lb" + off }, el("span", { class: `dot ${L.cls}` }), L.name),
+      el("div", { class: "c" + off }, el("span", { class: d.e[i] ? "yes" : "no", text: d.e[i] ? "Yes" : "No" })),
+      el("div", { class: "c" + off }, el("span", { class: d.m[i] ? "yes" : "no", text: d.m[i] ? "Yes" : "No" })));
+  });
+  $("rVs").replaceChildren(...cells);
+  $("rWhyText").textContent = d.x || "(no explanation recorded)";
+  $("prev").disabled = S.idx <= 0; $("next").disabled = S.idx >= S.list.length - 1; $("shuffle").disabled = S.list.length < 2;
+  if (animate) { const card = $("reader"); card.classList.remove("fade"); void card.offsetWidth; card.classList.add("fade"); }
+  if (S.mode === "read") history.replaceState(null, "", `#p=${d.id}`);
+}
+function go(k) {
+  const n = S.idx + k; if (n < 0 || n >= S.list.length) return;
+  S.idx = n; renderRead();
+}
+function shuffle() {
+  if (S.list.length < 2) return;
+  let n; do { n = Math.floor(Math.random() * S.list.length); } while (n === S.idx);
+  S.idx = n; renderRead();
+}
+
+// ----- list -----
+function renderList() {
+  S.shown = 0; $("rows").replaceChildren();
+  $("lcount").textContent = `${fmt(S.list.length)} of ${fmt(DATA.length)} passages. Click one to read it.`;
+  if (!S.list.length) $("rows").append(el("div", { class: "empty", text: "No passages match these filters." }));
   more();
 }
 function more() {
-  const next = S.list.slice(S.shown, S.shown + 48);
-  for (const d of next) $("grid").append(card(d));
-  S.shown += next.length;
+  if (S.mode !== "list") return;
+  for (const d of S.list.slice(S.shown, S.shown + 60)) {
+    const ok = agrees(d);
+    const r = el("button", { class: "row", type: "button", "aria-label": `${d.c}: ${ok ? "AI agrees" : "AI disagrees"}` },
+      el("span", { class: "c" }, el("span", { text: flag(d.cc) }), el("span", { text: d.c })),
+      el("span", { class: "t", text: d.p }),
+      el("span", { class: "e" }, tags(d.e)), el("span", { class: "a" }, tags(d.m)),
+      el("span", { class: "st " + (ok ? "ok" : "diff"), title: ok ? "AI agrees" : "AI disagrees: " + diffs(d).join(", "), text: ok ? "✓" : "≠" }));
+    r.addEventListener("click", () => { S.idx = S.list.indexOf(d); setMode("read"); $("explore").scrollIntoView(); });
+    $("rows").append(r);
+  }
+  S.shown = Math.min(S.shown + 60, S.list.length);
+}
+function setMode(m) {
+  S.mode = m; document.body.classList.toggle("list", m === "list");
+  document.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+  if (m === "list") { renderList(); history.replaceState(null, "", location.pathname + location.search + "#list"); }
+  else renderRead(false);
 }
 
-function openDetail(id) {
-  const d = DATA[IDX.get(id)]; if (!d) return;
-  S.cur = S.list.findIndex(x => x.id === id);
-  $("dFlag").textContent = flag(d.cc);
-  $("dTitle").textContent = d.c;
-  $("dSub").textContent = `${d.r} · passage #${d.id} · held-out fold ${d.f + 1}`;
-  $("dPassage").replaceChildren(highlight(d.p));
-  $("dTags").replaceChildren(...[d.tr ? "Translated into English" : null, `${fmt(d.p.length)} characters`].filter(Boolean)
-    .map(t => el("span", { class: "tag", text: t })));
-  $("dTable").replaceChildren(...LABELS.map((L, i) => {
-    const ok = d.e[i] === d.m[i];
-    return el("tr", {}, el("td", { class: "lab" }, el("span", { class: `pill ${L.cls}`, text: L.name })),
-      el("td", {}, el("span", { class: "yn " + (d.e[i] ? "y" : "n"), text: d.e[i] ? "Yes" : "No" })),
-      el("td", {}, el("span", { class: "yn " + (d.m[i] ? "y" : "n"), text: d.m[i] ? "Yes" : "No" })),
-      el("td", {}, el("span", { class: "res " + (ok ? "ok" : "bad") }, ok ? "✓" : "✗", el("span", { class: "w", text: ok ? " same" : " differs" }))));
-  }));
-  $("dWhy").textContent = d.x || "(no explanation recorded)";
-  $("dPrev").disabled = S.cur <= 0; $("dNext").disabled = S.cur < 0 || S.cur >= S.list.length - 1;
-  history.replaceState(null, "", `#p=${d.id}`);
-  const dlg = $("detail");
-  if (!dlg.open) dlg.showModal();
-  dlg.querySelector(".sheet-body").scrollTop = 0;
-}
-function step(k) { const n = S.list[S.cur + k]; if (n) openDetail(n.id); }
-function closeDetail() { $("detail").close(); }
-
+// ----- chrome -----
 function toast(msg) { const t = $("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 1600); }
-
-function stats() {
-  const tiles = [
-    [pct(META.exact), "all three labels match the experts", true],
-    [fmt(META.n), "passages, every one classified", false],
-    [String(META.countries), "countries", false],
-    ["≥ " + pct(META.label_agree_min), "agreement on each single label", false],
-  ];
-  $("stats").replaceChildren(...tiles.map(([v, l, hi]) => el("div", { class: "stat" }, el("b", { class: hi ? "hi" : "", text: v }), el("span", { text: l }))));
-  $("lede").textContent = `All ${fmt(META.n)} expert-labelled passages from national laws and policies of ${META.countries} countries ` +
-    `(Climate Policy Radar). Each is labelled by a GEPA-tuned Claude Haiku that never saw its country, with the model's own explanation.`;
-}
-
 function topo() {
-  const svg = $("topo"), cx = 420, cy = 250, NS = "http://www.w3.org/2000/svg";
+  const svg = $("topo"), cx = 400, cy = 230, NS = "http://www.w3.org/2000/svg";
   for (let k = 0; k < 11; k++) {
-    const r0 = 60 + k * 30; let d = "";
+    const r0 = 55 + k * 29; let d = "";
     for (let j = 0; j <= 180; j++) {
       const th = 2 * Math.PI * j / 180, r = r0 * (1 + 0.07 * Math.sin(3 * th + k * .45) + 0.045 * Math.sin(5 * th - k * .3));
       d += (j ? "L" : "M") + (cx + r * Math.cos(th)).toFixed(1) + "," + (cy + 0.78 * r * Math.sin(th)).toFixed(1);
     }
     const p = document.createElementNS(NS, "path");
     p.setAttribute("d", d + "Z"); p.setAttribute("fill", "none"); p.setAttribute("stroke", "#7ee2b8");
-    p.setAttribute("stroke-width", "1.2"); p.setAttribute("opacity", (0.3 - k * 0.022).toFixed(3));
+    p.setAttribute("stroke-width", "1.2"); p.setAttribute("opacity", (0.32 - k * 0.024).toFixed(3));
     svg.append(p);
   }
 }
-
 function theme() {
   let saved = null; try { saved = localStorage.getItem("theme"); } catch (e) {}
   if (saved) document.documentElement.dataset.theme = saved;
-  $("themeBtn").addEventListener("click", () => {
-    const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark"
-                                                         : matchMedia("(prefers-color-scheme: dark)").matches;
-    const next = dark ? "light" : "dark";
+  $("theme").addEventListener("click", () => {
+    const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = next;
     try { localStorage.setItem("theme", next); } catch (e) {}
   });
 }
+function loadData() {   // a script tag (not fetch) so the page also works when opened straight from disk
+  return new Promise((ok, fail) => {
+    const sc = document.createElement("script"); sc.src = "passages.js";
+    sc.onload = () => window.PASSAGES ? ok(window.PASSAGES) : fail(new Error("no data"));
+    sc.onerror = fail; document.head.append(sc);
+  });
+}
 
-let IDX = new Map();
 async function init() {
+  const startHash = location.hash;
   topo(); theme();
-  $("grid").replaceChildren(...Array.from({ length: 6 }, () => el("div", { class: "skeleton" })));
   let data;
-  try {   // a script tag (not fetch) so the page also works when index.html is opened straight from disk
-    data = await new Promise((ok, fail) => {
-      const sc = document.createElement("script"); sc.src = "passages.js";
-      sc.onload = () => window.PASSAGES ? ok(window.PASSAGES) : fail(new Error("no data"));
-      sc.onerror = fail; document.head.append(sc);
-    });
-  }
-  catch (e) { $("count").textContent = "Could not load the passages. Please refresh."; $("grid").replaceChildren(); return; }
+  try { data = await loadData(); } catch (e) { $("rCountry").textContent = "Could not load the passages. Please refresh."; return; }
   META = data.meta; DATA = data.passages;
   DATA.forEach((d, i) => { d._s = (d.p + " " + d.c + " " + d.r).toLowerCase(); IDX.set(d.id, i); });
+  $("nums").replaceChildren(
+    el("div", {}, el("b", { text: pct(META.exact) }), el("span", { text: "of passages: the AI matches the experts on every label" })),
+    el("div", {}, el("b", { text: fmt(META.n) }), el("span", { text: "passages" })),
+    el("div", {}, el("b", { text: String(META.countries) }), el("span", { text: "countries" })),
+    el("a", { class: "cta", href: "#explore", text: "Start exploring ↓" }));
   for (const r of [...new Set(DATA.map(d => d.r))].sort()) $("region").append(el("option", { value: r, text: r }));
-  stats(); apply();
 
-  let t; $("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { S.q = e.target.value; apply(); }, 120); });
-  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
-    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
-    S.agree = b.dataset.agree; apply();
-  }));
-  document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
-    const on = b.getAttribute("aria-pressed") !== "true";
-    b.setAttribute("aria-pressed", String(on));
-    on ? S.labs.add(b.dataset.lab) : S.labs.delete(b.dataset.lab); apply();
-  }));
-  $("region").addEventListener("change", e => { S.region = e.target.value; apply(); });
-  $("sort").addEventListener("change", e => { S.sort = e.target.value; apply(); });
-  $("clear").addEventListener("click", () => {
-    S.q = ""; $("q").value = ""; S.agree = "all"; S.labs.clear(); S.region = ""; $("region").value = "";
-    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.agree === "all")));
-    document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", "false")); apply();
-  });
-  $("surprise").addEventListener("click", () => {
-    const pool = S.list.length ? S.list : DATA; openDetail(pool[Math.floor(Math.random() * pool.length)].id);
-  });
-  new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) more(); }, { rootMargin: "600px" }).observe($("sentinel"));
+  S.list = filter();
+  const m = startHash.match(/^#p=(\d+)$/);
+  if (m && IDX.has(+m[1])) S.idx = S.list.findIndex(d => d.id === +m[1]);
+  else {   // open on a readable passage that holds at least one target
+    const good = S.list.map((d, i) => [d, i]).filter(([d]) => d.e.some(Boolean) && d.p.length >= 150 && d.p.length <= 700);
+    S.idx = good.length ? good[Math.floor(Math.random() * good.length)][1] : 0;
+  }
+  renderRead(false);
+  if (startHash === "#list") setMode("list");
 
-  $("dClose").addEventListener("click", closeDetail);
-  $("dPrev").addEventListener("click", () => step(-1));
-  $("dNext").addEventListener("click", () => step(1));
-  $("detail").addEventListener("close", () => history.replaceState(null, "", location.pathname + location.search));
-  $("detail").addEventListener("click", e => { if (e.target === $("detail")) closeDetail(); });
-  $("detail").addEventListener("keydown", e => { if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1); });
-  $("dCopy").addEventListener("click", async () => {
-    try { await navigator.clipboard.writeText(location.href); toast("Link copied"); } catch (e) { toast(location.href); }
+  document.querySelectorAll("[data-mode]").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
+  document.querySelectorAll("[data-show]").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll("[data-show]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    S.show = b.dataset.show; refresh(curId());
+  }));
+  $("label").addEventListener("change", e => { S.label = e.target.value; refresh(curId()); });
+  $("region").addEventListener("change", e => { S.region = e.target.value; refresh(); });
+  $("sort").addEventListener("change", e => { S.sort = e.target.value; refresh(); });
+  let t; $("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { S.q = e.target.value; refresh(); }, 150); });
+  $("prev").addEventListener("click", () => go(-1));
+  $("next").addEventListener("click", () => go(1));
+  $("shuffle").addEventListener("click", shuffle);
+  $("rCopy").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(location.href); toast("Link to this passage copied"); } catch (e) { toast(location.href); }
   });
-  const m = location.hash.match(/^#p=(\d+)$/);
-  if (m && IDX.has(+m[1])) openDetail(+m[1]);
+  document.addEventListener("keydown", e => {
+    if (e.target.closest("input, select, textarea") || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "/") { e.preventDefault(); $("q").focus(); }
+    if (S.mode !== "read") return;
+    if (e.key === "ArrowRight") go(1); else if (e.key === "ArrowLeft") go(-1); else if (e.key.toLowerCase() === "s") shuffle();
+  });
+  new IntersectionObserver(es => { if (es.some(x => x.isIntersecting)) more(); }, { rootMargin: "600px" }).observe($("sentinel"));
 }
 init();
 </script>
