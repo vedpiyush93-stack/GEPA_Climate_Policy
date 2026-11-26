@@ -478,7 +478,7 @@ async function init() {
   $("nums").replaceChildren(
     el("div", {}, el("b", { text: pct(META.exact) }), el("span", { text: "of passages: the AI matches the experts on every label" })),
     el("div", {}, el("b", { text: fmt(META.n) }), el("span", { text: "passages" })),
-    el("div", {}, el("b", { text: String(META.countries) }), el("span", { text: "countries" })),
+    el("div", {}, el("b", { text: String(META.countries) }), el("span", { text: "countries, plus the EU" })),
     el("a", { class: "cta", href: "#explore", text: "Start exploring ↓" }));
   for (const r of [...new Set(DATA.map(d => d.r))].sort()) $("region").append(el("option", { value: r, text: r }));
 

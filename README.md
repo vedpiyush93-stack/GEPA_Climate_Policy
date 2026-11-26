@@ -30,8 +30,8 @@
   <img alt="Cross-validation results" src="assets/results-light.svg" width="100%">
 </picture>
 
-- **A coached small model beats a bigger one.** GEPA lifts Claude Haiku from 81% to **86%** of passages with all three labels right, ahead of Claude Sonnet (82%) in 5 of 5 folds.
-- **Few labels.** GEPA used 75-87 labelled passages per fold. Classical machine learning (ML) trained on 1,878-2,200 and reached 79%.
+- **A coached small model beats a bigger one.** GEPA lifts Claude Haiku from 81% to **86%** of passages with all three labels right, ahead of Claude Sonnet (81%) in 5 of 5 folds.
+- **Few labels.** Each fold gives GEPA 360 labelled passages (300 for training, 60 for validation), and it reads only 75-87 of them: the validation set plus the training passages it samples. Classical machine learning (ML) trained on 1,878-2,200 and reached 79%.
 - **Fewer false alarms.** Passages wrongly flagged as containing a target fall from 21% to 13%. Classical ML flags the fewest (7%) but gets fewer passages fully right.
 - **It explains itself.** Every answer comes with its reasoning in plain language ([example below](#see-it-explain-an-answer)).
 
@@ -45,8 +45,8 @@
 
 | Setup | Labelled passages | How it was built | All 3 labels right (mean ± SD) | Wrongly flagged as targets |
 |---|---|---|---|---|
-| Claude Haiku + GEPA | 75-87 per fold | same small model; GEPA rewrote its prompt, with Claude Sonnet as the teacher | **86% ± 4%** | 13% |
-| Claude Sonnet | 0 | zero-shot: same prompt, larger model | 82% ± 3% | 21% |
+| Claude Haiku + GEPA | 75-87 read, of 360 | same small model; GEPA rewrote its prompt, with Claude Sonnet as the teacher | **86% ± 4%** | 13% |
+| Claude Sonnet | 0 | zero-shot: same prompt, larger model | 81% ± 3% | 21% |
 | Claude Haiku | 0 | zero-shot: the prompt is the annotators' published definition | 81% ± 6% | 21% |
 | Classical ML | 1,878-2,200 per fold | TF-IDF word features + logistic regression / linear SVM / random forest, grid search with country-grouped cross-validation | 79% ± 2% | 7% |
 
@@ -58,7 +58,7 @@
 
 **[Open the explorer →](https://vedpiyush93-stack.github.io/GEPA_Climate_Policy/)**
 
-All 2,610 passages from 192 countries, each labelled out of fold: by the GEPA-tuned model of the cross-validation fold that never saw its country. Expert labels, model labels and the model's explanation sit side by side, with search and filters (for example, every passage where the model and the experts differ). Over the whole dataset the model matches the experts on all three labels for 85% of passages.
+All 2,610 passages from 189 countries and the EU, each labelled out of fold: by the GEPA-tuned model of the cross-validation fold that never saw its country. Expert labels, model labels and the model's explanation sit side by side, with search and filters (for example, every passage where the model and the experts differ). Over the whole dataset the model matches the experts on all three labels for 85% of passages. (The cross-validation figure above, 86%, is the mean over 150 sampled test passages per fold; this one counts every passage.)
 
 ## The task
 
@@ -67,7 +67,7 @@ All 2,610 passages from 192 countries, each labelled out of fold: by the GEPA-tu
   <img alt="Example passage with expert labels" src="assets/task-light.svg" width="100%">
 </picture>
 
-Governments write their climate commitments into laws, policies and submissions to the UNFCCC (United Nations Framework Convention on Climate Change). Analysts have to find the real **targets** among pages of background, history and aspirations. [Climate Policy Radar](https://climatepolicyradar.org)'s *national-climate-targets* dataset gives 2,610 passages from 192 countries, each labelled by domain experts with three yes/no labels. A target counts only if it is **quantifiable and has a deadline**.
+Governments write their climate commitments into laws, policies and submissions to the UNFCCC (United Nations Framework Convention on Climate Change). Analysts have to find the real **targets** among pages of background, history and aspirations. [Climate Policy Radar](https://climatepolicyradar.org)'s *national-climate-targets* dataset gives 2,610 passages from 189 countries and the EU, each labelled by domain experts with three yes/no labels. A target counts only if it is **quantifiable and has a deadline**.
 
 ## How GEPA works
 
@@ -85,7 +85,7 @@ Governments write their climate commitments into laws, policies and submissions 
   <img alt="The annotators&#x27; rule and GEPA&#x27;s prompt, line by line" src="assets/prompt-diff-light.svg" width="100%">
 </picture>
 
-Each row puts one line of the annotators' rule next to the same line in GEPA's prompt, quoted word for word ("…" marks a cut). GEPA kept every definition and added, label by label, the codebook the experts applied but never wrote down, plus a section the rule never had: what is *not* a target. This is the prompt from the main run; on its 300 held-out passages it took Claude Haiku from 85% to 92% with all three labels right.
+Each row puts one line of the annotators' rule next to the same line in GEPA's prompt, quoted word for word ("…" marks a cut). GEPA kept every definition and added, label by label, the codebook the experts applied but never wrote down, plus a section the rule never had: what is *not* a target. This prompt comes from a single fixed train/test split, run separately from the cross-validation; on its 300 held-out passages it took Claude Haiku from 85% to 92% with all three labels right.
 
 <details>
 <summary><b>Full prompt, before and after GEPA</b></summary>
@@ -126,7 +126,7 @@ Strategy: 1) Scan for explicit net-zero/neutrality commitments with a date. 2) S
 
 ## See it explain an answer
 
-On 300 held-out passages from 43 countries never seen during tuning, GEPA's prompt fixed **27** passages the zero-shot model got wrong and broke 6. One of the fixes:
+In that single split, on 300 held-out passages from 43 countries never seen during tuning, GEPA's prompt fixed **27** passages the zero-shot model got wrong and broke 6. One of the fixes:
 
 > **Passage (Portugal).** A new national target was established to reduce GHG emissions in Portugal by 85% to 90% by 2050, compared to 2005 levels and to offset the remaining emissions through land use and forests, to be achieved through a trajectory of emissions reduction between 45% and 55% by 2030, and between 65% and 75% by 2040, compared to 2005.
 
@@ -142,7 +142,8 @@ On 300 held-out passages from 43 countries never seen during tuning, GEPA's prom
 
 - One dataset and one task. With 5 folds of 150 passages, gaps of a few points sit inside the fold-to-fold spread, which is why the chart shows every fold.
 - Classical ML raises the fewest false alarms of any setup.
-- GEPA has a one-off tuning cost: the main run took about 6 minutes and 351 program evaluations, with Claude Sonnet as the teacher.
+- The dataset files the United Arab Emirates under two codes (3 passages in all), so the country split treats them as two countries. None of them is in a cross-validation test sample; in the explorer, their labels may come from a model whose training pool held the other code's passages.
+- GEPA has a one-off tuning cost: the single-split run took about 6 minutes and 351 program evaluations, with Claude Sonnet as the teacher.
 
 ## Reproduce
 
