@@ -36,8 +36,31 @@ def folds(k=5, seed=0, n_test=150, n_train=300, n_val=60):
         test = df[in_fold].sample(n=min(n_test, int(in_fold.sum())), random_state=seed)
         pool = df[~in_fold].sample(frac=1, random_state=seed)
         out.append({"fold": f, "pool": pool, "train": pool.iloc[:n_train], "val": pool.iloc[n_train:n_train + n_val],
-                    "test": test, "test_countries": int(df[in_fold].geography.nunique())})
+                    "test": test, "test_countries": int(df[in_fold].geography.nunique()), "heldout": df[in_fold]})
     return out
+
+
+def oof_fold(f, threads=6, limit=None, save=True):
+    """Out-of-fold predictions: every passage from fold f's held-out countries, classified by fold f's GEPA-tuned Claude
+    Haiku, which was tuned only on other countries. Across the 5 folds every passage in the dataset is covered once.
+    The fold's 150 sampled test passages replay from cache. Returns one row per passage, keyed by its dataset row."""
+    held = folds()[f]["heldout"]
+    if limit is not None:
+        held = held.iloc[:limit]
+    prog = targets.TargetClassifier()
+    prog.load(str(OUT / f"tuned_fold{f}.json"))
+    res = targets.run(prog, _examples(held), claude_lm("haiku"), threads=threads)
+    assert len(res) == len(held) and (res.passage.values == [" ".join(t.split()) for t in held.text]).all()
+    res.insert(0, "row", held.index.values)
+    res.insert(1, "fold", f)
+    if save and limit is None:
+        res.to_pickle(OUT / f"oof_fold{f}.pkl")
+    return res
+
+
+def load_oof(k=5):
+    """All out-of-fold predictions (one row per dataset passage), from results/cv/oof_fold*.pkl."""
+    return pd.concat([pd.read_pickle(OUT / f"oof_fold{f}.pkl") for f in range(k)]).sort_values("row").reset_index(drop=True)
 
 
 def _examples(d):

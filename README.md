@@ -9,6 +9,7 @@
   <img alt="GEPA 0.1.4" src="https://img.shields.io/badge/GEPA-0.1.4-24292f?style=flat-square">
   <img alt="Data CC-BY-4.0" src="https://img.shields.io/badge/data-CC--BY--4.0-24292f?style=flat-square">
   <img alt="Exact replay, zero new LLM calls" src="https://img.shields.io/badge/replay-0_new_LLM_calls-0a8a5f?style=flat-square">
+  <a href="https://vedpiyush93-stack.github.io/GEPA_Climate_Policy/"><img alt="Browse every passage" src="https://img.shields.io/badge/explorer-browse_2610_passages-0a8a5f?style=flat-square"></a>
 </p>
 
 <p align="center">
@@ -52,6 +53,12 @@
 "Wrongly flagged" is the share of passages with no target (by the experts' labels) where a model still flagged one. Each fold holds out a fifth of the countries; every method is rebuilt from scratch on the rest.
 
 </details>
+
+## Browse every passage
+
+**[Open the explorer →](https://vedpiyush93-stack.github.io/GEPA_Climate_Policy/)**
+
+All 2,610 passages from 192 countries, each labelled out of fold: by the GEPA-tuned model of the cross-validation fold that never saw its country. Expert labels, model labels and the model's explanation sit side by side, with search and filters (for example, every passage where the model and the experts differ). Over the whole dataset the model matches the experts on all three labels for 85% of passages.
 
 ## The task
 

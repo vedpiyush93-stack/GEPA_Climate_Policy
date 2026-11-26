@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Climate Targets Explorer</title>
+<meta name="description" content="Every passage of Climate Policy Radar's national climate targets dataset, with the experts' labels, a GEPA-tuned language model's labels, and the model's explanation.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f4f7f6; --surface: #ffffff; --surface2: #f8faf9; --ink: #142a26; --ink2: #4a5f5a; --muted: #7a8a86;
+  --line: #e2e9e6; --accent: #0a8a5f; --accent-ink: #ffffff; --accent-soft: #e2f3ec;
+  --nz: #1f7a6b; --nz-soft: #dff1ec; --rd: #2d6aa3; --rd-soft: #e1ecf7; --ot: #6750b0; --ot-soft: #ece8f7;
+  --warn: #c2410c; --warn-soft: #fdeee6; --ok: #0a8a5f; --year: #fff1c7; --num: #e2f3ec;
+  --shadow: 0 1px 2px rgba(16,40,35,.05), 0 6px 24px rgba(16,40,35,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0b1110; --surface: #121b19; --surface2: #17221f; --ink: #e6f0ed; --ink2: #a8bab5; --muted: #7d8f8a;
+    --line: #23312e; --accent: #1aa874; --accent-ink: #06130f; --accent-soft: #14352b;
+    --nz: #6fd2bd; --nz-soft: #163631; --rd: #8dbbea; --rd-soft: #172a3d; --ot: #b9a8f0; --ot-soft: #251f3d;
+    --warn: #ff9a6b; --warn-soft: #3a2117; --ok: #3ccf95; --year: #4a3d12; --num: #173a2f;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1110; --surface: #121b19; --surface2: #17221f; --ink: #e6f0ed; --ink2: #a8bab5; --muted: #7d8f8a;
+  --line: #23312e; --accent: #1aa874; --accent-ink: #06130f; --accent-soft: #14352b;
+  --nz: #6fd2bd; --nz-soft: #163631; --rd: #8dbbea; --rd-soft: #172a3d; --ot: #b9a8f0; --ot-soft: #251f3d;
+  --warn: #ff9a6b; --warn-soft: #3a2117; --ok: #3ccf95; --year: #4a3d12; --num: #173a2f;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; color: #eaf6f1;
+  background: radial-gradient(1200px 420px at 85% 10%, rgba(52,211,153,.22), transparent 60%),
+              linear-gradient(135deg, #031d1c 0%, #05312c 55%, #0a4534 100%); }
+.hero svg.topo { position: absolute; right: -120px; top: -60px; width: 760px; height: 520px; opacity: .55; pointer-events: none; }
+.hero .wrap { position: relative; padding-top: 44px; padding-bottom: 40px; }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 30px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #34d399; }
+.iconbtn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06);
+  color: #eaf6f1; border-radius: 999px; padding: 7px 14px; cursor: pointer; font-size: 13px; text-decoration: none; }
+.iconbtn:hover { background: rgba(255,255,255,.12); }
+.hero h1 { font-size: clamp(30px, 5vw, 50px); line-height: 1.08; margin: 0 0 14px; letter-spacing: -.02em; max-width: 760px; }
+.hero p.lede { font-size: clamp(15px, 2vw, 18px); color: #a9cbbf; max-width: 680px; margin: 0 0 28px; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 900px; }
+.stat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.13); border-radius: 16px; padding: 14px 16px; }
+.stat b { display: block; font-size: clamp(22px, 3.4vw, 32px); line-height: 1.1; color: #fff; letter-spacing: -.01em; }
+.stat b.hi { color: #34d399; }
+.stat span { font-size: 13px; color: #a9cbbf; }
+
+/* toolbar */
+.toolbar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+.toolbar .wrap { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-top: 12px; padding-bottom: 12px; }
+.search { flex: 1 1 260px; display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0 12px; height: 40px; }
+.search input { border: 0; outline: 0; background: transparent; width: 100%; height: 38px; }
+.search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.seg { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 3px; height: 40px; }
+.seg button { border: 0; background: transparent; padding: 0 12px; border-radius: 9px; cursor: pointer; color: var(--ink2); font-size: 14px; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+select.pick { height: 40px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); padding: 0 10px; color: var(--ink2); }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; min-width: 0; max-width: 100%; }
+.chips .lead { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-right: 2px; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; font-size: 13px;
+  cursor: pointer; color: var(--ink2); display: inline-flex; align-items: center; gap: 6px; }
+.chip i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.chip[aria-pressed="true"] { border-color: currentColor; font-weight: 600; }
+.chip.nz[aria-pressed="true"] { color: var(--nz); background: var(--nz-soft); }
+.chip.rd[aria-pressed="true"] { color: var(--rd); background: var(--rd-soft); }
+.chip.ot[aria-pressed="true"] { color: var(--ot); background: var(--ot-soft); }
+.chip.no[aria-pressed="true"] { color: var(--ink); background: var(--surface2); }
+.btn { height: 40px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); padding: 0 14px; cursor: pointer;
+  color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
+.btn:hover, .chip:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+
+/* results */
+.meta-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0 12px; color: var(--muted); font-size: 14px; }
+.meta-row b { color: var(--ink); }
+.linkish { background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; padding-bottom: 40px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; cursor: pointer;
+  box-shadow: var(--shadow); transition: transform .12s ease, border-color .12s ease; display: flex; flex-direction: column; gap: 10px;
+  text-align: left; width: 100%; color: inherit; }
+.card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.card:focus-visible { outline: 3px solid var(--accent-soft); border-color: var(--accent); }
+.card-top { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.card-top .country { white-space: nowrap; }
+.flag { font-size: 20px; line-height: 1; }
+.country { font-weight: 650; }
+.region { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 0 1 auto; }
+.badge { margin-left: auto; font-size: 12px; font-weight: 650; border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+  max-width: 55%; overflow: hidden; text-overflow: ellipsis; flex: 0 0 auto; }
+.badge.ok { color: var(--ok); background: var(--accent-soft); }
+.badge.diff { color: var(--warn); background: var(--warn-soft); }
+.preview { overflow-wrap: anywhere; color: var(--ink2); font-size: 14px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.who { display: grid; grid-template-columns: 64px 1fr; gap: 6px 8px; align-items: center; font-size: 12px; }
+.who > span { color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 11px; }
+.pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.pill { font-size: 12px; font-weight: 600; border-radius: 999px; padding: 2px 10px; border: 1.5px solid transparent; }
+.pill.nz { color: var(--nz); background: var(--nz-soft); }
+.pill.rd { color: var(--rd); background: var(--rd-soft); }
+.pill.ot { color: var(--ot); background: var(--ot-soft); }
+.pill.none { color: var(--muted); background: var(--surface2); }
+.pill.off { border-color: var(--warn); border-style: dashed; }
+.idtag { color: var(--muted); font-size: 12px; }
+mark { border-radius: 4px; padding: 0 2px; color: inherit; }
+mark.yr { background: var(--year); }
+mark.nm { background: var(--num); }
+.sentinel { height: 1px; }
+.empty { text-align: center; padding: 60px 20px; color: var(--muted); grid-column: 1 / -1; }
+.skeleton { height: 210px; border-radius: 18px; background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
+  background-size: 200% 100%; animation: shimmer 1.2s infinite; border: 1px solid var(--line); }
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* detail */
+dialog { border: 0; padding: 0; background: transparent; max-width: 920px; width: calc(100% - 32px); max-height: calc(100% - 32px); color: var(--ink); }
+dialog::backdrop { background: rgba(6,16,14,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.sheet { background: var(--surface); border-radius: 22px; box-shadow: 0 30px 80px rgba(0,0,0,.35); overflow: hidden; display: flex; flex-direction: column; max-height: calc(100vh - 32px); }
+.sheet-head { display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.sheet-head .flag { font-size: 26px; }
+.sheet-head h2 { font-size: 19px; margin: 0; line-height: 1.2; }
+.sheet-head .sub { color: var(--muted); font-size: 13px; }
+.sheet-head .actions { margin-left: auto; display: flex; gap: 6px; }
+.round { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface2); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; color: var(--ink2); }
+.round:hover { border-color: var(--accent); color: var(--accent); }
+.sheet-body { overflow: auto; padding: 20px 22px 24px; display: grid; gap: 22px; }
+.sheet-body:focus { outline: none; }
+.sec-title { font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.passage { font-size: 16.5px; line-height: 1.7; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.tag { font-size: 12px; color: var(--ink2); background: var(--surface2); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+.cmp { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: 14px; }
+.cmp th, .cmp td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); }
+.cmp tr:last-child td { border-bottom: 0; }
+.cmp th { font-size: 12px; color: var(--muted); font-weight: 650; background: var(--surface2); }
+.cmp td.lab { font-weight: 650; }
+.cmp .pill { white-space: nowrap; }
+.yn { display: inline-block; min-width: 46px; text-align: center; border-radius: 999px; padding: 2px 10px; font-size: 12.5px; font-weight: 650; }
+.yn.y { background: var(--accent); color: var(--accent-ink); }
+.yn.n { background: var(--surface2); color: var(--muted); border: 1px solid var(--line); }
+.res { font-weight: 650; font-size: 13px; }
+.res.ok { color: var(--ok); } .res.bad { color: var(--warn); }
+.why { background: var(--accent-soft); border-radius: 16px; padding: 16px 18px; position: relative; }
+.why p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.65; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+.legend mark { font-size: 12.5px; }
+.sheet-foot { display: flex; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--line); background: var(--surface2); align-items: center; }
+.sheet-foot .grow { flex: 1; color: var(--muted); font-size: 13px; }
+kbd { font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 2px 5px; background: var(--surface); color: var(--ink2); }
+
+/* about + footer */
+.about { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px 24px; margin: 10px 0 30px; box-shadow: var(--shadow); }
+.about h3 { margin: 0 0 14px; font-size: 18px; }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.step { background: var(--surface2); border-radius: 14px; padding: 14px; font-size: 14px; color: var(--ink2); }
+.step b { display: flex; align-items: center; gap: 8px; color: var(--ink); margin-bottom: 4px; }
+.step b i { font-style: normal; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+footer { color: var(--muted); font-size: 13px; padding: 10px 0 40px; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); opacity: 0; background: var(--ink); color: var(--bg);
+  padding: 10px 16px; border-radius: 12px; font-size: 14px; transition: all .2s ease; z-index: 50; pointer-events: none; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@media (max-width: 760px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .hero .wrap { padding-top: 26px; padding-bottom: 28px; }
+  .card-top .region { display: none; }
+  .cmp th, .cmp td { padding: 9px 8px; }
+  .res .w { display: none; }
+  .sheet-body { padding: 16px 16px 20px; }
+  .badge { max-width: 60%; }
+  .topbar { margin-bottom: 20px; }
+  .chips { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; scrollbar-width: none; }
+  dialog { width: 100%; max-width: 100%; max-height: 100%; margin: 0; height: 100%; }
+  .sheet { border-radius: 0; max-height: 100vh; height: 100%; }
+  .kbdhint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .card, .toast { transition: none; } .skeleton { animation: none; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="topo" viewBox="0 0 760 520" aria-hidden="true" id="topo"></svg>
+  <div class="wrap">
+    <div class="topbar">
+      <span class="eyebrow">GEPA · Climate Policy Radar</span>
+      <span style="display:flex;gap:8px">
+        <button class="iconbtn" id="themeBtn" type="button" aria-label="Switch light or dark theme">◐ Theme</button>
+        <a class="iconbtn" href="https://github.com/vedpiyush93-stack/GEPA_Climate_Policy">Code &amp; method ↗</a>
+      </span>
+    </div>
+    <h1>Every climate-policy passage, classified and explained</h1>
+    <p class="lede" id="lede">Climate Policy Radar's expert-labelled passages from national laws and policies. Each one is labelled by a GEPA-tuned Claude Haiku that never saw its country, with the model's own explanation.</p>
+    <div class="stats" id="stats">
+      <div class="stat"><b>&nbsp;</b><span>loading</span></div><div class="stat"><b>&nbsp;</b><span>&nbsp;</span></div>
+      <div class="stat"><b>&nbsp;</b><span>&nbsp;</span></div><div class="stat"><b>&nbsp;</b><span>&nbsp;</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <label class="search" aria-label="Search passages">
+      <span aria-hidden="true" style="color:var(--muted)">⌕</span>
+      <input id="q" type="search" placeholder="Search passages or countries (e.g. hydrogen, India, 2030)" autocomplete="off">
+    </label>
+    <div class="seg" role="group" aria-label="Agreement with experts">
+      <button type="button" data-agree="all" aria-pressed="true">All</button>
+      <button type="button" data-agree="ok" aria-pressed="false">Agrees</button>
+      <button type="button" data-agree="diff" aria-pressed="false">Differs</button>
+    </div>
+    <select class="pick" id="region" aria-label="Region"><option value="">All regions</option></select>
+    <select class="pick" id="sort" aria-label="Sort">
+      <option value="order">Dataset order</option><option value="short">Shortest first</option>
+      <option value="long">Longest first</option><option value="country">Country A to Z</option>
+    </select>
+    <button class="btn primary" id="surprise" type="button">✦ Surprise me</button>
+    <div class="chips" role="group" aria-label="Filter by the experts' labels">
+      <span class="lead">Experts said</span>
+      <button class="chip nz" type="button" data-lab="0" aria-pressed="false"><i style="background:var(--nz)"></i>Net zero</button>
+      <button class="chip rd" type="button" data-lab="1" aria-pressed="false"><i style="background:var(--rd)"></i>Emission reduction</button>
+      <button class="chip ot" type="button" data-lab="2" aria-pressed="false"><i style="background:var(--ot)"></i>Other target</button>
+      <button class="chip no" type="button" data-lab="none" aria-pressed="false"><i style="background:var(--muted)"></i>No target</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="meta-row"><span id="count">Loading passages…</span><button class="linkish" id="clear" type="button" hidden>Clear filters</button></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+  <div class="sentinel" id="sentinel"></div>
+
+  <section class="about" id="about">
+    <h3>How these labels were made</h3>
+    <div class="steps">
+      <div class="step"><b><i>1</i>Expert labels</b>Climate Policy Radar's domain experts marked each passage: does it hold a net zero target, an emission reduction target, or another target with a number and a deadline?</div>
+      <div class="step"><b><i>2</i>Split by country</b>The countries were split into five groups. Each group was held out once, so a model never sees the country it is judging.</div>
+      <div class="step"><b><i>3</i>GEPA coaching</b>On the other four groups, GEPA had Claude Sonnet read Claude Haiku's mistakes and rewrite its instructions, starting from the experts' own written definition.</div>
+      <div class="step"><b><i>4</i>Every passage</b>Each fold's coached Haiku then labelled every passage of its held-out countries and explained why. That is what you are browsing.</div>
+    </div>
+  </section>
+  <footer>
+    Data: Climate Policy Radar, <a href="https://huggingface.co/datasets/ClimatePolicyRadar/national-climate-targets">national-climate-targets</a> (CC BY 4.0; Juhasz et al. 2024, <a href="https://arxiv.org/abs/2404.02822">arXiv:2404.02822</a>).
+    Method: GEPA (Agrawal et al., International Conference on Learning Representations 2026, <a href="https://arxiv.org/abs/2507.19457">arXiv:2507.19457</a>).
+    Code, data and cached model responses: <a href="https://github.com/vedpiyush93-stack/GEPA_Climate_Policy">GitHub</a>.
+  </footer>
+</main>
+
+<dialog id="detail" aria-labelledby="dTitle">
+  <div class="sheet">
+    <div class="sheet-head">
+      <span class="flag" id="dFlag"></span>
+      <div><h2 id="dTitle"></h2><div class="sub" id="dSub"></div></div>
+      <div class="actions">
+        <button class="round" id="dPrev" type="button" aria-label="Previous passage">←</button>
+        <button class="round" id="dNext" type="button" aria-label="Next passage">→</button>
+        <button class="round" id="dClose" type="button" aria-label="Close">✕</button>
+      </div>
+    </div>
+    <div class="sheet-body" tabindex="-1" autofocus>
+      <section>
+        <p class="sec-title">The passage</p>
+        <p class="passage" id="dPassage"></p>
+        <div class="tags" id="dTags"></div>
+      </section>
+      <section>
+        <p class="sec-title">The labels</p>
+        <table class="cmp"><thead><tr><th>Label</th><th>Experts</th><th>GEPA model</th><th></th></tr></thead><tbody id="dTable"></tbody></table>
+      </section>
+      <section>
+        <p class="sec-title">The model's explanation</p>
+        <div class="why"><p id="dWhy"></p></div>
+      </section>
+      <div class="legend"><span><mark class="yr">2030</mark> years</span><span><mark class="nm">45%</mark> numbers with units</span></div>
+    </div>
+    <div class="sheet-foot">
+      <span class="grow kbdhint"><kbd>←</kbd> <kbd>→</kbd> browse · <kbd>Esc</kbd> close</span>
+      <button class="btn" id="dCopy" type="button">🔗 Copy link</button>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+"use strict";
+const LABELS = [
+  { name: "Net zero", long: "Net zero target", cls: "nz" },
+  { name: "Emission reduction", long: "Emission reduction target", cls: "rd" },
+  { name: "Other target", long: "Other target", cls: "ot" },
+];
+const $ = id => document.getElementById(id);
+const S = { q: "", agree: "all", labs: new Set(), region: "", sort: "order", list: [], shown: 0, cur: -1 };
+let DATA = [], META = {};
+
+function el(tag, attrs, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+  }
+  for (const k of kids) if (k != null) n.append(k);
+  return n;
+}
+const flag = cc => cc ? String.fromCodePoint(...[...cc.toUpperCase()].map(c => 0x1F1E6 + c.charCodeAt(0) - 65)) : "🌐";
+const pct = x => `${Math.round(x * 100)}%`;
+const fmt = n => n.toLocaleString("en-US");
+const yes = bits => bits.map((b, i) => b ? i : -1).filter(i => i >= 0);
+const agrees = d => d.e.every((b, i) => b === d.m[i]);
+
+// Highlight years and numbers with units, built as DOM nodes (never innerHTML: the text is data).
+const HL = /\b(?:19|20)\d{2}\b|\b\d+(?:[.,]\d+)?\s?(?:%|per ?cent|percent|GW|MW|kW|Mt|Gt|kt|MtCO2e?|tCO2e?|tonnes?|million|billion|ha|hectares)(?![\w])/gi;
+function highlight(text) {
+  const f = document.createDocumentFragment(); let pos = 0;
+  for (const m of text.matchAll(HL)) {
+    if (m.index > pos) f.append(text.slice(pos, m.index));
+    f.append(el("mark", { class: /^(19|20)\d{2}$/.test(m[0]) ? "yr" : "nm", text: m[0] }));
+    pos = m.index + m[0].length;
+  }
+  f.append(text.slice(pos));
+  return f;
+}
+
+function pills(bits, ref) {
+  const box = el("div", { class: "pills" });
+  const on = yes(bits);
+  if (!on.length) box.append(el("span", { class: "pill none" + (ref && yes(ref).length ? " off" : ""), text: "No target" }));
+  for (const i of on) box.append(el("span", { class: `pill ${LABELS[i].cls}` + (ref && ref[i] !== bits[i] ? " off" : ""), text: LABELS[i].name }));
+  return box;
+}
+function diffText(d) {
+  const bad = d.e.map((b, i) => b !== d.m[i] ? LABELS[i].name : null).filter(Boolean);
+  return bad.length ? `Differs: ${bad.join(", ")}` : "Agrees";
+}
+
+function card(d) {
+  const ok = agrees(d);
+  const c = el("button", { class: "card", type: "button", "aria-label": `${d.c}, passage ${d.id}. ${diffText(d)}` },
+    el("div", { class: "card-top" }, el("span", { class: "flag", "aria-hidden": "true", text: flag(d.cc) }),
+      el("span", { class: "country", text: d.c }), el("span", { class: "region", text: d.r }),
+      el("span", { class: "badge " + (ok ? "ok" : "diff"), text: ok ? "✓ Agrees" : "≠ " + diffText(d).replace("Differs: ", "") })),
+    el("div", { class: "preview" }, highlight(d.p)),
+    el("div", { class: "who" }, el("span", { text: "Experts" }), pills(d.e), el("span", { text: "Model" }), pills(d.m, d.e)));
+  c.addEventListener("click", () => openDetail(d.id));
+  return c;
+}
+
+function apply() {
+  const q = S.q.trim().toLowerCase();
+  let list = DATA.filter(d =>
+    (S.agree === "all" || (S.agree === "ok") === agrees(d)) &&
+    (!S.region || d.r === S.region) &&
+    [...S.labs].every(l => l === "none" ? !d.e.some(Boolean) : d.e[+l] === 1) &&
+    (!q || d._s.includes(q)));
+  const by = { order: (a, b) => a.id - b.id, short: (a, b) => a.p.length - b.p.length, long: (a, b) => b.p.length - a.p.length,
+               country: (a, b) => a.c.localeCompare(b.c) || a.id - b.id }[S.sort];
+  S.list = list.sort(by); S.shown = 0;
+  $("grid").replaceChildren();
+  const filtered = S.q || S.agree !== "all" || S.labs.size || S.region;
+  $("clear").hidden = !filtered;
+  $("count").replaceChildren(el("span", {}, el("b", { text: fmt(list.length) }), ` of ${fmt(DATA.length)} passages`));
+  if (!list.length) $("grid").append(el("div", { class: "empty", text: "No passages match. Try fewer filters." }));
+  more();
+}
+function more() {
+  const next = S.list.slice(S.shown, S.shown + 48);
+  for (const d of next) $("grid").append(card(d));
+  S.shown += next.length;
+}
+
+function openDetail(id) {
+  const d = DATA[IDX.get(id)]; if (!d) return;
+  S.cur = S.list.findIndex(x => x.id === id);
+  $("dFlag").textContent = flag(d.cc);
+  $("dTitle").textContent = d.c;
+  $("dSub").textContent = `${d.r} · passage #${d.id} · held-out fold ${d.f + 1}`;
+  $("dPassage").replaceChildren(highlight(d.p));
+  $("dTags").replaceChildren(...[d.tr ? "Translated into English" : null, `${fmt(d.p.length)} characters`].filter(Boolean)
+    .map(t => el("span", { class: "tag", text: t })));
+  $("dTable").replaceChildren(...LABELS.map((L, i) => {
+    const ok = d.e[i] === d.m[i];
+    return el("tr", {}, el("td", { class: "lab" }, el("span", { class: `pill ${L.cls}`, text: L.name })),
+      el("td", {}, el("span", { class: "yn " + (d.e[i] ? "y" : "n"), text: d.e[i] ? "Yes" : "No" })),
+      el("td", {}, el("span", { class: "yn " + (d.m[i] ? "y" : "n"), text: d.m[i] ? "Yes" : "No" })),
+      el("td", {}, el("span", { class: "res " + (ok ? "ok" : "bad") }, ok ? "✓" : "✗", el("span", { class: "w", text: ok ? " same" : " differs" }))));
+  }));
+  $("dWhy").textContent = d.x || "(no explanation recorded)";
+  $("dPrev").disabled = S.cur <= 0; $("dNext").disabled = S.cur < 0 || S.cur >= S.list.length - 1;
+  history.replaceState(null, "", `#p=${d.id}`);
+  const dlg = $("detail");
+  if (!dlg.open) dlg.showModal();
+  dlg.querySelector(".sheet-body").scrollTop = 0;
+}
+function step(k) { const n = S.list[S.cur + k]; if (n) openDetail(n.id); }
+function closeDetail() { $("detail").close(); }
+
+function toast(msg) { const t = $("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 1600); }
+
+function stats() {
+  const tiles = [
+    [pct(META.exact), "all three labels match the experts", true],
+    [fmt(META.n), "passages, every one classified", false],
+    [String(META.countries), "countries", false],
+    ["≥ " + pct(META.label_agree_min), "agreement on each single label", false],
+  ];
+  $("stats").replaceChildren(...tiles.map(([v, l, hi]) => el("div", { class: "stat" }, el("b", { class: hi ? "hi" : "", text: v }), el("span", { text: l }))));
+  $("lede").textContent = `All ${fmt(META.n)} expert-labelled passages from national laws and policies of ${META.countries} countries ` +
+    `(Climate Policy Radar). Each is labelled by a GEPA-tuned Claude Haiku that never saw its country, with the model's own explanation.`;
+}
+
+function topo() {
+  const svg = $("topo"), cx = 420, cy = 250, NS = "http://www.w3.org/2000/svg";
+  for (let k = 0; k < 11; k++) {
+    const r0 = 60 + k * 30; let d = "";
+    for (let j = 0; j <= 180; j++) {
+      const th = 2 * Math.PI * j / 180, r = r0 * (1 + 0.07 * Math.sin(3 * th + k * .45) + 0.045 * Math.sin(5 * th - k * .3));
+      d += (j ? "L" : "M") + (cx + r * Math.cos(th)).toFixed(1) + "," + (cy + 0.78 * r * Math.sin(th)).toFixed(1);
+    }
+    const p = document.createElementNS(NS, "path");
+    p.setAttribute("d", d + "Z"); p.setAttribute("fill", "none"); p.setAttribute("stroke", "#7ee2b8");
+    p.setAttribute("stroke-width", "1.2"); p.setAttribute("opacity", (0.3 - k * 0.022).toFixed(3));
+    svg.append(p);
+  }
+}
+
+function theme() {
+  let saved = null; try { saved = localStorage.getItem("theme"); } catch (e) {}
+  if (saved) document.documentElement.dataset.theme = saved;
+  $("themeBtn").addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark"
+                                                         : matchMedia("(prefers-color-scheme: dark)").matches;
+    const next = dark ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+}
+
+let IDX = new Map();
+async function init() {
+  topo(); theme();
+  $("grid").replaceChildren(...Array.from({ length: 6 }, () => el("div", { class: "skeleton" })));
+  let data;
+  try { data = await (await fetch("passages.json")).json(); }
+  catch (e) { $("count").textContent = "Could not load the passages. Please refresh."; $("grid").replaceChildren(); return; }
+  META = data.meta; DATA = data.passages;
+  DATA.forEach((d, i) => { d._s = (d.p + " " + d.c + " " + d.r).toLowerCase(); IDX.set(d.id, i); });
+  for (const r of [...new Set(DATA.map(d => d.r))].sort()) $("region").append(el("option", { value: r, text: r }));
+  stats(); apply();
+
+  let t; $("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { S.q = e.target.value; apply(); }, 120); });
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    S.agree = b.dataset.agree; apply();
+  }));
+  document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+    const on = b.getAttribute("aria-pressed") !== "true";
+    b.setAttribute("aria-pressed", String(on));
+    on ? S.labs.add(b.dataset.lab) : S.labs.delete(b.dataset.lab); apply();
+  }));
+  $("region").addEventListener("change", e => { S.region = e.target.value; apply(); });
+  $("sort").addEventListener("change", e => { S.sort = e.target.value; apply(); });
+  $("clear").addEventListener("click", () => {
+    S.q = ""; $("q").value = ""; S.agree = "all"; S.labs.clear(); S.region = ""; $("region").value = "";
+    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.agree === "all")));
+    document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", "false")); apply();
+  });
+  $("surprise").addEventListener("click", () => {
+    const pool = S.list.length ? S.list : DATA; openDetail(pool[Math.floor(Math.random() * pool.length)].id);
+  });
+  new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) more(); }, { rootMargin: "600px" }).observe($("sentinel"));
+
+  $("dClose").addEventListener("click", closeDetail);
+  $("dPrev").addEventListener("click", () => step(-1));
+  $("dNext").addEventListener("click", () => step(1));
+  $("detail").addEventListener("close", () => history.replaceState(null, "", location.pathname + location.search));
+  $("detail").addEventListener("click", e => { if (e.target === $("detail")) closeDetail(); });
+  $("detail").addEventListener("keydown", e => { if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1); });
+  $("dCopy").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(location.href); toast("Link copied"); } catch (e) { toast(location.href); }
+  });
+  const m = location.hash.match(/^#p=(\d+)$/);
+  if (m && IDX.has(+m[1])) openDetail(+m[1]);
+}
+init();
+</script>
+</body>
+</html>
