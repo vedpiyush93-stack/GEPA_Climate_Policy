@@ -453,7 +453,13 @@ async function init() {
   topo(); theme();
   $("grid").replaceChildren(...Array.from({ length: 6 }, () => el("div", { class: "skeleton" })));
   let data;
-  try { data = await (await fetch("passages.json")).json(); }
+  try {   // a script tag (not fetch) so the page also works when index.html is opened straight from disk
+    data = await new Promise((ok, fail) => {
+      const sc = document.createElement("script"); sc.src = "passages.js";
+      sc.onload = () => window.PASSAGES ? ok(window.PASSAGES) : fail(new Error("no data"));
+      sc.onerror = fail; document.head.append(sc);
+    });
+  }
   catch (e) { $("count").textContent = "Could not load the passages. Please refresh."; $("grid").replaceChildren(); return; }
   META = data.meta; DATA = data.passages;
   DATA.forEach((d, i) => { d._s = (d.p + " " + d.c + " " + d.r).toLowerCase(); IDX.set(d.id, i); });
