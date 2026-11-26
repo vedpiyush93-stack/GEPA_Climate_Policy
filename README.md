@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <b>Can a small, cheap language model learn an expert's judgment from under 100 labelled examples,<br>and explain its answers?</b>
+  <b>Can a small, cheap language model learn an expert's judgment by reading under 100 labelled examples,<br>and explain its answers?</b>
 </p>
 
 <br>
@@ -126,22 +126,23 @@ Strategy: 1) Scan for explicit net-zero/neutrality commitments with a date. 2) S
 
 ## See it explain an answer
 
-In that single split, on 300 held-out passages from 43 countries never seen during tuning, GEPA's prompt fixed **27** passages the zero-shot model got wrong and broke 6. One of the fixes:
+Across the five folds, on the same 750 test passages, the GEPA-tuned prompts fixed **55** passages that zero-shot Claude Haiku got wrong and broke 13. One of the fixes, picked by rule (the shortest test passage where zero-shot Haiku got the *other* label wrong and the tuned model got all three right). The explorer shows the same answer and reasoning:
 
-> **Passage (Portugal).** A new national target was established to reduce GHG emissions in Portugal by 85% to 90% by 2050, compared to 2005 levels and to offset the remaining emissions through land use and forests, to be achieved through a trajectory of emissions reduction between 45% and 55% by 2030, and between 65% and 75% by 2040, compared to 2005.
+> **Passage (Panama, fold 2).** Panama is committed to achieve a reduction of total emissions from the country's energy sector by at least 24% by 2050 and by at least 11.5% by 2030, with respect to the trend scenario (BAU). Regarding the LULUCF sector, Panama is committed to the forest restoration of 50,000 hectares at the national level, which will contribute to the carbon absorption of approximately 2.6 million tons of CO eq by the year 2050.
 
 | | Net zero | Emission reduction | Other |
 |---|:-:|:-:|:-:|
 | Experts | no | **yes** | no |
-| Claude Haiku, zero-shot | **yes** ✗ | **yes** | no |
+| Claude Haiku, zero-shot | no | **yes** | **yes** ✗ |
 | Claude Haiku + GEPA | no | **yes** | no |
 
-> **Claude Haiku + GEPA, in its own words:** Scan for a net-zero/neutrality commitment with a date: the passage targets offsetting remaining emissions through land use and forests by 2050, and 85–90% reduction by 2050, which implies near-neutrality but does not explicitly state "net zero" or "carbon neutrality," so net_zero is false. Scan for quantified GHG emission reductions with dates: 85–90% by 2050 vs 2005, 45–55% by 2030, and 65–75% by 2040 all state GHG emissions, a baseline, and a deadline, so reduction is true. Scan for other quantified, dated targets: none beyond GHG reductions, so other is false.
+> **Claude Haiku + GEPA, in its own words:** Check each target type separately. The energy-sector commitment gives a quantified reduction (at least 11.5% by 2030 and 24% by 2050, relative to the BAU trend), so it is a dated emissions reduction target. Nothing mentions net zero or carbon neutrality. The LULUCF forest restoration commitment (50,000 ha) is quantified, but its only date (2050) attaches to an estimated carbon absorption, which is a projected outcome rather than a dated goal for the restoration itself. Under the strict rule for "other", this is not counted.
 
 ## Caveats
 
 - One dataset and one task. With 5 folds of 150 passages, gaps of a few points sit inside the fold-to-fold spread, which is why the chart shows every fold.
 - Classical ML raises the fewest false alarms of any setup.
+- The explanations are the model's own words. They show how it reached each answer, but nothing here checks that they are faithful to its internal process.
 - The dataset files the United Arab Emirates under two codes (3 passages in all), so the country split treats them as two countries. None of them is in a cross-validation test sample; in the explorer, their labels may come from a model whose training pool held the other code's passages.
 - GEPA has a one-off tuning cost: the single-split run took about 6 minutes and 351 program evaluations, with Claude Sonnet as the teacher.
 
@@ -153,7 +154,7 @@ uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/jupyter lab gepa_climate_targets.ipynb
 ```
 
-- **Exact replay.** Every LLM response is stored in `cache/dspy`, so a re-run reproduces every number without new calls. The first run re-fits the classical ML models (a few minutes) and caches them in `cache/ml`.
+- **Exact replay.** Every LLM response is stored in `cache/dspy`, so a re-run reproduces every number without new calls. The first run also re-fits the classical ML models (about ten minutes) and caches them in `cache/ml`. Running the notebook rewrites its outputs and touches the cache files, so `git status` shows them as modified; the numbers stay the same.
 - **Fresh runs.** LLM calls go through the Claude Code CLI (`claude -p`), which must be installed and logged in. Delete `cache/dspy` (or set `GEPA_CACHE_DIR`) to call the models afresh; answers then vary slightly. Set `RUN_GEPA = True` in the notebook to re-run the optimiser (about 6 minutes).
 
 ## Repository layout
