@@ -156,8 +156,9 @@ dialog::backdrop { background: rgba(6,16,14,.55); backdrop-filter: blur(6px); -w
 .res.ok { color: var(--ok); } .res.bad { color: var(--warn); }
 .why { background: var(--accent-soft); border-radius: 16px; padding: 16px 18px; position: relative; }
 .why p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.65; }
-.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
-.legend mark { font-size: 12.5px; }
+.sec-title .hint { text-transform: none; letter-spacing: 0; font-weight: 500; margin-left: 10px; white-space: nowrap; }
+.sw { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin: 0 4px 0 8px; vertical-align: -1px; }
+.sw.yr { background: var(--year); } .sw.nm { background: var(--num); }
 .sheet-foot { display: flex; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--line); background: var(--surface2); align-items: center; }
 .sheet-foot .grow { flex: 1; color: var(--muted); font-size: 13px; }
 kbd { font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 2px 5px; background: var(--surface); color: var(--ink2); }
@@ -274,7 +275,7 @@ footer { color: var(--muted); font-size: 13px; padding: 10px 0 40px; }
     </div>
     <div class="sheet-body" tabindex="-1" autofocus>
       <section>
-        <p class="sec-title">The passage</p>
+        <p class="sec-title">The passage <span class="hint">highlighted: <i class="sw yr"></i>years <i class="sw nm"></i>numbers with units</span></p>
         <p class="passage" id="dPassage"></p>
         <div class="tags" id="dTags"></div>
       </section>
@@ -286,7 +287,6 @@ footer { color: var(--muted); font-size: 13px; padding: 10px 0 40px; }
         <p class="sec-title">The model's explanation</p>
         <div class="why"><p id="dWhy"></p></div>
       </section>
-      <div class="legend"><span><mark class="yr">2030</mark> years</span><span><mark class="nm">45%</mark> numbers with units</span></div>
     </div>
     <div class="sheet-foot">
       <span class="grow kbdhint"><kbd>←</kbd> <kbd>→</kbd> browse · <kbd>Esc</kbd> close</span>
